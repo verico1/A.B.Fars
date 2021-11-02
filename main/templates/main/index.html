@@ -1,7 +1,15 @@
+{% load i18n %}
+
 A.B.Fars Project
 <br>
 <br>
-<a href="{% url 'main:contact_us' %}">تماس با ما</a>
+<a href="{% url 'main:contact_us' %}">{% trans "تماس باما" %}</a>
 <br>
 <br>
-<a href="{% url 'main:about_us' %}">درباره ما</a>
+<a href="{% url 'main:about_us' %}">{% trans "درباره ما" %}</a>
+
+<br>
+<a href="/en/">en</a>
+<a href="/fa/">fa</a>
+<a href="/ar/">ar</a>
+<a href="/ku/">ku</a>
