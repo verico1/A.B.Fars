@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-02 09:57+0330\n"
+"POT-Creation-Date: 2021-11-07 14:25+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,22 +18,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: config/settings.py:107
-msgid "Persian"
-msgstr ""
-
-#: config/settings.py:108
-msgid "English"
-msgstr ""
-
-#: config/settings.py:109
-msgid "Arabic"
-msgstr ""
-
-#: config/settings.py:110
-msgid "Kurdish"
-msgstr ""
-
 #: main/templates/main/index.html:6
 msgid "تماس باما"
 msgstr "تماس باما"
@@ -42,3 +26,6 @@ msgstr "تماس باما"
 msgid "درباره ما"
 msgstr "درباره ما"
 
+#: main/templates/main/index.html:12
+msgid "محصولات"
+msgstr "محصولات"

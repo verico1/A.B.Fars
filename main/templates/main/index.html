@@ -3,16 +3,36 @@
 A.B.Fars Project
 <br>
 <br>
-<a href="{% url 'main:contact_us' %}">{% trans "تماس باما" %}</a>
-<br>
-<br>
 <a href="{% url 'main:about_us' %}">{% trans "درباره ما" %}</a>
 <br>
 <br>
-<a href="{% url 'products:products' %}">محصولات</a>
+<a href="">{% trans "محصولات" %}</a>
 
 <br>
 <a href="/en/">en</a>
 <a href="/fa/">fa</a>
 <a href="/ar/">ar</a>
 <a href="/ku/">ku</a>
+
+<br>
+<br>
+<br>
+<form method="post">
+    {% csrf_token %}
+<input type="text", name="name"> نام و نام خانوادگی
+<br>
+<br>
+<input type="tel" name="phone_number"> شماه تماس 
+<br>
+<br>
+<input type="text" name="text"> متن پیام
+<br>
+<br>
+<button type="submit">ثبت پیام</button>
+</form>
+<br>
+<br>
+{% for message in messages %}
+    {{message}} <br>
+    <br>    
+{% endfor %}    

@@ -25,7 +25,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_quill',
     'main',
-    'products'
+    'products',
+    'staff',
+    'settings'
 ]
 
 MIDDLEWARE = [
@@ -36,7 +38,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'main.force_default_language_middleware.ForceDefaultLanguageMiddleware',
     'django.middleware.locale.LocaleMiddleware',
+
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -94,7 +98,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = "fa"
+LANGUAGE_CODE = 'fa'
 
 TIME_ZONE = 'Asia/Tehran'
 
@@ -107,10 +111,10 @@ USE_TZ = True
 # Languages
 
 LANGUAGES = (
-    ('fa', _('Persian')),
-    ('ar', _('Arabic')),
-    ('ku', _('Kurdish')), 
-    ('en', _('English')),
+    ('fa', 'Persian'),
+    ('ar', 'Arabic'),
+    ('ku', 'Kurdish'), 
+    ('en', 'English'),
 )
 
 LOCALE_PATHS = [
