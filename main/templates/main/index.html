@@ -1,6 +1,8 @@
+{% extends "main/base.html" %}
 {% load i18n %}
+{% load static %}
 
-A.B.Fars Project
+{% block title %}A.B.Fars Project{% endblock title %}
 <br>
 <br>
 <a href="{% url 'main:about_us' %}">{% trans "درباره ما" %}</a>
@@ -14,6 +16,199 @@ A.B.Fars Project
 <a href="/ar/">ar</a>
 <a href="/ku/">ku</a>
 
+<<<<<<< HEAD
+{% block content %}
+<div class="px-4 py-5 text-center main-hero position-relative">
+    <div class="px-4 py-5 my-5 text-center main-hero-content">
+        <div class="hero-content">
+            <img class="d-block mx-auto mb-4" src="{% static 'images/logo.png' %}" width="230" alt="A.B Fars">
+            <h1 class="display-5 fw-bold">عنوان دلخواه</h1>
+            <div class="col-lg-6 mx-auto">
+                <p class="lead mb-4" style="line-height: 2.5rem;">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از
+                    طراحان گرافیک
+                    است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
+                    تکنولوژی مورد
+                    نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد کتابهای زیادی در شصت و سه درصد
+                    گذشته حال و
+                    آینده شناخت فراوان جامعه و متخصصان را می طلبد</p>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    <button type="button" class="btn btn-primary btn-lg px-4 gap-3">درباره ما</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content-blur"></div>
+</div>
+
+<div class="container mt-5">
+    <h2 class="text-center my-4">محصولات صادراتی</h2>
+    <div>
+        <ul class="d-flex align-items-center justify-content-center">
+            <li class="filter fs-5 mx-3 active" data-filter="*">تمام محصولات</li>
+            <li class="filter fs-5 mx-3" data-filter=".Milk">خربزه</li>
+            <li class="filter fs-5 mx-3" data-filter=".Fruits">موز</li>
+            <li class="filter fs-5 mx-3" data-filter=".Vegetables">گلابی</li>
+            <li class="filter fs-5 mx-3" data-filter=".Juices">خیارسبز</li>
+            <li class="filter fs-5 mx-3" data-filter=".Beef">بادمجان</li>
+        </ul>
+    </div>
+    <div class="row" id="mixitup_list">
+
+        <div class="col-md-4 col-xs-6 mix Fruits Vegetables" data-bound="" style="display: inline-block;">
+            <div class="Product">
+                <div class="single_item_wrapper">
+                    <img src="{% static 'images/glry1.png' %}" alt="Image">
+                </div>
+                <div class="value-info">
+                    <h4><a href="shop.html">آناناس</a></h4>
+                    <h6 class="">160,000 تومان</h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-xs-6 mix Juices Beef" data-bound="" style="display: inline-block;">
+            <div class="Product">
+                <div class="single_item_wrapper">
+                    <img src="{% static 'images/glry2.png' %}" alt="Image">
+                </div>
+                <div class="value-info">
+                    <h4><a href="shop.html">کیوی</a></h4>
+                    <h6 class="">70,000 تومان</h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-xs-6 mix Fruits Milk" style="display: inline-block;" data-bound="">
+            <div class="Product">
+                <div class="single_item_wrapper">
+                    <img src="{% static 'images/glry3.png' %}" alt="Image">
+                </div>
+                <div class="value-info">
+                    <h4><a href="shop.html">پیاز</a></h4>
+                    <h6 class="">450,000 تومان</h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-xs-6 mix Beef" data-bound="" style="display: inline-block;">
+            <div class="Product">
+                <div class="single_item_wrapper">
+                    <img src="{% static 'images/glry1.png' %}" alt="Image">
+                </div>
+                <div class="value-info">
+                    <h4><a href="shop.html">آناناس هلندی</a></h4>
+                    <h6 class="">120,000 تومان</h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-xs-6 mix Milk  Juices Vegetables" data-bound="" style="display: inline-block;">
+            <div class="Product">
+                <div class="single_item_wrapper">
+                    <img src="{% static 'images/glry4.png' %}" alt="Image">
+                </div>
+                <div class="value-info">
+                    <h4><a href="shop.html">گیلاس</a></h4>
+                    <h6 class="">50,000 تومان</h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-xs-6 mix Milk Vegetables" data-bound="" style="display: inline-block;">
+            <div class="Product">
+                <div class="single_item_wrapper">
+                    <img src="{% static 'images/glry5.png' %}" alt="Image">
+                </div>
+                <div class="value-info">
+                    <h4><a href="shop.html">کلم بروکلی</a></h4>
+                    <h6 class="">180,000 تومان</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="testimonial my-5">
+    <div class="opacity">
+        <div class="container">
+            <div class="row owl-carousel owl-theme" id="owl-carousel">
+                <div class="info_wrapper">
+                    <div class="client_info">
+                        <img src="{% static 'images/testimonial-2.jpg' %}" alt="client" class="border_round float_left">
+                        <div class="name float_left">
+                            <h6>آقای بهرامی</h6>
+                            <span>شرکت جتامین خخخ</span>
+                        </div>
+                        <div class="clear_fix"></div>
+                    </div>
+                    <div class="brief-content">
+                        <h6>لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ،
+                            صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب
+                            بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می
+                            نماید،</h6>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="info_wrapper">
+                    <div class="client_info">
+                        <img src="{% static 'images/testimonial-2.jpg' %}" alt="client" class="border_round float_left">
+                        <div class="name float_left">
+                            <h6>جاستین بزرگ ( محسن پوریا )</h6>
+                            <span>کمپانی فامورال</span>
+                        </div>
+                        <div class="clear_fix"></div>
+                    </div>
+                    <div class="brief-content">
+                        <h6>لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ،
+                            صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب
+                            بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می
+                            نماید،</h6>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="contact-us" id="contact-us">
+        <div class="row">
+            <h4 class="text-center border-bottom pb-3">تماس با ما</h4>
+            <div class="col-lg-6">
+                <form method="POST" class="text-center">
+                    <div class="my-4">
+                        <input type="text" class="w-75 text-right" name="" id="" placeholder="نام و نام خانوادگی">
+                    </div>
+                    <div class="my-4">
+                        <input type="email" class="w-75 text-right" name="" id="" placeholder="آدرس ایمیل">
+                    </div>
+                    <div class="my-4">
+                        <input type="tel" class="w-75 text-right" name="" id="" placeholder="شماره تماس">
+                    </div>
+                    <div class="my-4">
+                        <textarea rows="" cols=""></textarea>
+                    </div>
+                    <div class="my-4">
+                        <button>ارسال</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-6">
+                <div class="h-100 d-flex justify-content-center align-items-center">
+                    <img src="{% static 'images/contact-us.webp' %}" style="filter: hue-rotate(120deg);" alt="">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock content %}
+=======
 <br>
 <br>
 <br>
@@ -36,3 +231,4 @@ A.B.Fars Project
     {{message}} <br>
     <br>    
 {% endfor %}    
+>>>>>>> 4e2f859a3dd6336808a1a0263acf3ffd8d228882
