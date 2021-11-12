@@ -16,15 +16,15 @@
 <a href="/ar/">ar</a>
 <a href="/ku/">ku</a>
 
-<<<<<<< HEAD
 {% block content %}
 <div class="px-4 py-5 text-center main-hero position-relative">
-    <div class="px-4 py-5 my-5 text-center main-hero-content">
+    <div class="p-lg-4 text-center main-hero-content">
         <div class="hero-content">
             <img class="d-block mx-auto mb-4" src="{% static 'images/logo.png' %}" width="230" alt="A.B Fars">
-            <h1 class="display-5 fw-bold">عنوان دلخواه</h1>
+            <h1 class="display-5 fw-bold text-white">عنوان دلخواه</h1>
             <div class="col-lg-6 mx-auto">
-                <p class="lead mb-4" style="line-height: 2.5rem;">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از
+                <p class="lead mb-4" style="line-height: 2.5rem;">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                    چاپ و با استفاده از
                     طراحان گرافیک
                     است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
                     تکنولوژی مورد
@@ -32,7 +32,7 @@
                     گذشته حال و
                     آینده شناخت فراوان جامعه و متخصصان را می طلبد</p>
                 <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                    <button type="button" class="btn btn-primary btn-lg px-4 gap-3">درباره ما</button>
+                    <button type="button" class="btn btn-primary btn-lg px-4 gap-3" onclick="scrollTO('about-us')">درباره ما</button>
                 </div>
             </div>
         </div>
@@ -41,20 +41,25 @@
 </div>
 
 <div class="container mt-5">
-    <h2 class="text-center my-4">محصولات صادراتی</h2>
+    <h2 class="text-center fw-bold my-4">محصولات صادراتی</h2>
     <div>
-        <ul class="d-flex align-items-center justify-content-center">
-            <li class="filter fs-5 mx-3 active" data-filter="*">تمام محصولات</li>
-            <li class="filter fs-5 mx-3" data-filter=".Milk">خربزه</li>
-            <li class="filter fs-5 mx-3" data-filter=".Fruits">موز</li>
-            <li class="filter fs-5 mx-3" data-filter=".Vegetables">گلابی</li>
-            <li class="filter fs-5 mx-3" data-filter=".Juices">خیارسبز</li>
-            <li class="filter fs-5 mx-3" data-filter=".Beef">بادمجان</li>
-        </ul>
+        <div class="d-block d-sm-flex justify-content-center align-items-center">
+            <ul class="d-flex align-items-center justify-content-center my-4">
+                <li class="filter fs-5 mx-3 pb-3 active" data-filter="*">تمام محصولات</li>
+                <li class="filter fs-5 mx-3 pb-3" data-filter=".Milk">خربزه</li>
+                <li class="filter fs-5 mx-3 pb-3" data-filter=".Fruits">موز</li>
+            </ul>
+            <ul class="d-flex align-items-center justify-content-center my-4">
+                <li class="filter fs-5 mx-3 pb-3" data-filter=".Vegetables">گلابی</li>
+                <li class="filter fs-5 mx-3 pb-3" data-filter=".Juices">خیارسبز</li>
+                <li class="filter fs-5 mx-3 pb-3" data-filter=".Beef">بادمجان</li>
+            </ul>
+        </div>
+
     </div>
     <div class="row" id="mixitup_list">
 
-        <div class="col-md-4 col-xs-6 mix Fruits Vegetables" data-bound="" style="display: inline-block;">
+        <div class="col-lg-4 col-md-6 col-xs-6 mix Fruits Vegetables" data-bound="" style="display: inline-block;">
             <div class="Product">
                 <div class="single_item_wrapper">
                     <img src="{% static 'images/glry1.png' %}" alt="Image">
@@ -66,7 +71,7 @@
             </div>
         </div>
 
-        <div class="col-md-4 col-xs-6 mix Juices Beef" data-bound="" style="display: inline-block;">
+        <div class="col-lg-4 col-md-6 col-xs-6 mix Juices Beef" data-bound="" style="display: inline-block;">
             <div class="Product">
                 <div class="single_item_wrapper">
                     <img src="{% static 'images/glry2.png' %}" alt="Image">
@@ -78,7 +83,7 @@
             </div>
         </div>
 
-        <div class="col-md-4 col-xs-6 mix Fruits Milk" style="display: inline-block;" data-bound="">
+        <div class="col-lg-4 col-md-6 col-xs-6 mix Fruits Milk" style="display: inline-block;" data-bound="">
             <div class="Product">
                 <div class="single_item_wrapper">
                     <img src="{% static 'images/glry3.png' %}" alt="Image">
@@ -90,7 +95,7 @@
             </div>
         </div>
 
-        <div class="col-md-4 col-xs-6 mix Beef" data-bound="" style="display: inline-block;">
+        <div class="col-lg-4 col-md-6 col-xs-6 mix Beef" data-bound="" style="display: inline-block;">
             <div class="Product">
                 <div class="single_item_wrapper">
                     <img src="{% static 'images/glry1.png' %}" alt="Image">
@@ -102,7 +107,7 @@
             </div>
         </div>
 
-        <div class="col-md-4 col-xs-6 mix Milk  Juices Vegetables" data-bound="" style="display: inline-block;">
+        <div class="col-lg-4 col-md-6 col-xs-6 mix Milk  Juices Vegetables" data-bound="" style="display: inline-block;">
             <div class="Product">
                 <div class="single_item_wrapper">
                     <img src="{% static 'images/glry4.png' %}" alt="Image">
@@ -114,7 +119,7 @@
             </div>
         </div>
 
-        <div class="col-md-4 col-xs-6 mix Milk Vegetables" data-bound="" style="display: inline-block;">
+        <div class="col-lg-4 col-md-6 col-xs-6 mix Milk Vegetables" data-bound="" style="display: inline-block;">
             <div class="Product">
                 <div class="single_item_wrapper">
                     <img src="{% static 'images/glry5.png' %}" alt="Image">
@@ -130,13 +135,14 @@
 
 <div class="testimonial my-5">
     <div class="opacity">
-        <div class="container">
-            <div class="row owl-carousel owl-theme" id="owl-carousel">
+        <div class="container py-5">
+            <h4 class="fw-bold text-white text-center border-bottom pt-4 pb-3">نظرات مشتریان</h4>
+            <div class="owl-carousel owl-theme">
                 <div class="info_wrapper">
                     <div class="client_info">
-                        <img src="{% static 'images/testimonial-2.jpg' %}" alt="client" class="border_round float_left">
+                        <img src="{% static 'images/profile.png' %}" alt="client" class="border_round float_left">
                         <div class="name float_left">
-                            <h6>آقای بهرامی</h6>
+                            <h6 class="text-white">آقای بهرامی</h6>
                             <span>شرکت جتامین خخخ</span>
                         </div>
                         <div class="clear_fix"></div>
@@ -152,9 +158,9 @@
                 </div>
                 <div class="info_wrapper">
                     <div class="client_info">
-                        <img src="{% static 'images/testimonial-2.jpg' %}" alt="client" class="border_round float_left">
+                        <img src="{% static 'images/profile2.png' %}" alt="client" class="border_round float_left">
                         <div class="name float_left">
-                            <h6>جاستین بزرگ ( محسن پوریا )</h6>
+                            <h6 class="text-white">جاستین بزرگ ( محسن پوریا )</h6>
                             <span>کمپانی فامورال</span>
                         </div>
                         <div class="clear_fix"></div>
@@ -174,24 +180,100 @@
     </div>
 </div>
 
+<div class="container-fluid bg-secondary mb-5" id="about-us">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-6">
+                <p class="my-4">درباره ما</p>
+                <h3 class="fw-bold mb-3">شرکت آبنوس برنای خلیج فارس</h3>
+                <p class="mb-5 lh-2">
+                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها
+                    و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و
+                    کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد کتابهای زیادی در شصت و سه درصد گذشته حال و
+                    آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه
+                    ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد در این صورت می توان امید داشت که
+                </p>
+                <div class="row mt-2">
+                    <div class="col-lg-6 d-flex justify-content-around d-md-block">
+                        <div class="counter mb-5">
+                            <span>+</span><span class="number-counter" number="70">0</span>
+                            <p>لورم ایپسوم متن ساختگی</p>
+                        </div>
+                        <div class="counter mb-5">
+                            <span>+</span><span class="number-counter" number="350">0</span>
+                            <p>لورم ایپسوم متن ساختگی</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 d-flex justify-content-around d-md-block">
+                        <div class="counter mb-5">
+                            <span>+</span><span class="number-counter" number="1240">0</span>
+                            <p>مشتری بین المللی</p>
+                        </div>
+                        <div class="counter mb-5">
+                            <span>+</span><span class="number-counter" number="8">0</span>
+                            <p>سال سابقه فعالیت</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="icon-box">
+                            <div class="icon bg-color1 mb-2">
+                                <i class="fad fa-columns" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="mb-2">لروم ایپسوم</h4>
+                            <p class="text-black-50 mb-2">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</p>
+                        </div>
+                        <div class="icon-box">
+                            <div class="icon bg-color2 mb-2">
+                                <i class="fad fa-star" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="mb-2">لروم ایپسوم</h4>
+                            <p class="text-black-50 mb-2">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="icon-box">
+                            <div class="icon bg-color3 mb-2">
+                                <i class="fad fa-shopping-cart" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="mb-2">لروم ایپسوم</h4>
+                            <p class="text-black-50 mb-2">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</p>
+                        </div>
+                        <div class="icon-box">
+                            <div class="icon bg-color4 mb-2">
+                                <i class="fab fa-instagram" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="mb-2">لروم ایپسوم</h4>
+                            <p class="text-black-50 mb-2">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<div class="container">
+<div class="container my-5">
     <div class="contact-us" id="contact-us">
         <div class="row">
-            <h4 class="text-center border-bottom pb-3">تماس با ما</h4>
+            <h4 class="fw-bold text-center border-bottom pb-3">تماس با ما</h4>
             <div class="col-lg-6">
                 <form method="POST" class="text-center">
                     <div class="my-4">
-                        <input type="text" class="w-75 text-right" name="" id="" placeholder="نام و نام خانوادگی">
+                        <input type="text" class="w-75 text-right bg-color5" name="" id=""
+                            placeholder="نام و نام خانوادگی">
                     </div>
                     <div class="my-4">
-                        <input type="email" class="w-75 text-right" name="" id="" placeholder="آدرس ایمیل">
+                        <input type="email" class="w-75 text-right bg-color5" name="" id="" placeholder="آدرس ایمیل">
                     </div>
                     <div class="my-4">
-                        <input type="tel" class="w-75 text-right" name="" id="" placeholder="شماره تماس">
+                        <input type="tel" class="w-75 text-right bg-color5" name="" id="" placeholder="شماره تماس">
                     </div>
                     <div class="my-4">
-                        <textarea rows="" cols=""></textarea>
+                        <textarea class="bg-color5" placeholder="متن پیام"></textarea>
                     </div>
                     <div class="my-4">
                         <button>ارسال</button>
@@ -200,7 +282,7 @@
             </div>
             <div class="col-lg-6">
                 <div class="h-100 d-flex justify-content-center align-items-center">
-                    <img src="{% static 'images/contact-us.webp' %}" style="filter: hue-rotate(120deg);" alt="">
+                    <img src="{% static 'images/contact-us.svg' %}" width="100%" alt="">
                 </div>
             </div>
 
@@ -208,27 +290,3 @@
     </div>
 </div>
 {% endblock content %}
-=======
-<br>
-<br>
-<br>
-<form method="post">
-    {% csrf_token %}
-<input type="text", name="name"> نام و نام خانوادگی
-<br>
-<br>
-<input type="tel" name="phone_number"> شماه تماس 
-<br>
-<br>
-<input type="text" name="text"> متن پیام
-<br>
-<br>
-<button type="submit">ثبت پیام</button>
-</form>
-<br>
-<br>
-{% for message in messages %}
-    {{message}} <br>
-    <br>    
-{% endfor %}    
->>>>>>> 4e2f859a3dd6336808a1a0263acf3ffd8d228882

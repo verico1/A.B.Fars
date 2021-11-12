@@ -35,9 +35,15 @@ time, mark, audio, video {
 	border: 0;
 	vertical-align: baseline;
 }
+h1, h2, h3, h4, h5, h6{
+    color:#4d486f;
+}
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
+}
+footer{
+    box-shadow: 0 0 50px #bfbfbf59;
 }
 body {
     font-family: 'IRANYekan', 'Roboto', sans-serif !important;
@@ -60,7 +66,7 @@ table {
 }
 a{
     text-decoration: none !important;
-    color: #121212;
+    color: #4d486f;
     transition: 0.3s all;
     &:hover{
         color: #FF2626;
@@ -87,10 +93,23 @@ a{
         top: 0;
     }
 }
+.nav-item{
+    cursor: pointer;
+    margin: 10px 0;
+}
 .main-hero{
     background: url(../images/home-page.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     height: 750px;
+    animation: changeBg 6s infinite;
 }
+@keyframes changeBg{
+    0%,100%  {background-image: url(../images/home-page.jpg);}
+    35% {background-image: url(../images/home-page2.jpg);}
+    70% {background-image: url(../images/home-page3.jpg);}
+ }
 .main-hero-content{
     position: relative;
 }
@@ -118,7 +137,7 @@ a{
 .Product {
     text-align: center;
     height: 480px;
-    width: 390px;
+    width: 100%;
     margin: auto;
     background: #e9e8e8;
     position: relative;
@@ -141,7 +160,9 @@ a{
     top: -160px;
 }
 .single_item_wrapper img{
-    width: 370px;
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
 }
 .single_item_wrapper , .value-info{
     position: relative;
@@ -187,8 +208,7 @@ a{
         border-radius: 50%;
     }
     .info_wrapper{
-        margin: 67px 0;
-        width: 95%;
+        margin: 65px 25px;
     }
     .info_wrapper .brief-content {
         background: #ffffff;
@@ -221,7 +241,7 @@ a{
             height: 20px;
             background-color: #e8e5e5;
             position: absolute;
-            top: 200px;
+            bottom: 50px;
             left: 40px;
             &::after{
                 position: absolute;
@@ -240,7 +260,7 @@ a{
             height: 20px;
             background-color: #e8e5e5;
             position: absolute;
-            top: 200px;
+            bottom: 50px;
             left: 75px;
             &::after{
                 position: absolute;
@@ -286,25 +306,25 @@ input {
     padding: 13px 30px;
     border-radius: 50px;
     border: none;
-    background: #fff2f2;
+    background: #f6f8fa;
+    color: #4d486f;
     transition: 0.3s all;
-    color: #a51212;
 }
 input::placeholder{
-    color: #a51212;
+    color: #4d486f98!important;
 }
 textarea {
     padding: 30px 30px;
     border-radius: 50px;
     border: none;
-    background: #fff2f2;
+    background: #f6f8fa;
+    color: #4d486f;
     transition: 0.3s all;
-    color: #a51212;
 }
 input:focus , textarea:focus{
     border: none;
     outline: none;
-    background: #ffe0e0;
+    box-shadow: 0 0 20px #e6edf5;
     transition: 0.3s all;
 }
 .text-right{
@@ -315,13 +335,55 @@ input:focus , textarea:focus{
         width: 75%;
         min-height: 250px;
         max-height: 500px;
+        &::placeholder{
+            color: #4d486f98!important;
+        }
     }
     button{
         width: 75%;
         border: none;
-        background: #FF2626;
         border-radius: 50px;
         padding: 13px;
+        background: #FF2626;
         color: #fff;
+        transition: 0.3s all;
+        &:hover{
+            box-shadow: 0 0 20px #FF2626;
+            transition: 0.3s all;
+        }
+    }
+}
+.icon-box{
+    padding: 30px 25px;
+    background: #fff;
+    margin: 25px 0;
+    border-radius: 25px;
+    transition: 0.3s all;
+    &:hover{
+        box-shadow: 0 0 50px #bfbfbf59;
+        transition: 0.3s all;
+    }
+    .icon{
+        height: 70px;
+        width: 70px;
+        text-align: center;
+        line-height: 70px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+    p{
+        line-height: 1.4rem;
+    }
+}
+.counter{
+    span{
+        font-size: 38px!important;
+        font-weight: 600!important;
+        display: inline!important;
+        color: #4d486f!important;
     }
 }
