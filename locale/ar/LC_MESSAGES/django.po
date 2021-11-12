@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-10 18:49+0330\n"
+"POT-Creation-Date: 2021-11-13 00:27+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,95 +19,109 @@ msgstr ""
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: main/templates/main/base.html:34
+#: main/templates/main/base.html:35
 msgid "خانه"
 msgstr "الصفحة الرئيسية"
 
-#: main/templates/main/base.html:37 main/templates/main/base.html:92
-#: main/templates/main/base.html:112 main/templates/main/index.html:11
+#: main/templates/main/base.html:38 main/templates/main/base.html:93
+#: main/templates/main/base.html:113 main/templates/main/index.html:11
 msgid "محصولات"
 msgstr "منتجات"
 
-#: main/templates/main/base.html:40 main/templates/main/base.html:118
-#: main/templates/main/index.html:8
+#: main/templates/main/base.html:41 main/templates/main/base.html:119
+#: main/templates/main/index.html:8 main/templates/main/index.html:28
+#: main/templates/main/index.html:180
 msgid "درباره ما"
 msgstr "معلومات عنا"
 
-#: main/templates/main/base.html:43 main/templates/main/base.html:115
+#: main/templates/main/base.html:44 main/templates/main/base.html:116
 msgid "تماس باما"
 msgstr "اتصل بنا"
 
-#: main/templates/main/base.html:83
+#: main/templates/main/base.html:84 main/templates/main/index.html:181
 msgid "شرکت آبنوس برنای خلیج فارس"
 msgstr "شركة آبنوس برنای خلیج فارس"
 
-#: main/templates/main/base.html:109
+#: main/templates/main/base.html:110
 msgid "لینک های مفید"
 msgstr "روابط مفيدة"
 
-#: main/templates/main/base.html:121
+#: main/templates/main/base.html:122
 msgid "راهنما"
 msgstr "يرشد"
 
-#: main/templates/main/base.html:126
+#: main/templates/main/base.html:127
 msgid "راه های ارتباطی"
 msgstr "طرق الاتصال"
 
-#: main/templates/main/base.html:129
+#: main/templates/main/base.html:130
 msgid "ایمیل"
 msgstr "البريد الإلكتروني"
 
-#: main/templates/main/base.html:133
+#: main/templates/main/base.html:134
 msgid "اینستاگرام"
 msgstr "انستغرام"
 
-#: main/templates/main/base.html:138
+#: main/templates/main/base.html:139
 msgid "تلگرام"
 msgstr "التلغرام"
 
-#: main/templates/main/base.html:143
+#: main/templates/main/base.html:144
 msgid "واتساپ"
 msgstr "واتساب"
 
-#: main/templates/main/index.html:39
+#: main/templates/main/index.html:37
 msgid "محصولات صادراتی"
 msgstr "منتجات التصدير"
 
-#: main/templates/main/index.html:42
+#: main/templates/main/index.html:41
 msgid "تمام محصولات"
 msgstr "كل المنتجات"
 
-#: main/templates/main/index.html:176
+#: main/templates/main/index.html:132
+msgid "نظرات مشتریان"
+msgstr "تعليقات العملاء"
+
+#: main/templates/main/index.html:197
+msgid "مشتریان بین المللی"
+msgstr "العميل الدولي"
+
+#: main/templates/main/index.html:201
+msgid "سابقه فعالیت"
+msgstr "سنوات من تاريخ النشاط"
+
+#: main/templates/main/index.html:249
 msgid "تماس با ما"
 msgstr "اتصل بنا"
 
-#: main/templates/main/index.html:181
+#: main/templates/main/index.html:255
 msgid "نام و نام خانوادگی"
 msgstr "الاسم الأول واسم العائلة"
 
-#: main/templates/main/index.html:184
+#: main/templates/main/index.html:258
 msgid "آدرس ایمیل"
 msgstr "البريد الإلكتروني"
 
-#: main/templates/main/index.html:187
+#: main/templates/main/index.html:261
 msgid "شماره تماس"
 msgstr "رقم الهاتف"
 
-#: main/templates/main/index.html:193
+#: main/templates/main/index.html:264
+msgid "متن پیام"
+msgstr "رسالة نصية"
+
+#: main/templates/main/index.html:267
 msgid "ارسال"
 msgstr "إرسال"
 
 #: main/views.py:27
 msgid "خطا در ثبت پیام. لطفا نام و نام خانوادگی را صحیح وارد کنید"
-msgstr ""
+msgstr "رسالة خطأ في التسجيل. الرجاء إدخال اسمك الأول والأخير بشكل صحيح"
 
 #: main/views.py:29
 msgid "خطا در ثبت پیام. لطفا شماره تماس را صحیح وارد کنید"
-msgstr ""
+msgstr "رسالة خطأ في التسجيل. الرجاء إدخال رقم الاتصال بشكل صحيح"
 
 #: main/views.py:31
 msgid "خطا در ثبت پیام. لطفا متن پیام را کوتاه تر کنید"
-msgstr ""
-
-#~ msgid "عنوان دلخواه"
-#~ msgstr "عنوان مخصص"
+msgstr "رسالة خطأ في التسجيل. الرجاء تقصير نص الرسالة"

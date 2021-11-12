@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-10 18:49+0330\n"
+"POT-Creation-Date: 2021-11-13 00:27+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,85 +17,102 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main/templates/main/base.html:34
+#: main/templates/main/base.html:35
 msgid "خانه"
 msgstr ""
 
-#: main/templates/main/base.html:37 main/templates/main/base.html:92
-#: main/templates/main/base.html:112 main/templates/main/index.html:11
+#: main/templates/main/base.html:38 main/templates/main/base.html:93
+#: main/templates/main/base.html:113 main/templates/main/index.html:11
 msgid "محصولات"
 msgstr ""
 
-#: main/templates/main/base.html:40 main/templates/main/base.html:118
-#: main/templates/main/index.html:8
+#: main/templates/main/base.html:41 main/templates/main/base.html:119
+#: main/templates/main/index.html:8 main/templates/main/index.html:28
+#: main/templates/main/index.html:180
 msgid "درباره ما"
 msgstr "çûna nava"
 
-#: main/templates/main/base.html:43 main/templates/main/base.html:115
+#: main/templates/main/base.html:44 main/templates/main/base.html:116
 msgid "تماس باما"
 msgstr "paqij bûn"
 
-#: main/templates/main/base.html:83
+#: main/templates/main/base.html:84 main/templates/main/index.html:181
 msgid "شرکت آبنوس برنای خلیج فارس"
 msgstr ""
 
-#: main/templates/main/base.html:109
+#: main/templates/main/base.html:110
 msgid "لینک های مفید"
 msgstr ""
 
-#: main/templates/main/base.html:121
+#: main/templates/main/base.html:122
 msgid "راهنما"
 msgstr ""
 
-#: main/templates/main/base.html:126
+#: main/templates/main/base.html:127
 msgid "راه های ارتباطی"
 msgstr ""
 
-#: main/templates/main/base.html:129
+#: main/templates/main/base.html:130
 msgid "ایمیل"
 msgstr ""
 
-#: main/templates/main/base.html:133
+#: main/templates/main/base.html:134
 msgid "اینستاگرام"
 msgstr ""
 
-#: main/templates/main/base.html:138
+#: main/templates/main/base.html:139
 msgid "تلگرام"
 msgstr ""
 
-#: main/templates/main/base.html:143
+#: main/templates/main/base.html:144
 msgid "واتساپ"
 msgstr ""
 
-#: main/templates/main/index.html:39
+#: main/templates/main/index.html:37
 msgid "محصولات صادراتی"
 msgstr ""
 
-#: main/templates/main/index.html:42
+#: main/templates/main/index.html:41
 msgid "تمام محصولات"
 msgstr ""
 
-#: main/templates/main/index.html:176
+#: main/templates/main/index.html:132
+msgid "نظرات مشتریان"
+msgstr ""
+
+#: main/templates/main/index.html:197
+msgid "مشتریان بین المللی"
+msgstr ""
+
+#: main/templates/main/index.html:201
+msgid "سابقه فعالیت"
+msgstr ""
+
+#: main/templates/main/index.html:249
 #, fuzzy
 #| msgid "تماس باما"
 msgid "تماس با ما"
 msgstr "paqij bûn"
 
-#: main/templates/main/index.html:181
+#: main/templates/main/index.html:255
 msgid "نام و نام خانوادگی"
 msgstr ""
 
-#: main/templates/main/index.html:184
+#: main/templates/main/index.html:258
 msgid "آدرس ایمیل"
 msgstr ""
 
-#: main/templates/main/index.html:187
+#: main/templates/main/index.html:261
 #, fuzzy
 #| msgid "درباره ما"
 msgid "شماره تماس"
 msgstr "çûna nava"
 
-#: main/templates/main/index.html:193
+#: main/templates/main/index.html:264
+msgid "متن پیام"
+msgstr ""
+
+#: main/templates/main/index.html:267
 msgid "ارسال"
 msgstr ""
 

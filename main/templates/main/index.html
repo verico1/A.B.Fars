@@ -21,18 +21,11 @@
     <div class="p-lg-4 text-center main-hero-content">
         <div class="hero-content">
             <img class="d-block mx-auto mb-4" src="{% static 'images/logo.png' %}" width="230" alt="A.B Fars">
-            <h1 class="display-5 fw-bold text-white">عنوان دلخواه</h1>
+            <h1 class="display-5 fw-bold text-white">{{setting.title}}</h1>
             <div class="col-lg-6 mx-auto">
-                <p class="lead mb-4" style="line-height: 2.5rem;">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
-                    چاپ و با استفاده از
-                    طراحان گرافیک
-                    است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
-                    تکنولوژی مورد
-                    نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد کتابهای زیادی در شصت و سه درصد
-                    گذشته حال و
-                    آینده شناخت فراوان جامعه و متخصصان را می طلبد</p>
+                <p class="lead mb-4" style="line-height: 2.5rem;">{{setting.about_us_small}}</p>
                 <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                    <button type="button" class="btn btn-primary btn-lg px-4 gap-3" onclick="scrollTO('about-us')">درباره ما</button>
+                    <button type="button" class="btn btn-primary btn-lg px-4 gap-3" onclick="scrollTO('about-us')">{% trans 'درباره ما' %}</button>
                 </div>
             </div>
         </div>
@@ -41,11 +34,11 @@
 </div>
 
 <div class="container mt-5">
-    <h2 class="text-center fw-bold my-4">محصولات صادراتی</h2>
+    <h2 class="text-center fw-bold my-4">{% trans 'محصولات صادراتی' %}</h2>
     <div>
         <div class="d-block d-sm-flex justify-content-center align-items-center">
             <ul class="d-flex align-items-center justify-content-center my-4">
-                <li class="filter fs-5 mx-3 pb-3 active" data-filter="*">تمام محصولات</li>
+                <li class="filter fs-5 mx-3 pb-3 active" data-filter="*">{% trans 'تمام محصولات' %}</li>
                 <li class="filter fs-5 mx-3 pb-3" data-filter=".Milk">خربزه</li>
                 <li class="filter fs-5 mx-3 pb-3" data-filter=".Fruits">موز</li>
             </ul>
@@ -136,7 +129,7 @@
 <div class="testimonial my-5">
     <div class="opacity">
         <div class="container py-5">
-            <h4 class="fw-bold text-white text-center border-bottom pt-4 pb-3">نظرات مشتریان</h4>
+            <h4 class="fw-bold text-white text-center border-bottom pt-4 pb-3">{% trans "نظرات مشتریان" %}</h4>
             <div class="owl-carousel owl-theme">
                 <div class="info_wrapper">
                     <div class="client_info">
@@ -184,15 +177,9 @@
     <div class="container py-5">
         <div class="row">
             <div class="col-md-6">
-                <p class="my-4">درباره ما</p>
-                <h3 class="fw-bold mb-3">شرکت آبنوس برنای خلیج فارس</h3>
-                <p class="mb-5 lh-2">
-                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها
-                    و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و
-                    کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد کتابهای زیادی در شصت و سه درصد گذشته حال و
-                    آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه
-                    ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد در این صورت می توان امید داشت که
-                </p>
+                <p class="my-4">{% trans "درباره ما" %}</p>
+                <h3 class="fw-bold mb-3">{% trans "شرکت آبنوس برنای خلیج فارس" %}</h3>
+                <p class="mb-5 lh-2">{{setting.about_us}}</p>
                 <div class="row mt-2">
                     <div class="col-lg-6 d-flex justify-content-around d-md-block">
                         <div class="counter mb-5">
@@ -207,11 +194,11 @@
                     <div class="col-lg-6 d-flex justify-content-around d-md-block">
                         <div class="counter mb-5">
                             <span>+</span><span class="number-counter" number="1240">0</span>
-                            <p>مشتری بین المللی</p>
+                            <p>{% trans "مشتریان بین المللی" %}</p>
                         </div>
                         <div class="counter mb-5">
                             <span>+</span><span class="number-counter" number="8">0</span>
-                            <p>سال سابقه فعالیت</p>
+                            <p>{% trans "سابقه فعالیت" %}</p>
                         </div>
                     </div>
                 </div>
@@ -259,22 +246,22 @@
 <div class="container my-5">
     <div class="contact-us" id="contact-us">
         <div class="row">
-            <h4 class="fw-bold text-center border-bottom pb-3">تماس با ما</h4>
+            <h4 class="fw-bold text-center border-bottom pb-3">{% trans "تماس با ما" %}</h4>
             <div class="col-lg-6">
                 <form method="POST" class="text-center">
                     {% csrf_token %}
                     <div class="my-4">
                         <input type="text" class="w-75 text-right bg-color5" name="" id=""
-                            placeholder="نام و نام خانوادگی">
+                            placeholder={% trans "نام و نام خانوادگی" %}>
                     </div>
                     <div class="my-4">
-                        <input type="email" class="w-75 text-right bg-color5" name="" id="" placeholder="آدرس ایمیل">
+                        <input type="email" class="w-75 text-right bg-color5" name="" id="" placeholder={% trans "آدرس ایمیل" %}>
                     </div>
                     <div class="my-4">
-                        <input type="tel" class="w-75 text-right bg-color5" name="" id="" placeholder="شماره تماس">
+                        <input type="tel" class="w-75 text-right bg-color5" name="" id="" placeholder={% trans "شماره تماس" %}>
                     </div>
                     <div class="my-4">
-                        <textarea class="bg-color5" placeholder="متن پیام"></textarea>
+                        <textarea class="bg-color5" placeholder={% trans "متن پیام" %}></textarea>
                     </div>
                     <div class="my-4">
                         <button>{% trans "ارسال" %}</button>
