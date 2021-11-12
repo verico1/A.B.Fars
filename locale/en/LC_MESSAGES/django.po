@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-07 14:25+0330\n"
+"POT-Creation-Date: 2021-11-10 18:49+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,14 +18,95 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: main/templates/main/index.html:6
-msgid "تماس باما"
-msgstr "Contact Us"
+#: main/templates/main/base.html:34
+msgid "خانه"
+msgstr "Home"
 
-#: main/templates/main/index.html:9
+#: main/templates/main/base.html:37 main/templates/main/base.html:92
+#: main/templates/main/base.html:112 main/templates/main/index.html:11
+msgid "محصولات"
+msgstr "Products"
+
+#: main/templates/main/base.html:40 main/templates/main/base.html:118
+#: main/templates/main/index.html:8
 msgid "درباره ما"
 msgstr "About Us"
 
-#: main/templates/main/index.html:12
-msgid "محصولات"
-msgstr "Products"
+#: main/templates/main/base.html:43 main/templates/main/base.html:115
+msgid "تماس باما"
+msgstr "Contact Us"
+
+#: main/templates/main/base.html:83
+msgid "شرکت آبنوس برنای خلیج فارس"
+msgstr "Abnos Borna Khalijfars"
+
+#: main/templates/main/base.html:109
+msgid "لینک های مفید"
+msgstr "Useful links"
+
+#: main/templates/main/base.html:121
+msgid "راهنما"
+msgstr "Guide"
+
+#: main/templates/main/base.html:126
+msgid "راه های ارتباطی"
+msgstr "Ways of communication"
+
+#: main/templates/main/base.html:129
+msgid "ایمیل"
+msgstr "Email"
+
+#: main/templates/main/base.html:133
+msgid "اینستاگرام"
+msgstr "Instagram"
+
+#: main/templates/main/base.html:138
+msgid "تلگرام"
+msgstr "Telegram"
+
+#: main/templates/main/base.html:143
+msgid "واتساپ"
+msgstr "Whatsapp"
+
+#: main/templates/main/index.html:39
+msgid "محصولات صادراتی"
+msgstr "Export Products"
+
+#: main/templates/main/index.html:42
+msgid "تمام محصولات"
+msgstr "All Products"
+
+#: main/templates/main/index.html:176
+msgid "تماس با ما"
+msgstr "Contact Us"
+
+#: main/templates/main/index.html:181
+msgid "نام و نام خانوادگی"
+msgstr "First name and Surename"
+
+#: main/templates/main/index.html:184
+msgid "آدرس ایمیل"
+msgstr "Email"
+
+#: main/templates/main/index.html:187
+msgid "شماره تماس"
+msgstr "Phonenumber"
+
+#: main/templates/main/index.html:193
+msgid "ارسال"
+msgstr "Send"
+
+#: main/views.py:27
+msgid "خطا در ثبت پیام. لطفا نام و نام خانوادگی را صحیح وارد کنید"
+msgstr ""
+
+#: main/views.py:29
+msgid "خطا در ثبت پیام. لطفا شماره تماس را صحیح وارد کنید"
+msgstr ""
+
+#: main/views.py:31
+msgid "خطا در ثبت پیام. لطفا متن پیام را کوتاه تر کنید"
+msgstr ""
+
+#~ msgid "عنوان دلخواه"
+#~ msgstr "Custom Title"

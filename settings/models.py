@@ -1,3 +1,18 @@
 from django.db import models
 
-# Create your models here.
+# translation
+from django.utils.translation import gettext_lazy as _
+from translated_fields import TranslatedField
+
+class Setting(models.Model):
+    title = TranslatedField(models.CharField(max_length=120, blank=True, null=True))
+    about_us = TranslatedField(models.CharField(max_length=800, blank=True, null=True))
+    about_us_small = TranslatedField(models.CharField(max_length=600, blank=True, null=True))
+    instagram = models.CharField(max_length=120)
+    whatsapp = models.CharField(max_length=120)
+    telegram =models.CharField(max_length=120)
+    email = models.EmailField()
+
+    def __str__(self):
+        return 'تنظیمات'
+        

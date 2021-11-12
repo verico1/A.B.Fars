@@ -262,6 +262,7 @@
             <h4 class="fw-bold text-center border-bottom pb-3">تماس با ما</h4>
             <div class="col-lg-6">
                 <form method="POST" class="text-center">
+                    {% csrf_token %}
                     <div class="my-4">
                         <input type="text" class="w-75 text-right bg-color5" name="" id=""
                             placeholder="نام و نام خانوادگی">
@@ -276,9 +277,12 @@
                         <textarea class="bg-color5" placeholder="متن پیام"></textarea>
                     </div>
                     <div class="my-4">
-                        <button>ارسال</button>
+                        <button>{% trans "ارسال" %}</button>
                     </div>
                 </form>
+                {% for message in messages %}
+                   {{message}}
+                {% endfor %}
             </div>
             <div class="col-lg-6">
                 <div class="h-100 d-flex justify-content-center align-items-center">

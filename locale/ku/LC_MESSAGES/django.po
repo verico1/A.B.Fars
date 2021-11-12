@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-07 14:25+0330\n"
+"POT-Creation-Date: 2021-11-10 18:49+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,14 +17,96 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main/templates/main/index.html:6
-msgid "تماس باما"
-msgstr "paqij bûn"
+#: main/templates/main/base.html:34
+msgid "خانه"
+msgstr ""
 
-#: main/templates/main/index.html:9
+#: main/templates/main/base.html:37 main/templates/main/base.html:92
+#: main/templates/main/base.html:112 main/templates/main/index.html:11
+msgid "محصولات"
+msgstr ""
+
+#: main/templates/main/base.html:40 main/templates/main/base.html:118
+#: main/templates/main/index.html:8
 msgid "درباره ما"
 msgstr "çûna nava"
 
-#: main/templates/main/index.html:12
-msgid "محصولات"
+#: main/templates/main/base.html:43 main/templates/main/base.html:115
+msgid "تماس باما"
+msgstr "paqij bûn"
+
+#: main/templates/main/base.html:83
+msgid "شرکت آبنوس برنای خلیج فارس"
+msgstr ""
+
+#: main/templates/main/base.html:109
+msgid "لینک های مفید"
+msgstr ""
+
+#: main/templates/main/base.html:121
+msgid "راهنما"
+msgstr ""
+
+#: main/templates/main/base.html:126
+msgid "راه های ارتباطی"
+msgstr ""
+
+#: main/templates/main/base.html:129
+msgid "ایمیل"
+msgstr ""
+
+#: main/templates/main/base.html:133
+msgid "اینستاگرام"
+msgstr ""
+
+#: main/templates/main/base.html:138
+msgid "تلگرام"
+msgstr ""
+
+#: main/templates/main/base.html:143
+msgid "واتساپ"
+msgstr ""
+
+#: main/templates/main/index.html:39
+msgid "محصولات صادراتی"
+msgstr ""
+
+#: main/templates/main/index.html:42
+msgid "تمام محصولات"
+msgstr ""
+
+#: main/templates/main/index.html:176
+#, fuzzy
+#| msgid "تماس باما"
+msgid "تماس با ما"
+msgstr "paqij bûn"
+
+#: main/templates/main/index.html:181
+msgid "نام و نام خانوادگی"
+msgstr ""
+
+#: main/templates/main/index.html:184
+msgid "آدرس ایمیل"
+msgstr ""
+
+#: main/templates/main/index.html:187
+#, fuzzy
+#| msgid "درباره ما"
+msgid "شماره تماس"
+msgstr "çûna nava"
+
+#: main/templates/main/index.html:193
+msgid "ارسال"
+msgstr ""
+
+#: main/views.py:27
+msgid "خطا در ثبت پیام. لطفا نام و نام خانوادگی را صحیح وارد کنید"
+msgstr ""
+
+#: main/views.py:29
+msgid "خطا در ثبت پیام. لطفا شماره تماس را صحیح وارد کنید"
+msgstr ""
+
+#: main/views.py:31
+msgid "خطا در ثبت پیام. لطفا متن پیام را کوتاه تر کنید"
 msgstr ""
