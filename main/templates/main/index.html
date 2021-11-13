@@ -25,7 +25,8 @@
             <div class="col-lg-6 mx-auto">
                 <p class="lead mb-4" style="line-height: 2.5rem;">{{setting.about_us_small}}</p>
                 <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                    <button type="button" class="btn btn-primary btn-lg px-4 gap-3" onclick="scrollTO('about-us')">{% trans 'درباره ما' %}</button>
+                    <button type="button" class="btn btn-primary btn-lg px-4 gap-3" onclick="scrollTO('about-us')">{%
+                        trans 'درباره ما' %}</button>
                 </div>
             </div>
         </div>
@@ -100,7 +101,8 @@
             </div>
         </div>
 
-        <div class="col-lg-4 col-md-6 col-xs-6 mix Milk  Juices Vegetables" data-bound="" style="display: inline-block;">
+        <div class="col-lg-4 col-md-6 col-xs-6 mix Milk  Juices Vegetables" data-bound=""
+            style="display: inline-block;">
             <div class="Product">
                 <div class="single_item_wrapper">
                     <img src="{% static 'images/glry4.png' %}" alt="Image">
@@ -251,14 +253,16 @@
                 <form method="POST" class="text-center">
                     {% csrf_token %}
                     <div class="my-4">
-                        <input type="text" class="w-75 text-right bg-color5" name="" id=""
-                            placeholder={% trans "نام و نام خانوادگی" %}>
+                        <input type="text" class="w-75 text-right bg-color5" name="" id="" placeholder={%
+                            trans "نام و نام خانوادگی" %}>
                     </div>
                     <div class="my-4">
-                        <input type="email" class="w-75 text-right bg-color5" name="" id="" placeholder={% trans "آدرس ایمیل" %}>
+                        <input type="email" class="w-75 text-right bg-color5" name="" id="" placeholder={%
+                            trans "آدرس ایمیل" %}>
                     </div>
                     <div class="my-4">
-                        <input type="tel" class="w-75 text-right bg-color5" name="" id="" placeholder={% trans "شماره تماس" %}>
+                        <input type="tel" class="w-75 text-right bg-color5" name="" id="" placeholder={%
+                            trans "شماره تماس" %}>
                     </div>
                     <div class="my-4">
                         <textarea class="bg-color5" placeholder={% trans "متن پیام" %}></textarea>
@@ -268,7 +272,7 @@
                     </div>
                 </form>
                 {% for message in messages %}
-                   {{message}}
+                {{message}}
                 {% endfor %}
             </div>
             <div class="col-lg-6">
