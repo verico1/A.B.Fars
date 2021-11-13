@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-13 00:27+0330\n"
+"POT-Creation-Date: 2021-11-13 11:58+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: main/templates/main/base.html:35
 msgid "خانه"
-msgstr ""
+msgstr "خانه"
 
 #: main/templates/main/base.html:38 main/templates/main/base.html:93
 #: main/templates/main/base.html:113 main/templates/main/index.html:11
@@ -39,96 +39,96 @@ msgstr "تماس باما"
 
 #: main/templates/main/base.html:84 main/templates/main/index.html:181
 msgid "شرکت آبنوس برنای خلیج فارس"
-msgstr ""
+msgstr "شرکت آبنوس برنای خلیج فارس"
 
 #: main/templates/main/base.html:110
 msgid "لینک های مفید"
-msgstr ""
+msgstr "لینک های مفید"
 
 #: main/templates/main/base.html:122
 msgid "راهنما"
-msgstr ""
+msgstr "راهنما"
 
 #: main/templates/main/base.html:127
 msgid "راه های ارتباطی"
-msgstr ""
+msgstr "راه های ارتباطی"
 
 #: main/templates/main/base.html:130
 msgid "ایمیل"
-msgstr ""
+msgstr "ایمیل"
 
 #: main/templates/main/base.html:134
 msgid "اینستاگرام"
-msgstr ""
+msgstr "اینستاگرام"
 
 #: main/templates/main/base.html:139
 msgid "تلگرام"
-msgstr ""
+msgstr "تلگرام"
 
 #: main/templates/main/base.html:144
 msgid "واتساپ"
-msgstr ""
+msgstr "واتساپ"
 
 #: main/templates/main/index.html:37
-#, fuzzy
-#| msgid "محصولات"
 msgid "محصولات صادراتی"
-msgstr "محصولات"
+msgstr "محصولات صادراتی"
 
 #: main/templates/main/index.html:41
-#, fuzzy
-#| msgid "محصولات"
 msgid "تمام محصولات"
-msgstr "محصولات"
+msgstr "تمام محصولات"
 
 #: main/templates/main/index.html:132
 msgid "نظرات مشتریان"
-msgstr ""
+msgstr "نظرات مشتریان"
+
+#: main/templates/main/index.html:187
+msgid "مشتریان داخلی"
+msgstr "مشتریان داخلی"
+
+#: main/templates/main/index.html:191
+msgid "تعداد محصولات"
+msgstr "تعداد محصولات"
 
 #: main/templates/main/index.html:197
 msgid "مشتریان بین المللی"
-msgstr ""
+msgstr "مشتریان بین المللی"
 
 #: main/templates/main/index.html:201
 msgid "سابقه فعالیت"
-msgstr ""
+msgstr "سابقه فعالیت"
 
 #: main/templates/main/index.html:249
-#, fuzzy
-#| msgid "تماس باما"
-msgid "تماس با ما"
+msgid "تماس باما"
 msgstr "تماس باما"
 
 #: main/templates/main/index.html:255
 msgid "نام و نام خانوادگی"
-msgstr ""
+msgstr "نام و نام خانوادگی"
 
 #: main/templates/main/index.html:258
-msgid "آدرس ایمیل"
-msgstr ""
+msgid "پست الکترونیکی"
+msgstr "پست الکترونیکی"
 
 #: main/templates/main/index.html:261
-#, fuzzy
-#| msgid "درباره ما"
 msgid "شماره تماس"
-msgstr "درباره ما"
+msgstr "شماره تماس"
 
 #: main/templates/main/index.html:264
 msgid "متن پیام"
-msgstr ""
+msgstr "متن پیام"
 
 #: main/templates/main/index.html:267
 msgid "ارسال"
-msgstr ""
+msgstr "ارسال"
 
 #: main/views.py:27
 msgid "خطا در ثبت پیام. لطفا نام و نام خانوادگی را صحیح وارد کنید"
-msgstr ""
+msgstr "خطا در ثبت پیام. لطفا نام و نام خانوادگی را صحیح وارد کنید"
 
 #: main/views.py:29
 msgid "خطا در ثبت پیام. لطفا شماره تماس را صحیح وارد کنید"
-msgstr ""
+msgstr "خطا در ثبت پیام. لطفا شماره تماس را صحیح وارد کنید"
 
 #: main/views.py:31
 msgid "خطا در ثبت پیام. لطفا متن پیام را کوتاه تر کنید"
-msgstr ""
+msgstr "خطا در ثبت پیام. لطفا متن پیام را کوتاه تر کنید"

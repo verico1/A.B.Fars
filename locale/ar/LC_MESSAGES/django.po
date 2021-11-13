@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-13 00:27+0330\n"
+"POT-Creation-Date: 2021-11-13 11:58+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -82,6 +82,14 @@ msgstr "كل المنتجات"
 msgid "نظرات مشتریان"
 msgstr "تعليقات العملاء"
 
+#: main/templates/main/index.html:187
+msgid "مشتریان داخلی"
+msgstr "العملاء المحليين"
+
+#: main/templates/main/index.html:191
+msgid "تعداد محصولات"
+msgstr "عدد من المنتجات"
+
 #: main/templates/main/index.html:197
 msgid "مشتریان بین المللی"
 msgstr "العميل الدولي"
@@ -99,8 +107,8 @@ msgid "نام و نام خانوادگی"
 msgstr "الاسم الأول واسم العائلة"
 
 #: main/templates/main/index.html:258
-msgid "آدرس ایمیل"
-msgstr "البريد الإلكتروني"
+msgid "پست الکترونیکی"
+msgstr "بريد الالكتروني"
 
 #: main/templates/main/index.html:261
 msgid "شماره تماس"
@@ -125,3 +133,4 @@ msgstr "رسالة خطأ في التسجيل. الرجاء إدخال رقم ا
 #: main/views.py:31
 msgid "خطا در ثبت پیام. لطفا متن پیام را کوتاه تر کنید"
 msgstr "رسالة خطأ في التسجيل. الرجاء تقصير نص الرسالة"
+

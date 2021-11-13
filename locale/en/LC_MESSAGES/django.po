@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-13 00:27+0330\n"
+"POT-Creation-Date: 2021-11-13 11:58+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -79,7 +79,15 @@ msgstr "All Products"
 
 #: main/templates/main/index.html:132
 msgid "نظرات مشتریان"
-msgstr "Customers comments"
+msgstr "Customers Comments"
+
+#: main/templates/main/index.html:187
+msgid "مشتریان داخلی"
+msgstr "Domestic Customers"
+
+#: main/templates/main/index.html:191
+msgid "تعداد محصولات"
+msgstr "Products Count"
 
 #: main/templates/main/index.html:197
 msgid "مشتریان بین المللی"
@@ -98,7 +106,7 @@ msgid "نام و نام خانوادگی"
 msgstr "First name and Surename"
 
 #: main/templates/main/index.html:258
-msgid "آدرس ایمیل"
+msgid "پست الکترونیکی"
 msgstr "Email"
 
 #: main/templates/main/index.html:261
@@ -115,8 +123,7 @@ msgstr "Send"
 
 #: main/views.py:27
 msgid "خطا در ثبت پیام. لطفا نام و نام خانوادگی را صحیح وارد کنید"
-msgstr ""
-"Error recording message. Please enter your first and last name correctly"
+msgstr "Error recording message. Please enter your first and last name correctly"
 
 #: main/views.py:29
 msgid "خطا در ثبت پیام. لطفا شماره تماس را صحیح وارد کنید"

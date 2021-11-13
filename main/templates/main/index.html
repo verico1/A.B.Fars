@@ -184,21 +184,21 @@
                 <div class="row mt-2">
                     <div class="col-lg-6 d-flex justify-content-around d-md-block">
                         <div class="counter mb-5">
-                            <span>+</span><span class="number-counter" number="70">0</span>
-                            <p>لورم ایپسوم متن ساختگی</p>
+                            <span>+</span><span class="number-counter" number="{{setting.domestic_customers}}">0</span>
+                            <p>{% trans "مشتریان داخلی" %}</p>
                         </div>
                         <div class="counter mb-5">
-                            <span>+</span><span class="number-counter" number="350">0</span>
-                            <p>لورم ایپسوم متن ساختگی</p>
+                            <span>+</span><span class="number-counter" number="{{setting.products_count}}">0</span>
+                            <p>{% trans "تعداد محصولات" %}</p>
                         </div>
                     </div>
                     <div class="col-lg-6 d-flex justify-content-around d-md-block">
                         <div class="counter mb-5">
-                            <span>+</span><span class="number-counter" number="1240">0</span>
+                            <span>+</span><span class="number-counter" number="{{setting.international_customers}}">0</span>
                             <p>{% trans "مشتریان بین المللی" %}</p>
                         </div>
                         <div class="counter mb-5">
-                            <span>+</span><span class="number-counter" number="8">0</span>
+                            <span>+</span><span class="number-counter" number="{{setting.years_of_activity}}">0</span>
                             <p>{% trans "سابقه فعالیت" %}</p>
                         </div>
                     </div>
@@ -252,13 +252,14 @@
                 <form method="POST" class="text-center">
                     {% csrf_token %}
                     <div class="my-4">
-                        <input type="text" class="w-75 text-right bg-color5" name="" id="" placeholder='{%trans "نام و نام خانوادگی" %}'>
+                        <input type="text" class="w-75 text-right bg-color5" name="" id=""
+                            placeholder="{% trans "نام و نام خانوادگی" %}">
                     </div>
                     <div class="my-4">
-                        <input type="email" class="w-75 text-right bg-color5" name="" id="" placeholder='{%trans "آدرس ایمیل" %}'>
+                        <input type="email" class="w-75 text-right bg-color5" name="" id="" placeholder="{% trans "پست الکترونیکی" %}">
                     </div>
                     <div class="my-4">
-                        <input type="tel" class="w-75 text-right bg-color5" name="" id="" placeholder='{%trans "شماره تماس" %}'>
+                        <input type="tel" class="w-75 text-right bg-color5" name="" id="" placeholder='{% trans "شماره تماس" %}'>
                     </div>
                     <div class="my-4">
                         <textarea class="bg-color5" placeholder='{% trans "متن پیام" %}'></textarea>
