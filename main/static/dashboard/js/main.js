@@ -1,31 +1,47 @@
-
-tagInput = document.getElementById('tagInput');
-tagList = document.getElementById('tagList');
-tagBtn = document.getElementById('tagBtn');
-
-if(tagInput){
-    removeTags.style.display = "none"
-    tagBtn.addEventListener('click', function(){
-        if (tagInput.value == "" || /^\s/.test(tagInput.value) === true){
-            console.log("error");
-            tagInput.value = '';
-        }else{
-            tagList.innerHTML += `<p class="text-secondary">${tagInput.value}</p>`;
-            tagInput.value = ''; 
+const ctx1 = document.getElementById('chartViewPage').getContext('2d');
+const chartViewPage = new Chart(ctx1, {
+    type: 'line',
+    data: {
+        labels: ['فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور', 'مهر', 'آبان', 'آذر', 'دی', 'بهمن', 'اسفند'],
+        datasets: [{
+            label: 'بازدید',
+            data: [40, 53, 43, 52, 100, 95, 130 , 145],
+            backgroundColor: [
+                '#FF2626'
+            ],
+            borderColor: [
+                '#FF2626'
+            ],
+            borderWidth: 5
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
         }
-        removeTags.style.display = "block"
-    });
+    }
+});
 
-    tagInput.addEventListener("keyup", function(event) {
-        if (event.keyCode === 13) {
-            event.preventDefault();
-            tagBtn.click();
-            removeTags.style.display = "block"
+const ctx2 = document.getElementById('chartViewProducts').getContext('2d');
+const chartViewProducts = new Chart(ctx2, {
+    type: 'bar',
+    data: {
+        labels: ['عنوان محصول', 'عنوان محصول', 'عنوان محصول', 'عنوان محصول', 'عنوان محصول'],
+        datasets: [{
+            label: 'بازدید',
+            data: [140, 53, 43, 52, 100, 95, 130 , 145],
+            backgroundColor: [
+                '#FF2626'
+            ]
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
         }
-    });
-}
-
-removeTags.addEventListener('click', () =>{
-    tagList.innerHTML=""
-    removeTags.style.display = "none"
-})
+    }
+});

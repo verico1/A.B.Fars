@@ -9,74 +9,57 @@
 <div class="content">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="col-lg-4 col-md-6 col-sm-6">
         <div class="card card-stats">
           <div class="card-header card-header-warning card-header-icon">
             <div class="card-icon">
-              <i class="fad fa-users"></i>
+              <i class="fad fa-envelope-open-text"></i>
             </div>
-            <p class="card-category">تعداد کل کاربران</p>
-            <h3 class="card-title">{{users_count}}
-              <small>نفر</small>
+            <p class="card-category">تعداد پیام ها</p>
+            <h3 class="card-title">{{messages_count}}
+              <small>پیام</small>
             </h3>
           </div>
           <div class="card-footer">
             <div class="stats">
               <i class="fad fa-user"></i>
-              <p class="mx-2 my-0"> تعداد کاربران جدید ماه : {{users_count_month}}</p>
+              <p class="mx-2 my-0"> تعداد پیام های جدید ماه : {{messages_count_month}}</p>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="col-lg-4 col-md-6 col-sm-6">
         <div class="card card-stats">
           <div class="card-header card-header-success card-header-icon">
             <div class="card-icon">
-              <i class="fad fa-shopping-basket"></i>
+              <i class="fad fa-eye"></i>
             </div>
-            <p class="card-category">سفارش ها</p>
-            <h3 class="card-title">{{orders_count}}
-              <small>عدد</small>
+            <p class="card-category">بازدید های این ماه</p>
+            <h3 class="card-title">{{views_count}}
+              <small>بازدید</small>
             </h3>
           </div>
           <div class="card-footer">
-            <div class="stats">
-              تعداد سفارش های یک ماه
-              گذشته : {{orders_count_month}}
+            <div class="stats"> بازدید امروز : {{orders_count_month}}
             </div>
           </div>
         </div>
       </div>
-      <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="col-lg-4 col-md-6 col-sm-6">
         <div class="card card-stats">
           <div class="card-header card-header-danger card-header-icon">
             <div class="card-icon">
               <i class="fad fa-shopping-bag"></i>
             </div>
             <p class="card-category">تعداد محصولات</p>
-            <h3 class="card-title">{{products_count}}</h3>
+            <h3 class="card-title">{{products_count}} 
+              <small>محصول</small>
+            </h3>
           </div>
           <div class="card-footer">
             <div class="stats">
               <i class="fad fa-shopping-bag"></i>
-              <p class="mx-2 my-0">محصولات جدید</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 col-sm-6">
-        <div class="card card-stats">
-          <div class="card-header card-header-info card-header-icon">
-            <div class="card-icon">
-              <i class="fal fa-money-bill-wave"></i>
-            </div>
-            <p class="card-category">در آمد ماه</p>
-            <h3 class="card-title"> تومان</h3>
-          </div>
-          <div class="card-footer">
-            <div class="stats">
-              <i class="fad fa-history"></i>
-              <p class="mx-2 my-0">آخرین به‌روزرسانی</p>
+              <p class="mx-2 my-0">محصولات جدید امروز : {{products_count_today}}</p>
             </div>
           </div>
         </div>
@@ -84,30 +67,23 @@
     </div>
 
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-6">
         <div class="card">
-          <div class="card-header card-header-warning">
-            <h4 class="card-title">آخرین سفارش های در انتظار تایید...</h4>
+          <div class="card-header card-header-danger">
+            <h4 class="card-title">نمودار بازدید از سایت</h4>
           </div>
           <div class="card-body table-responsive">
-            <table class="table table-hover">
-              <thead class="text-warning">
-                <th>شماره سفارش</th>
-                <th>خریدار</th>
-                <th>قیمت</th>
-                <th> </th>
-              </thead>
-              <tbody>
-                {% for last_order in last_orders %}
-                <tr>
-                  <td>{{last_order.ref_code}}</td>
-                  <td>{{last_order.owner}}</td>
-                  <td>{{last_order.get_total}} تومان</td>
-                  <td><a href="/staff/orders/{{last_order.id}}/">جزئیات</a></td>
-                </tr>
-                {% endfor %}
-              </tbody>
-            </table>
+            <canvas id="chartViewPage" width="400" height="200"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title">نمودار بازدید از محصولات</h4>
+          </div>
+          <div class="card-body table-responsive">
+            <canvas id="chartViewProducts" width="400" height="200"></canvas>
           </div>
         </div>
       </div>

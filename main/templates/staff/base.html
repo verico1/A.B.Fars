@@ -12,15 +12,16 @@
     {% block title %}{% endblock title %}
   </title>
   <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-      <link rel="icon" type="image/png" sizes="32x32" href="https://mahootcollection.com/media/settings/favicon.ico">
-    <link rel="icon" type="image/png'" sizes="16x16" href="https://mahootcollection.com/media/settings/favicon.ico">
-    <link rel="shortcut icon" href="https://mahootcollection.com/media/settings/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://mahootcollection.com/media/settings/favicon.ico">
+  <link rel="icon" type="image/png'" sizes="16x16" href="https://mahootcollection.com/media/settings/favicon.ico">
+  <link rel="shortcut icon" href="https://mahootcollection.com/media/settings/favicon.ico">
   <!--     Fonts and icons     -->
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
-  <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+  <link rel="stylesheet" type="text/css"
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="{% static 'css/fontawesome.css' %}">
   <!-- CSS Files -->
-
-  <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.rtl.min.css"
+    integrity="sha384-+qdLaIRZfNu4cVPK/PxJJEy0B0f3Ugv8i482AKY7gwXwhaCroABd086ybrVKTa0q" crossorigin="anonymous">
   <link href="{% static 'dashboard/css/material-dashboard.css' %}" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="{% static 'dashboard/demo/demo.css' %}" rel="stylesheet" />
@@ -28,10 +29,11 @@
 
 <body class="">
   <div class="wrapper ">
-    <div class="sidebar" data-color="purple" data-background-color="white" data-image="{% static 'assets/img/sidebar-1.jpg' %}">
+    <div class="sidebar" data-color="purple" data-background-color="white"
+      data-image="{% static 'dashboard/img/sidebar-2.jpg' %}">
 
       <div class="logo"><a href="/" class="simple-text logo-normal">
-          Mahoot Collection
+          آبنوس برنای خلیج فارس
         </a></div>
       <div class="sidebar-wrapper">
         <ul class="nav">
@@ -51,16 +53,10 @@
               {% endif %}
             </a>
           </li>
-          <li class="nav-item {% block users %}{% endblock %}">
-            <a class="nav-link" href="/staff/users/">
-              <i class="fad fa-user"></i>
-              <p>کاربران</p>
-            </a>
-          </li>
           <li class="nav-item {% block categories %}{% endblock %}">
             <a class="nav-link" href="/staff/categories/">
               <i class="fad fa-list"></i>
-              <p>دسته ها</p>
+              <p>دسته بندی</p>
             </a>
           </li>
           <li class="nav-item {% block products %}{% endblock %}">
@@ -75,21 +71,6 @@
               <p>ایجاد محصول</p>
             </a>
           </li>
-          <li class="nav-item {% block collections %}{% endblock %}">
-            <a class="nav-link" href="/staff/collections/">
-              <i class="fad fa-table"></i>
-              <p>کالکشن ها</p>
-            </a>
-          </li>
-          <li class="nav-item {% block orders %}{% endblock %}">
-            <a class="nav-link" href="/staff/orders/">
-              <i class="fad fa-shopping-cart"></i>
-              <p>سفارشات</p>
-              {% if orders_c %}
-              <p class="new-notification">{{orders_c}}</p>
-              {% else %}
-              {% endif %}
-            </a>
           </li>
           <li class="nav-item {% block settings %}{% endblock %}">
             <a class="nav-link" href="/staff/settings/">
@@ -103,7 +84,7 @@
           ">
             <a class="nav-link" href="/staff/logout/">
               <i class="fad fa-sign-out"></i>
-              <p>خروج از حساب کاربری</p>
+              <p>خروج از پنل مدیریت</p>
             </a>
           </li>
         </ul>
@@ -116,7 +97,8 @@
           <div class="navbar-wrapper">
             <a class="navbar-brand" href="javascript:;">{% block head %}{% endblock head %}</a>
           </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index"
+            aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
             <span class="navbar-toggler-icon icon-bar"></span>
             <span class="navbar-toggler-icon icon-bar"></span>
@@ -128,13 +110,14 @@
 
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="/staff/logout/" style="font-size: 20px;" rel="tooltip" data-original-title="خروج از حساب کاربری">
+                <a class="nav-link" href="/staff/logout/" style="font-size: 20px;" rel="tooltip"
+                  data-original-title="خروج از حساب کاربری">
                   <i class="fas fa-sign-out"></i>
-                  <h3 class="d-lg-none d-md-block">خروج</h3>
                 </a>
               </li>
               <li class="nav-item dropdown d-none">
-                <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 20px;">
+                <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false" style="font-size: 20px;">
                   <i class="fas fa-bell"></i>
                   <span class="notification">5</span>
                   <p class="d-lg-none d-md-block">
@@ -160,7 +143,7 @@
       <footer class="footer d-none">
         <div class="container-fluid">
           <div class="copyright float-left">
-            
+
             <script>
               document.write(new Date().getFullYear())
             </script> - 2018 Powered By
@@ -177,11 +160,12 @@
   <script src="{% static 'dashboard/js/plugins/perfect-scrollbar.jquery.min.js' %}"></script>
   <!-- Plugin for the momentJs  -->
   <script src="{% static 'dashboard/js/plugins/moment.js' %}"></script>
+  <script src="{% static 'dashboard/js/chart.min.js' %}"></script>
   <!--  Plugin for Sweet Alert -->
   <script src="{% static 'dashboard/js/plugins/sweetalert2.js' %}"></script>
   <!-- Forms Validations Plugin -->
   <script src="{% static 'dashboard/js/plugins/jquery.validate.min.js' %}"></script>
-  <script src="{% static 'assets/js/fontawesome.js' %}"></script>
+  <script src="{% static 'js/fontawesome.js' %}"></script>
   <!-- Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
   <script src="{% static 'dashboard/js/plugins/jquery.bootstrap-wizard.js' %}"></script>
   <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
@@ -204,10 +188,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
   <!-- Library for adding dinamically elements -->
   <script src="{% static 'dashborad/js/plugins/arrive.min.js' %}"></script>
-  <!--  Google Maps Plugin    -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-  <!-- Chartist JS -->
-  <script src="{% static 'dashboard/js/plugins/chartist.min.js' %}"></script>
   <!--  Notifications Plugin    -->
   <script src="{% static 'dashboard/js/plugins/bootstrap-notify.js' %}"></script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
@@ -216,8 +196,8 @@
   <script src="{% static 'dashboard/demo/demo.js' %}"></script>
   <script src="{% static 'dashboard/js/main.js' %}"></script>
   <script>
-    $(document).ready(function() {
-      $().ready(function() {
+    $(document).ready(function () {
+      $().ready(function () {
         $sidebar = $('.sidebar');
 
         $sidebar_img_container = $sidebar.find('.sidebar-background');
@@ -237,7 +217,7 @@
 
         }
 
-        $('.fixed-plugin a').click(function(event) {
+        $('.fixed-plugin a').click(function (event) {
           // Alex if we click on switch, stop propagation of the event, so the dropdown will not be hide, otherwise we set the  section active
           if ($(this).hasClass('switch-trigger')) {
             if (event.stopPropagation) {
@@ -248,7 +228,7 @@
           }
         });
 
-        $('.fixed-plugin .active-color span').click(function() {
+        $('.fixed-plugin .active-color span').click(function () {
           $full_page_background = $('.full-page-background');
 
           $(this).siblings().removeClass('active');
@@ -269,7 +249,7 @@
           }
         });
 
-        $('.fixed-plugin .background-color .badge').click(function() {
+        $('.fixed-plugin .background-color .badge').click(function () {
           $(this).siblings().removeClass('active');
           $(this).addClass('active');
 
@@ -280,7 +260,7 @@
           }
         });
 
-        $('.fixed-plugin .img-holder').click(function() {
+        $('.fixed-plugin .img-holder').click(function () {
           $full_page_background = $('.full-page-background');
 
           $(this).parent('li').siblings().removeClass('active');
@@ -290,7 +270,7 @@
           var new_image = $(this).find("img").attr('src');
 
           if ($sidebar_img_container.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
-            $sidebar_img_container.fadeOut('fast', function() {
+            $sidebar_img_container.fadeOut('fast', function () {
               $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
               $sidebar_img_container.fadeIn('fast');
             });
@@ -299,7 +279,7 @@
           if ($full_page_background.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
             var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
 
-            $full_page_background.fadeOut('fast', function() {
+            $full_page_background.fadeOut('fast', function () {
               $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
               $full_page_background.fadeIn('fast');
             });
@@ -318,7 +298,7 @@
           }
         });
 
-        $('.switch-sidebar-image input').change(function() {
+        $('.switch-sidebar-image input').change(function () {
           $full_page_background = $('.full-page-background');
 
           $input = $(this);
@@ -350,7 +330,7 @@
           }
         });
 
-        $('.switch-sidebar-mini input').change(function() {
+        $('.switch-sidebar-mini input').change(function () {
           $body = $('body');
 
           $input = $(this);
@@ -365,7 +345,7 @@
 
             $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar('destroy');
 
-            setTimeout(function() {
+            setTimeout(function () {
               $('body').addClass('sidebar-mini');
 
               md.misc.sidebar_mini_active = true;
@@ -373,12 +353,12 @@
           }
 
           // we simulate the window Resize so the charts will get updated in realtime.
-          var simulateWindowResize = setInterval(function() {
+          var simulateWindowResize = setInterval(function () {
             window.dispatchEvent(new Event('resize'));
           }, 180);
 
           // we stop the simulation of Window Resize after the animations are completed
-          setTimeout(function() {
+          setTimeout(function () {
             clearInterval(simulateWindowResize);
           }, 1000);
 
@@ -387,14 +367,14 @@
     });
   </script>
   <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
       // Javascript method's body can be found in assets/js/demos.js
       md.initDashboardPageCharts();
 
     });
   </script>
   {% block scripts %}
-  
+
   {% endblock scripts %}
 
 </body>
