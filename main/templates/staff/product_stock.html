@@ -1,0 +1,94 @@
+{% extends 'staff/base.html' %}
+{% load humanize %}
+{% block title %}ماهوت کالکشن | مدیریت انبار{% endblock %}
+{% block head %}مدیریت انبار{% endblock head %}
+
+{% block content %}
+<div class="d-none">{% block products %}active{% endblock %}</div>
+
+      <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col"></div>
+            <div class="col-md-8">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                      <h4 class="card-title ">وضعیت انبار</h4>
+                      <p class="card-category">محصول : {{product.product_model}}</p>
+                </div>
+                <div class="card-body text-right">
+                    <form method="POST">
+                    <div class="row">
+                        {% csrf_token %}
+                            <div class="col-md-6">
+                                <label for="price">قیمت</label>
+                                <input name="price" type="text" class="form-control" value="{{product.price}}">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="discount_price">قیمت با تخفیف</label>
+                                <input name="discount_price" type="text" class="form-control" value="{{product.discount_price|default_if_none:''}}">
+                            </div>
+                            <div class="col-md-12 my-4">
+                                <label for="price">قیمت</label>
+                                <span name="price" type="text" class="form-control">
+                                    {% if product.discount_price %}
+                                    <b class="text-black-50">قیمت بدون تخفیف :</b> {{product.price|intcomma}} تومان<b class="text-black-50"> - </b>
+                                    <b class="text-black-50">قیمت با تخفیف :</b> {{product.discount_price|intcomma}} تومان<b class="text-black-50"> - </b>
+                                    <b class="text-black-50">درصد تخفیف :</b> {{product.off_precent|intcomma}}%
+                                    {% else %}
+                                    <b class="text-black-50">قیمت :</b> {{product.price|intcomma}} تومان
+                                    {% endif %}
+                                </span>
+                            </div>
+
+                            {% if product.size_form == False %}
+                                {% for stock in stocks %}
+                                <div class="col-md-12">   {{stock.size}}   
+                                    [ موجودی : {{stock.quantity}} عدد ]
+                                     
+                                      <a href="/staff/product/stock/{{stock.id}}/">ویرایش موجودی</a>
+                                </div>
+
+                                {% endfor %}
+                            {% endif %}        
+                            {% if product.size_form == True %}
+                                {% for stock in stocks %}
+                                <div class="col-md-12">   سایز آزاد   
+                                  [ موجودی : {{stock.quantity}} عدد ]
+
+                                    <a href="/staff/product/stock/{{stock.id}}/">ویرایش موجودی</a>
+                                </div>
+                                {% endfor %}
+                            {% endif %}
+
+                            <div class="col-md-12 my-2 text-left">    
+                                <button class="btn btn-primary mt-2">ذخیره تغییرات</button>
+                                {% if msg  %}
+                                <div class="alert alert-success text-center mt-3 col-xl-5">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                      <i class="material-icons">close</i>
+                                    </button>
+                                    <span class="mw-100">{{msg}}</span>
+                                </div>
+                                {% endif %}
+                                {% if e_msg  %}
+                                <div class="alert alert-danger text-center mt-3 col-xl-5">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                      <i class="material-icons">close</i>
+                                    </button>
+                                    <span class="mw-100">{{e_msg}}</span>
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </form>
+                </div>
+              </div>
+            </div>
+            <div class="col"></div>
+          </div>
+        </div>
+    </div>
+
+{% endblock content %}
+

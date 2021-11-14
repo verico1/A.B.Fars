@@ -1,0 +1,62 @@
+{% extends 'staff/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}ماهوت کالکشن | مدیریت دسته بندی{% endblock %}
+{% block head %}مدیریت دسته بندی{% endblock head %}
+
+{% block content %}
+
+<div class="content">
+    <div class="container-fluid">
+        <form method="POST" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-md-9">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                    <h4 class="card-title">دسته بندی</h4>
+                    <p class="card-category">از این قسمت میتوانید دسته بندی را ایجاد یا ویرایش کنید</p>
+                    </div>
+                    <div class="card-body">
+                        {% csrf_token %}
+                        <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group bmd-form-group">
+                                {{form.category_name|as_crispy_field}}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group bmd-form-group">
+                                {{form.category_url|as_crispy_field}}
+                            </div>
+                        </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                            <div class="form-group bmd-form-group">
+                                {{form.category_img|as_crispy_field}}
+                            </div>
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-header card-header-primary">
+                        <h4 class="card-title">انتشار</h4>
+                        </div>
+                        <div class="card-body">
+                            <p><i class="far fa-eye"></i> وضعیت : <span class="text-secondary">نامشخص</span></p>
+                            <div class="row px-2">
+                                <button type="submit" class="btn btn-primary pull-right">ذخیره</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock content %}

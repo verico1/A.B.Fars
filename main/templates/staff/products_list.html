@@ -1,0 +1,188 @@
+{% extends 'staff/base.html' %}
+{% load humanize %}
+{% block title %}ماهوت کالکشن | لیست محصولات{% endblock %}
+{% block head %}مدیریت محصولات{% endblock head %}
+
+{% block content %}
+<div class="d-none">{% block products %}active{% endblock %}</div>
+    <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+
+                  <div class="row">
+                    <div class="col-6">
+                      <h4 class="card-title ">لیست محصولات</h4>
+                      <p class="card-category">تعداد محصولات: {{count}}</p>
+    
+                    </div>
+                    <div class="col-2"></div>
+                    <div class="col-4">
+                      <form action="/staff/product-search/" class="navbar-form">
+                        <div class="input-group no-border">
+                          <input type="search" name="q" id="q" class="form-control text-white" placeholder="جستجو ... ( عنوان یا نامک محصول )">
+                          <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                            <i class="material-icons">search</i>
+                            <div class="ripple-container"></div>
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead class=" text-primary">
+                        <tr>
+                        <th>
+                          نام محصول
+                        </th>
+                        <th>
+                          دسته محصول
+                        </th>
+                        <th>
+                          قیمت محصول
+                        </th>
+                        <th>
+                            تصویر محصول
+                        </th>
+                        <th style="width: 250px;">
+                             
+                        </th>
+                      </tr></thead>
+                      <tbody>
+                        {% for product in products %} 
+                        <tr>
+                          <td>
+                            <a href="/products/category/{{ product.product_category.category_url }}/{{ product.product_subcategory.subcategory_url }}/{{product.product_url}}" target="_blank">{{product.product_model}}</a>
+                          </td>
+                          <td>
+                            {% if product.product_subcategory.subcategory_url == "others"  %}
+                              {{product.product_category}}
+                            {% else %}
+                              {{product.product_category}} -> {{product.product_subcategory}}
+                            {% endif %}
+                          </td>
+                          <td class="text-black-50">
+                            {% if product.product_all_price == "0" %}
+                            ناموجود
+                            {% else %}
+                                {% if product.product_all_price.0 == 0 %}
+                                قیمت : <span class="oldPrice">{{product.product_all_price.2|intcomma}}</span> - <span class="discount">{{product.product_all_price.1|intcomma}}</span> تومان  
+                                {% else %}
+                                قیمت : {{product.product_all_price|intcomma}} تومان
+                                {% endif %}
+                            {% endif %}
+                          </td>
+                          <td class="text-primary">
+                            <img src="{{product.product_img1.url}}" width="120" class="product_image">
+                          </td>
+                          <td class="text-info">
+                            {% if product.product_draft == False %}
+                              <a href="/staff/products/add-to-draft/{{product.id}}" class="btn btn btn-outline-secondary px-3" rel="tooltip" data-original-title="افزودن به پیش نویس"><i class="fad fa-eye-slash"></i></a>
+                            {% else %}
+                              <a href="/staff/products/add-to-publish/{{product.id}}" class="btn btn btn-outline-secondary px-3" rel="tooltip" data-original-title="منتشر کردن"><i class="fad fa-copy"></i></a>
+                            {% endif %}
+                            <button class="btn btn-danger px-3" data-toggle="modal" data-target="#Delete{{product.pk}}}" rel="tooltip" data-original-title="حذف محصول"><i class="fas fa-trash"></i></button>
+                            <a href="/staff/product/detail/{{product.product_url}}/" class="btn btn-outline-warning px-3" rel="tooltip" data-original-title="وضعیت انبار"><i class="fad fa-box-open"></i></a>
+                            <a href="/staff/product/update/{{product.pk}}" class="btn btn-outline-primary px-3" rel="tooltip" data-original-title="ویرایش محصول"><i class="fas fa-pencil"></i></a>
+                          </td>
+                        </tr>
+                        <div id="Delete{{product.pk}}}" class="modal fade" role="dialog">
+                          <div class="modal-dialog modal-dialog-centered">
+
+                            <div class="modal-content text-right">
+                              <div class="modal-header text-right">
+                                  <h4 class="modal-title">حذف محصول</h4>
+                                <button type="button" class="close btn btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i></button>
+                              </div>
+                              <div class="modal-body text-right">
+                                <p>آیا از حذف محصول مطمئن هستید؟</p>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">انصراف</button>
+                                <a href="/staff/product/delete/{{product.pk}}" class="btn btn-danger"><i class="fas fa-trash"></i> حذف کن</a>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                        {% endfor %}
+                      </tbody>
+                    </table>
+                    {% if count == 0 %}
+                    <div class="alert alert-warning">
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <i class="material-icons">close</i>
+                      </button>
+                      <span>
+                      <b> هشدار - </b>هنوز محصولی وجود ندارد</span>
+                    </div>
+                    {% endif %}
+                  </div>
+                </div>
+                <nav aria-label="Page navigation">
+                  <ul class="pagination justify-content-center">
+                      {% if products.number|add:'-4' > 1 %}
+                      <li class="page-item">
+                          <a class="page-link" href="?page={{ products.number|add:'-5' }}" aria-label="Previous" tabindex="-1" aria-disabled="true">
+                              <span aria-hidden="true"></span><<
+                          </a>
+                      </li>
+                      {% endif %}
+                      
+                      {% if products.has_previous %}
+                      <li class="page-item ">
+                          <a class="page-link page-link-prev" href="?page={{ products.previous_page_number }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}" aria-label="Previous" tabindex="-1" aria-disabled="true">
+                              <span aria-hidden="true"><i class="icon-long-arrow-right"></i></span>قبلی
+                          </a>
+                      </li>
+                      {% else %}
+                      <li class="page-item disabled">
+                          <a class="page-link page-link-prev" href="" aria-label="Previous" tabindex="-1" aria-disabled="true">
+                              <span aria-hidden="true"><i class="icon-long-arrow-right"></i></span>قبلی
+                          </a>
+                      </li>
+                      {% endif %}
+          
+                      {% for i in products.paginator.page_range %}
+                      {% if products.number == i %}
+                      <li class="page-item active" aria-current="page"><a class="page-link" href="">{{ i }}</a></li>
+                      {% elif i > products.number|add:'-5' and i < products.number|add:'4' %}
+                      <li class="page-item" aria-current="page"><a class="page-link" href="?page={{ i }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">{{ i }}</a></li>
+                      {% endif %}
+                      {% endfor %}
+          
+                      {% if products.has_next %}
+                      <li class="page-item">
+                          <a class="page-link page-link-next" href="?page={{ products.next_page_number }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}" aria-label="Next">
+                              بعدی <span aria-hidden="true"><i class="icon-long-arrow-left"></i></span>
+                          </a>
+                      </li>
+                      {% else %}
+                      <li class="page-item disabled">
+                          <a class="page-link page-link-next" href="" aria-label="Next">
+                              بعدی <span aria-hidden="true"><i class="icon-long-arrow-left"></i></span>
+                          </a>
+                      </li>
+                      {% endif %}
+          
+                      {% if products.paginator.num_pages > products.number|add:'4' %}
+                      <li class="page-item">
+                          <a class="page-link" href="?page={{ products.number|add:'5' }}" aria-label="Previous" tabindex="-1" aria-disabled="true">
+                              <span aria-hidden="true"></span>>>
+                          </a>
+                      {% endif %}
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+{% endblock content %}
+

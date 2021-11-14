@@ -1,0 +1,59 @@
+{% extends 'staff/base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}ماهوت کالکشن | ویرایش اسلایدر{% endblock %}
+
+{% block content %}
+<div class="content">
+  <form method="POST" id="productForm" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-9 mx-auto">
+          <div class="card">
+            <div class="card-header card-header-primary">
+              <h4 class="card-title">تنظیمات</h4>
+              <p class="card-category">تنظیمات اسلایدر</p>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group bmd-form-group">
+                        {{ form.site_small_title|as_crispy_field }} 
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group bmd-form-group">
+                      {{ form.site_big_title|as_crispy_field }} 
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group bmd-form-group">
+                      {{ form.sliderimg|as_crispy_field }} 
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group bmd-form-group">
+                      {{ form.buttom_link|as_crispy_field }} 
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group bmd-form-group">
+                      {{ form.buttom_name|as_crispy_field }} 
+                    </div>
+                  </div>
+              </div>
+              <button type="submit" id="saveProduct" class="btn btn-primary pull-right">ذخیره</button>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </form>
+</div>
+
+{% endblock content %}

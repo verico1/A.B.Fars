@@ -1,0 +1,154 @@
+{% extends 'staff/base.html' %}
+{% block title %}ماهوت کالکشن | کاربران{% endblock %}
+{% block head %}کاربران{% endblock head %}
+
+{% block content %}
+<div class="d-none">{% block users %}active{% endblock %}</div>
+    <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+
+                  <div class="row">
+                    <div class="col-6">
+                      <h4 class="card-title ">لیست کاربران</h4>
+                      <p class="card-category">تعداد کاربران: {{users.all|length}}</p>
+    
+                    </div>
+                    <div class="col-2"></div>
+                    <div class="col-4">
+                      <form action="/staff/user-search/" class="navbar-form">
+                        <div class="input-group no-border">
+                          <input type="search" name="q" id="q" class="form-control text-white" placeholder="جستجو... ( ایمیل، نام کاربری، اسم، فامیل )">
+                          <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                            <i class="material-icons">search</i>
+                            <div class="ripple-container"></div>
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead class=" text-primary">
+                        <tr>
+                        <th>
+                          نام کاربری
+                        </th>
+                        <th>
+                          ایمیل
+                        </th>
+                        <th>
+                          وضعیت
+                        </th>
+                        <th>
+                          تاریخ عضویت
+                        </th>
+                        <th>
+                          
+                        </th>
+                      </tr></thead>
+                      <tbody>
+                        {% for user in users %} 
+                        <tr>
+                          <td>
+                            {{user.username}}
+                          </td>
+                          <td class="text-black-50">
+                            {{user.email}}
+                          </td>
+                          <td>
+                            {% if user.is_active %}
+                              <span class="span text-primary">فعال</span>
+                            {% else %}
+                              <span class="span text-black-50">غیرفعال</span>
+                            {% endif %}
+                            <br>
+                            <span class="text-primary">{{message.created_on_time|date:"G:i"}}</span>
+                          </td>
+                          <td>
+                            {{user.profile.created_on|date:'y/m/d'}}
+                          </td>
+                          <td class="text-primary">
+                            <a href="/staff/users/{{user.id}}"><i class="fad fa-eye"></i> مشاهده</a>
+                          </td>
+                        </tr>
+                        {% endfor %}
+                      </tbody>
+                    </table>
+                    {% if count == 0 %}
+                    <div class="alert alert-warning">
+                      <button type="button" class="close text-white" data-dismiss="alert" aria-label="Close">
+                        <i class="fas fa-times"></i>
+                      </button>
+                      <h5 class="mx-4 my-0">هشدار - هنوز کاربری وجود ندارد</h5>
+                    </div>
+                    {% endif %}
+                  </div>
+                </div>
+                <nav aria-label="Page navigation">
+                  <ul class="pagination justify-content-center">
+                      {% if users.number|add:'-4' > 1 %}
+                      <li class="page-item">
+                          <a class="page-link" href="?page={{ users.number|add:'-5' }}" aria-label="Previous" tabindex="-1" aria-disabled="true">
+                              <span aria-hidden="true"></span><<
+                          </a>
+                      </li>
+                      {% endif %}
+                      
+                      {% if users.has_previous %}
+                      <li class="page-item ">
+                          <a class="page-link page-link-prev" href="?page={{ users.previous_page_number }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}" aria-label="Previous" tabindex="-1" aria-disabled="true">
+                              <span aria-hidden="true"><i class="icon-long-arrow-right"></i></span>قبلی
+                          </a>
+                      </li>
+                      {% else %}
+                      <li class="page-item disabled">
+                          <a class="page-link page-link-prev" href="" aria-label="Previous" tabindex="-1" aria-disabled="true">
+                              <span aria-hidden="true"><i class="icon-long-arrow-right"></i></span>قبلی
+                          </a>
+                      </li>
+                      {% endif %}
+          
+                      {% for i in users.paginator.page_range %}
+                      {% if users.number == i %}
+                      <li class="page-item active" aria-current="page"><a class="page-link" href="">{{ i }}</a></li>
+                      {% elif i > users.number|add:'-5' and i < users.number|add:'4' %}
+                      <li class="page-item" aria-current="page"><a class="page-link" href="?page={{ i }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">{{ i }}</a></li>
+                      {% endif %}
+                      {% endfor %}
+          
+                      {% if users.has_next %}
+                      <li class="page-item">
+                          <a class="page-link page-link-next" href="?page={{ users.next_page_number }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}" aria-label="Next">
+                              بعدی <span aria-hidden="true"><i class="icon-long-arrow-left"></i></span>
+                          </a>
+                      </li>
+                      {% else %}
+                      <li class="page-item disabled">
+                          <a class="page-link page-link-next" href="" aria-label="Next">
+                              بعدی <span aria-hidden="true"><i class="icon-long-arrow-left"></i></span>
+                          </a>
+                      </li>
+                      {% endif %}
+          
+                      {% if users.paginator.num_pages > users.number|add:'4' %}
+                      <li class="page-item">
+                          <a class="page-link" href="?page={{ users.number|add:'5' }}" aria-label="Previous" tabindex="-1" aria-disabled="true">
+                              <span aria-hidden="true"></span>>>
+                          </a>
+                      {% endif %}
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+{% endblock content %}
+

@@ -1,0 +1,79 @@
+{% extends 'staff/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}ماهوت کالکشن | مدیریت کالکشن{% endblock %}
+{% block head %}کالکشن {{collection.collection_name}}{% endblock head %}
+
+{% block content %}
+<div class="d-none">{% block collections %}active{% endblock %}</div>
+
+<div class="content">
+    <div class="container-fluid">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-9">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                    <h4 class="card-title">کالکشن</h4>
+                    <p class="card-category">از این قسمت میتوانید کالکشن را ایجاد یا ویرایش کنید</p>
+                    </div>
+                    <div class="card-body">
+                        {% csrf_token %}
+                        <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group bmd-form-group">
+                                {{form.collection_name|as_crispy_field}}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group bmd-form-group">
+                                {{form.collection_url|as_crispy_field}}
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group bmd-form-group">
+                                {{form.collection_items|as_crispy_field}}
+                            </div>
+                        </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                            <div class="form-group bmd-form-group">
+                                {{form.collection_img|as_crispy_field}}
+                            </div>
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-header card-header-primary">
+                        <h4 class="card-title">انتشار</h4>
+                        </div>
+                        {% if c.created_on %}
+                            <div class="card-body">
+                                <p><i class="far fa-eye"></i> وضعیت : <span class="text-secondary">منتشر شده</span></p>
+                                <p><i class="far fa-calendar-alt"></i> تاریخ انتشار : <span class="text-secondary">{{c.created_on|date:"y/m/d"}}</span></p>
+                                <div class="row px-2">
+                                    <button type="submit" class="btn btn-primary pull-right">ذخیره</button>
+                                </div>
+                            </div>
+                        {% else %}
+                            <div class="card-body">
+                                <p><i class="far fa-eye"></i> وضعیت : <span class="text-secondary">پیش نویس</span></p>
+                                <div class="row px-2">
+                                    <button type="submit" class="btn btn-primary pull-right">ذخیره</button>
+                                </div>
+                            </div>
+                        {% endif %}  
+                    </div>
+                </div>    
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock content %}

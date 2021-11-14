@@ -1,0 +1,127 @@
+{% extends 'staff/base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}ماهوت کالکشن | تنظیمات عمومی{% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="content">
+  <form method="POST" id="productForm" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-9">
+          <div class="card">
+            <div class="card-header card-header-primary">
+              <h4 class="card-title">تنظیمات</h4>
+              <p class="card-category">تنظیمات عمومی فروشگاه</p>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group bmd-form-group">
+                      {{settings.site_title|as_crispy_field}}
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group bmd-form-group">
+                      {{settings.site_description|as_crispy_field}}
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group bmd-form-group">
+                      {{settings.site_logo|as_crispy_field}}
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group bmd-form-group">
+                      {{settings.site_favicon|as_crispy_field}}
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="form-group bmd-form-group">
+                    {{settings.site_about|as_crispy_field}}
+                  </div>
+                </div>
+                
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group bmd-form-group">
+                      {{settings.site_phone|as_crispy_field}}
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group bmd-form-group">
+                      {{settings.site_phone_2|as_crispy_field}}
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group bmd-form-group">
+                      {{settings.site_email|as_crispy_field}}
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group bmd-form-group">
+                      {{settings.site_address|as_crispy_field}}
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group bmd-form-group">
+                      {{socials.instagram|as_crispy_field}}
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group bmd-form-group">
+                      {{socials.telegram|as_crispy_field}}
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group bmd-form-group">
+                      {{socials.whatsapp|as_crispy_field}}
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group bmd-form-group">
+                      {{socials.twitter|as_crispy_field}}
+                    </div>
+                  </div>
+              </div>
+              <div class="row mt-5">
+                {% for transport in transports %}
+                <div class="col-md-4">
+                  <div id="transport" class="form-group bmd-form-group">
+                    <label for="transport" class="requiredField" style="right: 0;">
+                      {{transport.transport_way}}<span class="asteriskField">*</span>
+                    </label>
+                    <div class="pt-2"> 
+                      <input type="text" name="transport" value="{{transport.transport_price}}" class="textinput textInput form-control form-control" id="transport" required>
+                    </div>
+                  </div> 
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title">ذخیره</h4>
+                </div>
+                <div class="card-body">
+                    <p><i class="far fa-calendar-alt"></i> آخرین بروزرسانی : <span class="text-secondary">{{instance.date_updated|date:"y/m/d"}}</span></p>
+                    <div class="row px-2">
+                        <button type="submit" id="saveProduct" class="btn btn-primary pull-right">ذخیره</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+      </div>
+    </div>
+  </form>
+</div>
+
+{% endblock content %}

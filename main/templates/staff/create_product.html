@@ -1,0 +1,151 @@
+{% extends 'staff/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}ماهوت کالکشن | مدیریت محصول{% endblock %}
+
+{% block content %}
+<div class="d-none">{% block create-product %}active{% endblock %}</div>
+{{form.media}}
+<div class="content">
+  <form method="POST" id="productForm" enctype="multipart/form-data"
+    data-categories-url="/staff/ajax/load-subcategories/" novalidate>
+    {% csrf_token %}
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-9">
+          <div class="card">
+            <div class="card-header card-header-primary">
+              <h4 class="card-title">افزودن محصول</h4>
+              <p class="card-category">از این قسمت میتوانید محصول جدید وارد کنید</p>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group bmd-form-group">
+                    {{ form.product_model|as_crispy_field }}
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group bmd-form-group">
+                    {{ form.product_url|as_crispy_field }}
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group bmd-form-group" dir="ltr" style="min-height: 300px;">
+                    {{ form.description|as_crispy_field }}
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-12">
+                {{ form.size_form|as_crispy_field }}
+              </div>
+
+              <div class="row">
+                <div class="col-md-3">
+                  {{ form.product_img1|as_crispy_field }}
+                </div>
+                <div class="col-md-3">
+                  {{ form.product_img2|as_crispy_field }}
+                </div>
+                <div class="col-md-3">
+                  {{ form.product_img3|as_crispy_field }}
+                </div>
+                <div class="col-md-3">
+                  {{ form.product_img4|as_crispy_field }}
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card">
+            <div class="card-header card-header-primary">
+              <h4 class="card-title">انتشار</h4>
+            </div>
+            <div class="card-body">
+              <p><i class="far fa-eye"></i> وضعیت : <span class="text-secondary">
+                  {% if p.product_draft == False %}
+                  منتشر شده
+                  {% else %}
+                  پیش نویس
+                  {% endif %}
+                </span></p>
+              {% if p.time_created and p.date_created %}
+              <p><i class="far fa-calendar-alt"></i> تاریخ ثبت محصول : <span class="text-secondary">تاریخ :
+                  {{p.date_created|date:"y/m/d"}}
+                  <br>
+                  ساعت : {{p.time_created|date:"G:i"}}</span></p>
+              {% endif %}
+              <div class="row px-2">
+                <div class="col"></div>
+                <button type="submit" id="saveProduct" class="btn btn-primary pull-right">انتشار</button>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header card-header-primary">
+              <h4 class="card-title">انتخاب دسته محصول</h4>
+            </div>
+            <div class="card-body">
+              {{ form.product_category|as_crispy_field}}
+              {{ form.product_subcategory|as_crispy_field }}
+            </div>
+          </div>
+          <!-- <div class="card">
+              <div class="card-header card-header-primary">
+                <h4 class="card-title">برچسب محصول</h4>
+              </div>
+              <div class="card-body">
+                <div class="input-group">
+                    <input type="text" class="plus-input" placeholder="عنوان برچسب" id="tagInput">
+                    <button type="submit" class="btn btn-primary" id="tagBtn">افزودن</button>
+                </div>
+                <div id="tagList">
+
+                </div>
+                <button class="btn btn-outline-primary mt-3" id="removeTags">پاک کردن برچسب ها</button>
+              </div>
+            </div> -->
+        </div>
+
+      </div>
+    </div>
+  </form>
+</div>
+
+
+
+{% endblock content %}
+
+{% block scripts %}
+<script>
+  const product_category = document.getElementById("id_product_category")
+  const product_subcategory = document.getElementById("id_product_subcategory")
+  var option = document.createElement("option");
+  option.text = "دسته بندی را انتخاب کنید";
+  option.value = "500"
+  product_category.add(option, 0);
+  product_category.options.selectedIndex = 0
+  $("#id_product_category").change(function () {
+    if (product_category.options.selectedIndex == 0) {
+      product_subcategory.innerHTML = `<option value="501">لطفا یک دسته بندی را انتخاب کنید</option>`
+    }
+    var url = $("#productForm").attr("data-categories-url");  // get the url of the `load_cities` view
+    var categoryId = $(this).val();  // get the selected country ID from the HTML input
+    $.ajax({                       // initialize an AJAX request
+      url: url,                    // set the url of the request (= localhost:8000/hr/ajax/load-cities/)
+      data: {
+        'category': categoryId       // add the country id to the GET parameters
+      },
+      success: function (data) {   // `data` is the return of the `load_cities` view function
+        $("#id_product_subcategory").html(data);  // replace the contents of the city input with the data that came from the server
+
+      }
+    });
+  });
+</script>
+{% endblock scripts %}

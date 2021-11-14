@@ -1,0 +1,192 @@
+{% extends 'staff/base.html' %}
+{% block title %}ماهوت کالکشن | دسته بندی ها{% endblock %}
+{% block head %}دسته بندی{% endblock head %}
+
+{% block content %}
+<div class="d-none">{% block categories %}active{% endblock %}</div>
+
+    <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+
+                  <div class="row">
+                    <div class="col-6">
+                      <h4 class="card-title ">لیست دسته بندی ها</h4>
+                      <p class="card-category">تعداد دسته ها : {{count}}</p>
+
+                    </div>
+                    <div class="col-2"></div>
+                    <div class="col-4">
+
+                      <form action="/staff/category-search/" class="navbar-form">
+                        <div class="input-group no-border">
+                          <input type="search" name="q" id="q" class="form-control text-white" placeholder="جستجو ... ( عنوان یا نامک دسته )">
+                          <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                            <i class="material-icons">search</i>
+                            <div class="ripple-container"></div>
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead class=" text-primary">
+                        <tr>
+                        <th style="width: 400px;">
+                          نام دسته
+                        </th>
+                        <th style="width: 250px;">
+                          تصویر دسته
+                        </th>
+                        <th>
+                          نامک
+                        </th>
+                        <th class="d-md-table-cell d-none" style="width: 250px;">
+                          تعداد زیر دسته
+                        </th>
+                        <th class="pr-5 d-md-table-cell d-none">
+                          لینک دسته
+                        </th>
+                        <th style="width: 235px;">
+                          <!-- <a href="/staff/category/create/"> ایجاد دسته </a> -->
+                        </th>
+                      </tr></thead>
+                      <tbody>
+                        {% for category in categories %}
+                        <tr>
+                          <td>
+                            {{category.category_name}}
+                          </td>
+                          <td class="text-info">
+                            <img src="{{category.category_img.url}}" class="cat_img">
+                          </td>
+                          <td class="text-primary">
+                            {{category.category_url}}
+                          </td>
+                          <td class="text-primary d-md-table-cell d-none">
+                            {{category.subcategory.all|length |add:"-1"}}
+                          </td>
+                          <td class="d-md-table-cell d-none">
+                            <a href="/products/category/{{ category.category_url }}">
+                              <button class="btn btn-outline-secondary"><i class="fad fa-eye"></i> مشاهده دسته</button>
+                            </a>
+                          </td>
+                          <td class="text-info">
+                            <a href="/staff/category/update/{{category.pk}}" class="btn btn-outline-primary px-3" rel="tooltip" data-original-title="ویرایش دسته"><i class="fas fa-pencil"></i></a>
+                            <a href="/staff/subcategories/{{category.category_url}}/" class="btn btn-outline-secondary px-3" rel="tooltip" data-original-title="زیر دسته ها"><i class="fas fa-list"></i></a>
+                            {% if category.category_selected == True %}
+                            <a href="/staff/categories/remove-from-selected/{{category.pk}}" class="btn btn-warning px-3" rel="tooltip" data-original-title="حذف از دسته های محبوب"><i class="fas fa-star"></i></a>
+                            {% else %}
+                              {% if selected >= 4 %}
+                              {% else %}
+                              <a href="/staff/categories/add-to-selected/{{category.pk}}" class="btn btn-outline-warning px-3" rel="tooltip" data-original-title="افزودن به دسته های محبوب"><i class="far fa-star"></i></a>
+                              {% endif %}
+                            {% endif %}
+                            <button class="btn btn-danger px-3" data-toggle="modal" data-target="#Delete{{category.pk}}" rel="tooltip" data-original-title="حذف دسته بندی"><i class="fas fa-trash"></i></button>
+                          </td>
+                        </tr>
+                        <div id="Delete{{category.pk}}" class="modal fade" role="dialog">
+                          <div class="modal-dialog modal-dialog-centered">
+
+                            <div class="modal-content text-right">
+                              <div class="modal-header text-right">
+                                  <h4 class="modal-title">حذف دسته بندی</h4>
+                                <button type="button" class="close btn btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i></button>
+                              </div>
+                              <div class="modal-body text-right">
+                                <p>آیا از حذف دسته بندی مطمئن هستید؟</p>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">انصراف</button>
+                                <a href="/staff/category/delete/{{category.pk}}/" class="btn btn-danger"><i class="fas fa-trash"></i> حذف کن</a>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                        {% endfor %}
+                      </tbody>
+                    </table>
+                    {% if count == 0 %}
+                    <div class="alert alert-warning">
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <i class="material-icons">close</i>
+                      </button>
+                      <span>
+                      <b> هشدار - </b>هنوز هیچ دسته بندی ایجاد نشده است</span>
+                    </div>
+                    {% endif %}
+                    <a href="/staff/category/create/">
+                      <button class="btn btn-primary" style="width: 175px;">ایجاد دسته بندی</button>
+                    </a>
+                  </div>
+                </div>
+                <nav aria-label="Page navigation">
+                  <ul class="pagination justify-content-center">
+                      {% if categories.number|add:'-4' > 1 %}
+                      <li class="page-item">
+                          <a class="page-link" href="?page={{ categories.number|add:'-5' }}" aria-label="Previous" tabindex="-1" aria-disabled="true">
+                              <span aria-hidden="true"></span><<
+                          </a>
+                      </li>
+                      {% endif %}
+
+                      {% if categories.has_previous %}
+                      <li class="page-item ">
+                          <a class="page-link page-link-prev" href="?page={{ categories.previous_page_number }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}" aria-label="Previous" tabindex="-1" aria-disabled="true">
+                              <span aria-hidden="true"><i class="icon-long-arrow-right"></i></span>قبلی
+                          </a>
+                      </li>
+                      {% else %}
+                      <li class="page-item disabled">
+                          <a class="page-link page-link-prev" href="" aria-label="Previous" tabindex="-1" aria-disabled="true">
+                              <span aria-hidden="true"><i class="icon-long-arrow-right"></i></span>قبلی
+                          </a>
+                      </li>
+                      {% endif %}
+
+                      {% for i in categories.paginator.page_range %}
+                      {% if categories.number == i %}
+                      <li class="page-item active" aria-current="page"><a class="page-link" href="">{{ i }}</a></li>
+                      {% elif i > categories.number|add:'-5' and i < categories.number|add:'4' %}
+                      <li class="page-item" aria-current="page"><a class="page-link" href="?page={{ i }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">{{ i }}</a></li>
+                      {% endif %}
+                      {% endfor %}
+
+                      {% if categories.has_next %}
+                      <li class="page-item">
+                          <a class="page-link page-link-next" href="?page={{ categories.next_page_number }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}" aria-label="Next">
+                              بعدی <span aria-hidden="true"><i class="icon-long-arrow-left"></i></span>
+                          </a>
+                      </li>
+                      {% else %}
+                      <li class="page-item disabled">
+                          <a class="page-link page-link-next" href="" aria-label="Next">
+                              بعدی <span aria-hidden="true"><i class="icon-long-arrow-left"></i></span>
+                          </a>
+                      </li>
+                      {% endif %}
+
+                      {% if categories.paginator.num_pages > categories.number|add:'4' %}
+                      <li class="page-item">
+                          <a class="page-link" href="?page={{ categories.number|add:'5' }}" aria-label="Previous" tabindex="-1" aria-disabled="true">
+                              <span aria-hidden="true"></span>>>
+                          </a>
+                      {% endif %}
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+{% endblock content %}

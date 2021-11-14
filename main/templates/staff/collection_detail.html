@@ -1,0 +1,72 @@
+{% extends 'staff/base.html' %}
+{% block title %}ماهوت کالکشن | کالکشن {{collection.collection_name}}{% endblock %}
+{% block head %}کالکشن{% endblock head %}
+
+{% block content %}
+<div class="d-none">{% block collections %}active{% endblock %}</div>
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title">کالکشن {{collection.collection_name}}</h4>
+                        <h4 class="card-subtitle">{{collection.collection_url}}</h4>
+                    </div>
+                    <div class="card-body">
+                        محصولات کالکشن : 
+                        <div class="row">
+                            {% for item in collection.collection_items.all %}
+                            <div class="col-md-3">
+                                <div class="card p-2 text-center">
+                                    <img src="{{item.product_img1.url}}" class="product-image rounded">
+                                    <p class="mt-2">{{item.product_model}}</p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title">ویرایش</h4>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="text-black-50">تصویر کالکشن</h5>
+                        <p><i class="far fa-calendar-alt"></i> تاریخ ایجاد کالکشن : <span class="text-secondary">{{collection.created_on|date:"y/m/d"}}</span></p>
+                        <img src="{{collection.collection_img.url}}" class="collection-img w-100" alt="">
+                        <a href="/staff/collection/update/{{collection.id}}/" class="btn btn-dark mt-3"><i class="fas fa-pen"></i> ویرایش</a>
+                        <button class="btn btn-secondary text-danger mt-3 float-left" data-toggle="modal" data-target="#DeleteModel"><i class="fas fa-trash"></i> حذف</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="DeleteModel" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-dialog-centered">
+
+    <div class="modal-content text-right">
+      <div class="modal-header text-right">
+          <h4 class="modal-title">حذف کالکشن</h4>
+        <button type="button" class="close btn btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body text-right">
+        <p>آیا از حذف کالکشن مطمئن هستید؟</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">انصراف</button>
+        <a href="/staff/collection/delete/{{collection.id}}/" class="btn btn-danger"><i class="fas fa-trash"></i> حذف کن</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock content %}

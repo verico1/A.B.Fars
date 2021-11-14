@@ -1,0 +1,62 @@
+{% extends 'staff/base.html' %}
+{% block title %}ماهوت کالکشن | پیام {{message.name}}{% endblock %}
+
+{% block content %}
+<div class="d-none">{% block meassages %}active{% endblock %}</div>
+<div class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-7">
+          <div class="card">
+            <div class="card-header card-header-primary">
+              <h4 class="card-title ">عنوان : {{message.subject}}</h4>
+              <p class="card-category">فرستنده : {{message.name}}</p>
+            </div>
+            <div class="card-body">
+                <div class="form-group recive">
+                    <label for="ans_content" class="text-primary">متن پیام</label>
+                    <div name="msg_content" class="w-100 mb-2">
+                        {{message.content}}
+                    </div>
+                </div>
+                {% if message.answer %}
+                <div class="form-group send mr-auto mt-3">
+                    <label for="ans_content" class="text-primary">پاسخ شما</label>
+                    <div name="ans_content" class="w-100 mb-2">
+                        {{message.answer|default_if_none:""}}
+                    </div>
+                </div>
+                {% endif %}
+
+            </div>
+            <div class="card-footer border-top mt-3">
+                    <span class="mb-3 text-black-50">تاریخ ارسال : {{message.created_on|date:"Y/m/d"}} ساعت : {{message.created_on_time|date:"G:i"}}</span>
+                    <span class="mb-3 text-black-50 mr-auto">ایمیل فرستنده : {{message.email}}</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5">
+            <div class="card">
+              <div class="card-header card-header-primary">
+                <h4 class="card-title ">پاسخ به پیام</h4>
+              </div>
+              <form method="POST">
+                {% csrf_token %}
+                <div class="card-body">
+                    <div class="w-100"></div>
+                    <label for="content">متن پاسخ *</label>
+                    <textarea type="text" name="content" class="form-control" style="min-height: 200px;" required></textarea>
+                  </div>
+
+                  <div class="card-footer">
+                      <button type="submit" class="btn btn-primary mb-3">ارسال</button>
+                      <span class="mb-3 text-black-50 mr-auto">ایمیل شما : mahoot@mahootcollection.com</span>
+                  </div>
+              </form>
+            </div>
+          </div>
+      </div>
+    </div>
+</div>
+
+{% endblock content %}
