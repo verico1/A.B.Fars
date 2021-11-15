@@ -1,5 +1,4 @@
 {% extends 'staff/base.html' %}
-{% load crispy_forms_tags %}
 
 {% block title %}ماهوت کالکشن | مدیریت محصول{% endblock %}
 
@@ -22,39 +21,28 @@
               <div class="row">
                 <div class="col-md-12">
                   <div class="form-group bmd-form-group">
-                    {{ form.product_model|as_crispy_field }}
+                    {{ form.product_model }}
                   </div>
                 </div>
                 <div class="col-md-12">
                   <div class="form-group bmd-form-group">
-                    {{ form.product_url|as_crispy_field }}
+                    {{ form.product_url}}
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-12">
                   <div class="form-group bmd-form-group" dir="ltr" style="min-height: 300px;">
-                    {{ form.description|as_crispy_field }}
+                    {{ form.description }}
                   </div>
                 </div>
               </div>
 
               <div class="col-md-12">
-                {{ form.size_form|as_crispy_field }}
+                {{ form.size_form}}
               </div>
 
               <div class="row">
-                <div class="col-md-3">
-                  {{ form.product_img1|as_crispy_field }}
-                </div>
-                <div class="col-md-3">
-                  {{ form.product_img2|as_crispy_field }}
-                </div>
-                <div class="col-md-3">
-                  {{ form.product_img3|as_crispy_field }}
-                </div>
-                <div class="col-md-3">
-                  {{ form.product_img4|as_crispy_field }}
                 </div>
               </div>
 
@@ -91,8 +79,8 @@
               <h4 class="card-title">انتخاب دسته محصول</h4>
             </div>
             <div class="card-body">
-              {{ form.product_category|as_crispy_field}}
-              {{ form.product_subcategory|as_crispy_field }}
+              {{ form.product_category}}
+              {{ form.product_subcategory}}
             </div>
           </div>
           <!-- <div class="card">

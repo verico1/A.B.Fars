@@ -1,5 +1,4 @@
 {% extends 'staff/base.html' %}
-{% load humanize %}
 {% block title %}ماهوت کالکشن | لیست محصولات{% endblock %}
 {% block head %}مدیریت محصولات{% endblock head %}
 
@@ -72,9 +71,9 @@
                             ناموجود
                             {% else %}
                                 {% if product.product_all_price.0 == 0 %}
-                                قیمت : <span class="oldPrice">{{product.product_all_price.2|intcomma}}</span> - <span class="discount">{{product.product_all_price.1|intcomma}}</span> تومان  
+                                قیمت : <span class="oldPrice">{{product.product_all_price.2}}</span> - <span class="discount">{{product.product_all_price.1}}</span> تومان  
                                 {% else %}
-                                قیمت : {{product.product_all_price|intcomma}} تومان
+                                قیمت : {{product.product_all_price}} تومان
                                 {% endif %}
                             {% endif %}
                           </td>
