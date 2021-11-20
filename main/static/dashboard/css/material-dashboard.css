@@ -9533,21 +9533,21 @@ a.text-dark:focus {
   color: #fff;
   background-color: #FF2626;
   border-color: #FF2626;
-  box-shadow: 0 2px 2px 0 #cc9966, 0 3px 1px -2px #cc9966, 0 1px 5px 0 #cc9966;
+  box-shadow: 0 2px 2px 0 #FF2626, 0 3px 1px -2px #FF2626, 0 1px 5px 0 #FF2626;
 }
 
 .btn.btn-primary:hover {
   color: #fff;
-  background-color: #b18254;
-  border-color: #b18254;
+  background-color: #FF2626;
+  border-color: #FF2626;
 }
 
 .btn.btn-primary:focus,
 .btn.btn-primary.focus,
 .btn.btn-primary:hover {
   color: #fff;
-  background-color: #b18254;
-  border-color: #b18254;
+  background-color: #FF2626;
+  border-color: #FF2626;
 }
 
 .btn.btn-primary:active,
@@ -11404,7 +11404,7 @@ fieldset[disabled][disabled] .btn-group-raised .btn,
 
 .btn.btn-fab.btn-round,
 .btn.btn-just-icon.btn-round {
-  border-radius: 50%;
+  border-radius: 50% !important;
 }
 
 .btn-group-sm .btn.btn-fab,
@@ -17632,7 +17632,7 @@ html[dir="rtl"] .form-check .form-check-sign .check:before {
 .card.bg-primary,
 .card.card-rotate.bg-primary .front,
 .card.card-rotate.bg-primary .back {
-  background: linear-gradient(60deg, #FF2626, #bd8c5a);
+  background: linear-gradient(60deg, #FF2626, #FF2626);
 }
 
 .card .card-header-info .card-icon,
@@ -17683,7 +17683,7 @@ html[dir="rtl"] .form-check .form-check-sign .check:before {
 .card .card-header-primary .card-icon,
 .card .card-header-primary:not(.card-header-icon):not(.card-header-text),
 .card .card-header-primary .card-text {
-  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px #cc996698;
+  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px #fe272699;
 }
 
 .card .card-header-danger .card-icon,
