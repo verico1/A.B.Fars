@@ -18,19 +18,6 @@
                       <p class="card-category">تعداد دسته ها : {{count}}</p>
 
                     </div>
-                    <div class="col-2"></div>
-                    <div class="col-4">
-
-                      <form action="/staff/category-search/" class="navbar-form">
-                        <div class="input-group no-border">
-                          <input type="search" name="q" id="q" class="form-control text-white" placeholder="جستجو ... ( عنوان یا نامک دسته )">
-                          <button type="submit" class="btn btn-white btn-round btn-just-icon">
-                            <i class="material-icons">search</i>
-                            <div class="ripple-container"></div>
-                          </button>
-                        </div>
-                      </form>
-                    </div>
                   </div>
 
                 </div>
@@ -42,17 +29,8 @@
                         <th style="width: 400px;">
                           نام دسته
                         </th>
-                        <th style="width: 250px;">
-                          تصویر دسته
-                        </th>
-                        <th>
-                          نامک
-                        </th>
                         <th class="d-md-table-cell d-none" style="width: 250px;">
-                          تعداد زیر دسته
-                        </th>
-                        <th class="pr-5 d-md-table-cell d-none">
-                          لینک دسته
+                          محصولات دسته
                         </th>
                         <th style="width: 235px;">
                           <!-- <a href="/staff/category/create/"> ایجاد دسته </a> -->
@@ -62,55 +40,14 @@
                         {% for category in categories %}
                         <tr>
                           <td>
-                            {{category.category_name}}
+                            {{category.category}}
                           </td>
                           <td class="text-info">
-                            <img src="{{category.category_img.url}}" class="cat_img">
-                          </td>
-                          <td class="text-primary">
-                            {{category.category_url}}
-                          </td>
-                          <td class="text-primary d-md-table-cell d-none">
-                            {{category.subcategory.all|length |add:"-1"}}
-                          </td>
-                          <td class="d-md-table-cell d-none">
-                            <a href="/products/category/{{ category.category_url }}">
-                              <button class="btn btn-outline-secondary"><i class="fad fa-eye"></i> مشاهده دسته</button>
-                            </a>
-                          </td>
-                          <td class="text-info">
-                            <a href="/staff/category/update/{{category.pk}}" class="btn btn-outline-primary px-3" rel="tooltip" data-original-title="ویرایش دسته"><i class="fas fa-pencil"></i></a>
-                            <a href="/staff/subcategories/{{category.category_url}}/" class="btn btn-outline-secondary px-3" rel="tooltip" data-original-title="زیر دسته ها"><i class="fas fa-list"></i></a>
-                            {% if category.category_selected == True %}
-                            <a href="/staff/categories/remove-from-selected/{{category.pk}}" class="btn btn-warning px-3" rel="tooltip" data-original-title="حذف از دسته های محبوب"><i class="fas fa-star"></i></a>
-                            {% else %}
-                              {% if selected >= 4 %}
-                              {% else %}
-                              <a href="/staff/categories/add-to-selected/{{category.pk}}" class="btn btn-outline-warning px-3" rel="tooltip" data-original-title="افزودن به دسته های محبوب"><i class="far fa-star"></i></a>
-                              {% endif %}
-                            {% endif %}
-                            <button class="btn btn-danger px-3" data-toggle="modal" data-target="#Delete{{category.pk}}" rel="tooltip" data-original-title="حذف دسته بندی"><i class="fas fa-trash"></i></button>
+                          {% for n in category.cat.all %}
+                            {{n.name}}
+                          {% endfor %}
                           </td>
                         </tr>
-                        <div id="Delete{{category.pk}}" class="modal fade" role="dialog">
-                          <div class="modal-dialog modal-dialog-centered">
-
-                            <div class="modal-content text-right">
-                              <div class="modal-header text-right">
-                                  <h4 class="modal-title">حذف دسته بندی</h4>
-                                <button type="button" class="close btn btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i></button>
-                              </div>
-                              <div class="modal-body text-right">
-                                <p>آیا از حذف دسته بندی مطمئن هستید؟</p>
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">انصراف</button>
-                                <a href="/staff/category/delete/{{category.pk}}/" class="btn btn-danger"><i class="fas fa-trash"></i> حذف کن</a>
-                              </div>
-                            </div>
-
-                          </div>
-                        </div>
                         {% endfor %}
                       </tbody>
                     </table>

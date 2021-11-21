@@ -35,5 +35,3 @@ def index(request):
 			messages.success(request, 'پیام با موفقیت ارسال شد')
 	return render(request, 'main/index.html', ctx)
 
-def about_us(request):
-	return render(request, 'main/about-us.html')

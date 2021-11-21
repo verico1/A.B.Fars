@@ -28,16 +28,13 @@
                       آدرس ایمیل
                     </th>
                     <th>
-                      تاریخ
+                      شماره تماس
                     </th>
                     <th>
-                      موضوع
+                      تاریخ ثبت
                     </th>
                     <th>
                       وضعیت
-                    </th>
-                    <th>
-
                     </th>
                   </tr>
                 </thead>
@@ -67,16 +64,14 @@
                       {{message.email}}
                     </td>
                     <td>
-                      <span class="text-black-50">{{message.created_on|date:"y/m/d"}}</span>
-                      <br>
-                      <span class="text-black-50">ساعت :</span> <span
-                        class="text-primary">{{message.created_on_time|date:"G:i"}}</span>
+                      {{message.phone_number}}
                     </td>
                     <td>
-                      {{message.subject}}
+                      {{message.jcreated_on.0}}
+                      {{message.created_on_time|date:"G:i"}}
                     </td>
                     <td>
-                      {% if message.read == False %}
+                      {% if message.is_read == False %}
                       <span class="text-danger">پیام جدید!</span>
                       {% else %}
                       <div class="text-black-50">خوانده شده</div>
@@ -123,8 +118,7 @@
               <li class="page-item active" aria-current="page"><a class="page-link" href="">{{ i }}</a></li>
               {% elif i > messages.number|add:'-5' and i < messages.number|add:'4' %} <li class="page-item"
                 aria-current="page"><a class="page-link"
-                  href="?page={{ i }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">{{
-                  i }}</a></li>
+                  href="?page={{ i }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">{{i}}</a></li>
                 {% endif %}
                 {% endfor %}
 

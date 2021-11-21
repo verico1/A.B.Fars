@@ -41,6 +41,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'main.force_default_language_middleware.ForceDefaultLanguageMiddleware',
     'django.middleware.locale.LocaleMiddleware',
+    'main.view_counter_middleware.ViewCounterMiddleware',
 
 ]
 
