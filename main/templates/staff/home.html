@@ -1,4 +1,6 @@
 {% extends 'staff/base.html' %}
+{% load static %}
+
 {% block title %}ماهوت کالکشن | پنل مدیریت{% endblock %}
 {% block head %}داشبورد{% endblock head %}
 
@@ -90,4 +92,8 @@
     </div>
   </div>
 </div>
-{% endblock %}
+{% endblock content%}
+
+{% block scripts %}
+<script src="{% static 'dashboard/js/charts.js' %}"></script>
+{% endblock scripts %}
