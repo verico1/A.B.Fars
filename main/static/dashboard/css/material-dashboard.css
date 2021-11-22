@@ -13393,7 +13393,7 @@ fieldset[disabled][disabled] .has-rose .form-control,
 
 .bmd-form-group .bmd-label-static {
   top: 0.35rem;
-  left: 0;
+  right: 0;
   font-size: 0.875rem;
 }
 
@@ -13703,7 +13703,7 @@ select.form-control {
 }
 
 .form-group .bmd-label-static {
-  top: -10px;
+  top: -20px;
 }
 
 textarea {

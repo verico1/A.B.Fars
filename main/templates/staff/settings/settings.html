@@ -1,5 +1,5 @@
 {% extends 'staff/base.html' %}
-{% block title %}ماهوت کالکشن | تنظیمات{% endblock %}
+{% block title %}آبنوس برنای خلیج فارس | تنظیمات{% endblock %}
 
 {% block content %}
 <div class="d-none">{% block settings %}active{% endblock %}</div>
@@ -74,7 +74,7 @@
                             <input class="form-control h-auto" value="{{social_media_setting.whatsapp|default_if_none:'ثبت نشده'}}">
                         </div>
                     </div>
-                    <a href="/staff/settings_update/{{settings.id}}/" class="btn btn-primary mt-3">ویرایش</a>
+                    <a href="/staff/settings_update/{{settings.id}}" class="btn btn-primary mt-3">ویرایش</a>
                 </div>
             </div>
             <div class="card col-10 mx-auto my-5 pt-5">
@@ -111,7 +111,7 @@
                             <input class="form-control h-auto" value="{{slider_setting.buttom_link}}">
                         </div>
                     </div>
-                    <a href="/staff/slider-settings-update/{{slider_setting.id}}/" class="btn btn-primary">ویرایش</a>
+                    <a href="/staff/slider-settings-update/{{slider_setting.id}}" class="btn btn-primary">ویرایش</a>
                 </div>
             </div>
     </div>
