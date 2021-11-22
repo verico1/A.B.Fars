@@ -252,17 +252,17 @@
                 <form method="POST" class="text-center">
                     {% csrf_token %}
                     <div class="my-4">
-                        <input type="text" class="w-75 text-right bg-color5" name="" id=""
+                        <input type="text" class="w-75 text-right bg-color5" name="name" id=""
                             placeholder="{% trans "نام و نام خانوادگی" %}">
                     </div>
                     <div class="my-4">
-                        <input type="email" class="w-75 text-right bg-color5" name="" id="" placeholder="{% trans "پست الکترونیکی" %}">
+                        <input type="email" class="w-75 text-right bg-color5" name="email" id="" placeholder="{% trans "پست الکترونیکی" %}">
                     </div>
                     <div class="my-4">
-                        <input type="tel" class="w-75 text-right bg-color5" name="" id="" placeholder='{% trans "شماره تماس" %}'>
+                        <input type="tel" class="w-75 text-right bg-color5" name="phone_number" id="" placeholder='{% trans "شماره تماس" %}'>
                     </div>
                     <div class="my-4">
-                        <textarea class="bg-color5" placeholder='{% trans "متن پیام" %}'></textarea>
+                        <textarea name="text" class="bg-color5" placeholder='{% trans "متن پیام" %}'></textarea>
                     </div>
                     <div class="my-4">
                         <button>{% trans "ارسال" %}</button>

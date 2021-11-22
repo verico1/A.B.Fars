@@ -1,5 +1,6 @@
 asgiref==3.4.1
 Django==3.2.9
+django-crispy-forms==1.13.0
 django-quill-editor==0.1.22
 django-translated-fields==0.11.3
 Pillow==8.4.0

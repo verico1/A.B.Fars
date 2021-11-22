@@ -4,6 +4,8 @@ from products.models import Category, Product
 from main.models import Message, IPAddress
 import time
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.views.generic import CreateView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
 def staff_index(request):
@@ -42,6 +44,22 @@ def staff_messages(request):
     return render(request, 'staff/messages.html',ctx)   
 
 def staff_categories(request):
+    if request.method == "POST":
+        category_name_fa = request.POST['category_name_fa']
+        category_name_en = request.POST['category_name_en']
+        category_name_ku = request.POST['category_name_ku']
+        category_name_ar = request.POST['category_name_ar']
+        try:
+            category_name = Category.objects.get(category_fa=category_name_fa,
+                category_en=category_name_en,
+                category_ku=category_name_ku,
+                category_ar=category_name_ar)
+        except Category.DoesNotExist:
+            category_name = Category(category_fa=category_name_fa,
+                category_en=category_name_en,
+                category_ku=category_name_ku,
+                category_ar=category_name_ar)  
+            category_name.save()
     categories = Category.objects.all()
     count = Category.objects.all().count()
     page = request.GET.get('page', 1)
@@ -56,7 +74,23 @@ def staff_categories(request):
     return render(request, "staff/categories.html", ctx)        
 
 def staff_products(request):
-    return render(request, "staff/products.html")  
+    products = Product.objects.all()
+    count = Message.objects.all().count()
+    page = request.GET.get('page', 1)
+    paginator = Paginator(products, 12)
+    try:
+        products = paginator.page(page)
+    except PageNotAnInteger:
+        products = paginator.page(1)
+    except EmptyPage:
+        products = paginator.page(paginator.num_pages)
+    ctx = {'products':products, 'count':count}
+    return render(request, "staff/products.html", ctx)  
+
+class CreateProduct(LoginRequiredMixin, CreateView):
+    model = Product
+    fields = '__all__'
+    template_name = "staff/create_product.html"
 
 def staff_create_products(request):
     return render(request, "staff/create_product.html")     

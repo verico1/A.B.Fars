@@ -1,10 +1,10 @@
 {% extends 'staff/base.html' %}
+{% load crispy_forms_tags %}
 
 {% block title %}ماهوت کالکشن | مدیریت محصول{% endblock %}
 
 {% block content %}
 <div class="d-none">{% block create-product %}active{% endblock %}</div>
-{{form.media}}
 <div class="content">
   <form method="POST" id="productForm" enctype="multipart/form-data"
     data-categories-url="/staff/ajax/load-subcategories/" novalidate>
@@ -21,25 +21,34 @@
               <div class="row">
                 <div class="col-md-12">
                   <div class="form-group bmd-form-group">
-                    {{ form.product_model }}
+                    {{form.name_fa|as_crispy_field}}
+                    {{form.name_ar|as_crispy_field}}
+                    {{form.name_en|as_crispy_field}}
+                    {{form.name_ku|as_crispy_field}}
                   </div>
                 </div>
                 <div class="col-md-12">
                   <div class="form-group bmd-form-group">
-                    {{ form.product_url}}
+                    {{ form.category|as_crispy_field }}
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-12">
                   <div class="form-group bmd-form-group" dir="ltr" style="min-height: 300px;">
-                    {{ form.description }}
+                    {{ form.description_fa|as_crispy_field }}
+                    {{ form.description_ar|as_crispy_field }}
+                    {{ form.description_en|as_crispy_field }}
+                    {{ form.description_ku|as_crispy_field }}
                   </div>
                 </div>
               </div>
 
               <div class="col-md-12">
-                {{ form.size_form}}
+                {{ form.image1|as_crispy_field }}
+                {{ form.image2|as_crispy_field }}
+                {{ form.image3|as_crispy_field }}
+                {{ form.image4|as_crispy_field }}
               </div>
 
             </div>
@@ -50,21 +59,7 @@
             <div class="card-header card-header-primary">
               <h4 class="card-title">انتشار</h4>
             </div>
-            <div class="card-body">
-              <p><i class="far fa-eye"></i> وضعیت : <span class="text-secondary">
-                  {% if p.product_draft == False %}
-                  منتشر شده
-                  {% else %}
-                  پیش نویس
-                  {% endif %}
-                </span></p>
-              {% if p.time_created and p.date_created %}
-              <p><i class="far fa-calendar-alt"></i> تاریخ ثبت محصول : <span class="text-secondary">تاریخ :
-                  {{p.date_created|date:"y/m/d"}}
-                  <br>
-                  ساعت : {{p.time_created|date:"G:i"}}</span></p>
-              {% endif %}
-              <div class="row px-2">
+
                 <div class="col"></div>
                 <button type="submit" id="saveProduct" class="btn btn-primary pull-right">انتشار</button>
               </div>
@@ -74,28 +69,8 @@
             <div class="card-header card-header-primary">
               <h4 class="card-title">انتخاب دسته محصول</h4>
             </div>
-            <div class="card-body">
-              {{ form.product_category}}
-              {{ form.product_subcategory}}
-            </div>
           </div>
-          <!-- <div class="card">
-              <div class="card-header card-header-primary">
-                <h4 class="card-title">برچسب محصول</h4>
-              </div>
-              <div class="card-body">
-                <div class="input-group">
-                    <input type="text" class="plus-input" placeholder="عنوان برچسب" id="tagInput">
-                    <button type="submit" class="btn btn-primary" id="tagBtn">افزودن</button>
-                </div>
-                <div id="tagList">
-
-                </div>
-                <button class="btn btn-outline-primary mt-3" id="removeTags">پاک کردن برچسب ها</button>
-              </div>
-            </div> -->
         </div>
-
       </div>
     </div>
   </form>

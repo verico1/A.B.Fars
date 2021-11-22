@@ -144,9 +144,15 @@
       <div class="modal-body">
         <div class="text-right">
           <label>نام دسته بندی</label>
-          <input class="form-control h-auto" value="{{slider_setting.buttom_name}}">
+          <form method="POST">
+            {% csrf_token %}
+            <input name="category_name_fa" class="form-control h-auto" value="{{slider_setting.buttom_name}}">
+            <input name="category_name_ar" class="form-control h-auto" value="{{slider_setting.buttom_name}}">
+            <input name="category_name_en" class="form-control h-auto" value="{{slider_setting.buttom_name}}">
+            <input name="category_name_ku" class="form-control h-auto" value="{{slider_setting.buttom_name}}">
+            <button type="submit" class="btn btn-primary mt-3" id="createCategory" style="width: 175px;">ذخیره</button>
+          </form>
         </div>
-        <a href="#" class="btn btn-primary mt-3" id="createCategory" style="width: 175px;">ایجاد</a>
       </div>
     </div>
   </div>
