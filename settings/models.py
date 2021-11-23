@@ -6,8 +6,10 @@ from translated_fields import TranslatedField
 
 class Setting(models.Model):
     title = TranslatedField(models.CharField(max_length=120, blank=True, null=True))
+    meta_title = TranslatedField(models.CharField(max_length=120, blank=True, null=True))
     about_us = TranslatedField(models.CharField(max_length=800, blank=True, null=True))
     about_us_small = TranslatedField(models.CharField(max_length=600, blank=True, null=True))
+    address = TranslatedField(models.CharField(max_length=600, blank=True, null=True))
     
     instagram = models.CharField(max_length=120)
     whatsapp = models.CharField(max_length=120)

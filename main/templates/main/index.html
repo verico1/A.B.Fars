@@ -2,7 +2,7 @@
 {% load i18n %}
 {% load static %}
 
-{% block title %}A.B.Fars Project{% endblock title %}
+{% block title %}{{setting.meta_title}}{% endblock title %}
 <br>
 <br>
 <a href="{% url 'main:about_us' %}">{% trans "درباره ما" %}</a>

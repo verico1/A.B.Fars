@@ -5,6 +5,8 @@
 <div class="d-none">{% block settings %}active{% endblock %}</div>
 <div class="content">
     <div class="container-fluid">
+    <form method="POST">
+    {% csrf_token %}
             <div class="card col-10 mx-auto">
                 <div class="card-header card-header-primary">
                     <h4 class="card-title">تنظیمات عمومی</h4>
@@ -12,108 +14,81 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <label>عنوان سایت</label>
-                            <input class="form-control" value="{{settings.site_title}}">
+                            <label> عنوان سایت فارسی</label>
+                            <input name="title_fa" class="form-control" value="{{settings.title_fa|default_if_none:'ثبت نشده'}}">
+                            <label> عنوان سایت عربی</label>
+                            <input name="title_ar" class="form-control" value="{{settings.title_ar|default_if_none:'ثبت نشده'}}">
+                            <label> عنوان سایت کردی</label>
+                            <input name="title_ku" class="form-control" value="{{settings.title_ku|default_if_none:'ثبت نشده'}}">
+                            <label> عنوان سایت انگلیسی</label>
+                            <input name="title_en" class="form-control" value="{{settings.title_en|default_if_none:'ثبت نشده'}}">
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label>توضیحات متا</label>
-                            <input class="form-control" value="{{settings.site_description|default_if_none:'ثبت نشده'}}">
+                            <label> عنوان متا سایت فارسی</label>
+                            <input name="meta_title_fa" class="form-control" value="{{settings.meta_title_fa|default_if_none:'ثبت نشده'}}">
+                            <label> عنوان متا سایت عربی</label>
+                            <input name="meta_title_ar" class="form-control" value="{{settings.meta_title_ar|default_if_none:'ثبت نشده'}}">
+                            <label> عنوان متا سایت کردی</label>
+                            <input name="meta_title_ku" class="form-control" value="{{settings.meta_title_ku|default_if_none:'ثبت نشده'}}">
+                            <label> عنوان متا سایت انگلیسی</label>
+                            <input name="meta_title_en" class="form-control" value="{{settings.meta_title_en|default_if_none:'ثبت نشده'}}">
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <button class="btn bg-dark w-100 text-right p-3 rounded">
-                                <label>لوگوی سایت</label>
-                                <img src="{{settings.site_logo.url}}" class="mx-2" style="max-width:120px; min-width:120px">
-                            </button>
+                        <div class="col-md-6 mb-3">
+                            <label>درباره ما فارسی</label>
+                            <input name="about_us_fa" class="form-control" value="{{settings.about_us_fa|default_if_none:'ثبت نشده'}}">
+                            <label>درباره ما عربی</label>
+                            <input name="about_us_ar" class="form-control" value="{{settings.about_us_ar|default_if_none:'ثبت نشده'}}">
+                            <label>درباره ما کردی</label>
+                            <input name="about_us_ku" class="form-control" value="{{settings.about_us_ku|default_if_none:'ثبت نشده'}}">
+                            <label>درباره ما انگلیسی</label>
+                            <input name="about_us_en" class="form-control" value="{{settings.about_us_en|default_if_none:'ثبت نشده'}}">
                         </div>
-                        <div class="col-md-6">
-                            <button class="btn bg-dark w-100 text-right p-3 rounded">
-                                <label>نمادک</label>
-                                <img src="{{settings.site_favicon.url}}" class="mx-2" style="max-width:120px">
-                            </button>
+                        <div class="col-md-6 mb-3">
+                            <label>درباره ما کوچک فارسی</label>
+                            <input name="about_us_small_fa" class="form-control" value="{{settings.about_us_small_fa|default_if_none:'ثبت نشده'}}">
+                            <label>درباره ما کوچک عربی</label>
+                            <input name="about_us_small_ar" class="form-control" value="{{settings.about_us_small_ar|default_if_none:'ثبت نشده'}}">
+                            <label>درباره ما کوچک کردی</label>
+                            <input name="about_us_small_ku" class="form-control" value="{{settings.about_us_small_ku|default_if_none:'ثبت نشده'}}">
+                            <label>درباره ما کوچک انگلیسی</label>
+                            <input name="about_us_small_en" class="form-control" value="{{settings.about_us_small_en|default_if_none:'ثبت نشده'}}">
                         </div>
-                    </div>
-                    
-                    
-                    <label class="mt-4">درباره وبسایت</label>
-                    <textarea class="form-control mb-5 h-auto" style="line-height: 1.4rem;">{{settings.site_about|default_if_none:'ثبت نشده'}}</textarea>
-
-                    <div class="row">
-                        <div class="col-md-6 mb-4">
-                            <label>درباره وبسایت</label>
-                            <input class="form-control h-auto" value="{{settings.site_phone|default_if_none:'ثبت نشده'}}" style="line-height: 1.4rem;">
-                        </div>
-                        <div class="col-md-6 mb-4">
-                            <label>درباره وبسایت</label>
-                            <input class="form-control h-auto" value="{{settings.site_phone_2|default_if_none:'ثبت نشده'}}" style="line-height: 1.4rem;">
-                        </div>
-                    </div>
+                    </div>         
                     <div class="row">
                         <div class="col-md-6 my-4">
-                            <label>آدرس</label>
-                            <input class="form-control h-auto" value="{{settings.site_address|default_if_none:'ثبت نشده'}}" style="line-height: 1.4rem;">
+                            <label>آدرس فارسی</label>
+                            <input name="address_fa" class="form-control h-auto" value="{{settings.address_fa|default_if_none:'ثبت نشده'}}" style="line-height: 1.4rem;">
+                            <label>آدرس عربی</label>
+                            <input name="address_ar" class="form-control h-auto" value="{{settings.address_ar|default_if_none:'ثبت نشده'}}" style="line-height: 1.4rem;">
+                            <label>آدرس کردی</label>
+                            <input name="address_ku" class="form-control h-auto" value="{{settings.address_ku|default_if_none:'ثبت نشده'}}" style="line-height: 1.4rem;">
+                            <label>آدرس انگلیسی</label>
+                            <input name="address_en" class="form-control h-auto" value="{{settings.address_en|default_if_none:'ثبت نشده'}}" style="line-height: 1.4rem;">
                         </div>
                         <div class="col-md-6 my-4">
                             <label>ایمیل</label>
-                            <input class="form-control h-auto" value="{{settings.site_email|default_if_none:'ثبت نشده'}}" style="line-height: 1.4rem;">
+                            <input name="email" class="form-control h-auto" value="{{settings.email|default_if_none:'ثبت نشده'}}" style="line-height: 1.4rem;">
                         </div>
                     </div>
                     <h4 class="mt-5 py-3">شبکه های اجتماعی</h4>
                     <div class="row">
                         <div class="col-md-4 mb-2">
                             <label>اینستاگرام</label>
-                            <input class="form-control h-auto" value="{{social_media_setting.instagram|default_if_none:'ثبت نشده'}}">        
+                            <input name="instagram" class="form-control h-auto" value="{{settings.instagram|default_if_none:'ثبت نشده'}}">        
                         </div>
                         <div class="col-md-4 mb-2">
                             <label>تلگرام</label>
-                            <input class="form-control h-auto" value="{{social_media_setting.telegram|default_if_none:'ثبت نشده'}}">
+                            <input name="telegram" class="form-control h-auto" value="{{settings.telegram|default_if_none:'ثبت نشده'}}">
                         </div>
                         <div class="col-md-4 mb-2">
                             <label>واتساپ</label>
-                            <input class="form-control h-auto" value="{{social_media_setting.whatsapp|default_if_none:'ثبت نشده'}}">
+                            <input name="whatsapp" class="form-control h-auto" value="{{settings.whatsapp|default_if_none:'ثبت نشده'}}">
                         </div>
                     </div>
-                    <a href="/staff/settings_update/{{settings.id}}" class="btn btn-primary mt-3">ویرایش</a>
+                    <button type="submit" >ویرایش</button>
                 </div>
             </div>
-            <div class="card col-10 mx-auto my-5 pt-5">
-                <div class="card-header card-header-primary">
-                    <h4 class="card-title">تنظیمات اسلایدر </h4>
-                </div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label>متن کوچک</label>
-                            <input class="form-control" value="{{slider_setting.site_small_title}}">
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label>متن بزرگ</label>
-                            <input class="form-control" value="{{slider_setting.site_big_title}}">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 mb-3">
-                            <button class="btn bg-dark w-100 text-right p-3 rounded">
-                                <label>تصویر اسلایدر</label>
-                                <img src="{{slider_setting.sliderimg.url}}" class="mx-2" width="90%">
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="row mt-3">
-                        <div class="col-md-6 mb-3">
-                            <label>عنوان دکمه</label>
-                            <input class="form-control h-auto" value="{{slider_setting.buttom_name}}">
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label>لینک دکمه</label>
-                            <input class="form-control h-auto" value="{{slider_setting.buttom_link}}">
-                        </div>
-                    </div>
-                    <a href="/staff/slider-settings-update/{{slider_setting.id}}" class="btn btn-primary">ویرایش</a>
-                </div>
-            </div>
+    </form>
     </div>
   </div>
 {% endblock content %}

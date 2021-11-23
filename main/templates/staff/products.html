@@ -61,7 +61,7 @@
                           </td>
                           <td class="text-info">
                             <button class="btn btn-danger px-3" data-toggle="modal" data-target="#Delete{{product.pk}}}" rel="tooltip" data-original-title="حذف محصول"><i class="fas fa-trash"></i></button>
-                            <a href="/staff/product/update/{{product.pk}}" class="btn btn-outline-primary px-3" rel="tooltip" data-original-title="ویرایش محصول"><i class="fas fa-pencil"></i></a>
+                            <a href="/staff/update-product/{{product.pk}}" class="btn btn-outline-primary px-3" rel="tooltip" data-original-title="ویرایش محصول"><i class="fas fa-pencil"></i></a>
                           </td>
                         </tr>
                         <div id="Delete{{product.pk}}}" class="modal fade" role="dialog">
@@ -77,7 +77,7 @@
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">انصراف</button>
-                                <a href="/staff/product/delete/{{product.pk}}" class="btn btn-danger"><i class="fas fa-trash"></i> حذف کن</a>
+                                <a href="/staff/delete-product/{{product.pk}}/" class="btn btn-danger"><i class="fas fa-trash"></i> حذف کن</a>
                               </div>
                             </div>
 

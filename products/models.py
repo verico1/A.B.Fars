@@ -19,7 +19,7 @@ class Category(models.Model):
 class Product(models.Model):
 	name = TranslatedField(models.CharField(verbose_name="" ,max_length=80, blank=True, null=True))
 	category = models.ForeignKey(Category,verbose_name='دسته' ,blank=True, null=True, on_delete=models.CASCADE, related_name="cat")
-	description = TranslatedField(QuillField(blank=True, null=True, verbose_name="توضیحات"))
+	description = TranslatedField(models.TextField(blank=True, null=True, verbose_name="توضیحات"))
 	image1 = models.ImageField(upload_to="Products-img/", verbose_name="تصویر اول", blank=True, null=True)
 	image2 = models.ImageField(upload_to="Products-img/", verbose_name="تصویر دوم", blank=True, null=True)
 	image3 = models.ImageField(upload_to="Products-img/", verbose_name="تصویر سوم", blank=True, null=True)
