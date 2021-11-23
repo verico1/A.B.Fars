@@ -143,13 +143,24 @@
       </div>
       <div class="modal-body">
         <div class="text-right">
-          <label>نام دسته بندی</label>
           <form method="POST">
             {% csrf_token %}
-            <input name="category_name_fa" class="form-control h-auto" value="{{slider_setting.buttom_name}}">
-            <input name="category_name_ar" class="form-control h-auto" value="{{slider_setting.buttom_name}}">
-            <input name="category_name_en" class="form-control h-auto" value="{{slider_setting.buttom_name}}">
-            <input name="category_name_ku" class="form-control h-auto" value="{{slider_setting.buttom_name}}">
+            <div class="form-group bmd-form-group text-right my-3 py-3">
+              <label for="category_name_fa">عنوان فارسی</label>
+              <input name="category_name_fa" class="form-control h-auto" value="{{slider_setting.buttom_name}}">
+            </div>
+            <div class="form-group bmd-form-group text-right my-3 py-3">
+              <label for="category_name_en">عنوان انگلیسی</label>
+              <input name="category_name_en" class="form-control h-auto" value="{{slider_setting.buttom_name}}">
+            </div>
+            <div class="form-group bmd-form-group text-right my-3 py-3">
+              <label for="category_name_ar">عنوان عربی</label>
+              <input name="category_name_ar" class="form-control h-auto" value="{{slider_setting.buttom_name}}">
+            </div>
+            <div class="form-group bmd-form-group text-right my-3 py-3">
+              <label for="category_name_ku">عنوان کردی</label>
+              <input name="category_name_ku" class="form-control h-auto" value="{{slider_setting.buttom_name}}">
+            </div>
             <button type="submit" class="btn btn-primary mt-3" id="createCategory" style="width: 175px;">ذخیره</button>
           </form>
         </div>
