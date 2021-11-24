@@ -1,9 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.contrib import messages
 
 # models imported here
 from .models import Message
 from settings.models import Setting
+from products.models import Product
 
 # Translation Imports
 from django.utils.translation import gettext as _
@@ -34,4 +35,9 @@ def index(request):
 			message.save()
 			messages.success(request, 'پیام با موفقیت ارسال شد')
 	return render(request, 'main/index.html', ctx)
+
+def product(request, id):
+	product = get_object_or_404(Product, id=id)
+	ctx = {'product':product}
+	return render(request, "main/product.html", ctx)
 

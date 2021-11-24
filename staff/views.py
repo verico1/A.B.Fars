@@ -1,5 +1,5 @@
 from django.core.checks import messages
-from django.shortcuts import redirect, render
+from django.shortcuts import get_object_or_404, redirect, render
 from django.views.generic.edit import UpdateView
 from translated_fields import fields
 from products.models import Category, Product
@@ -46,6 +46,13 @@ def staff_messages(request):
         messages = paginator.page(paginator.num_pages)
     ctx = {'messages':messages, 'count':count}
     return render(request, 'staff/messages.html',ctx)   
+
+def staff_message(request, id):
+    message = get_object_or_404(Message, id=id)
+    message.is_read = True
+    message.save()
+    ctx = {'message':message}
+    return render(request, 'staff/message.html', ctx)
 
 def staff_categories(request):
     if request.method == "POST":
@@ -133,6 +140,15 @@ def staff_settings(request):
         setting.instagram = request.POST['instagram']
         setting.telegram = request.POST['telegram']
         setting.whatsapp = request.POST['whatsapp']
+        setting.save()
+
+        """
+            numeric data
+        """
+        setting.products_count = request.POST['products_count']
+        setting.international_customers = request.POST['international_customers']
+        setting.years_of_activity = request.POST['years_of_activity']
+        setting.domestic_customers = request.POST['domestic_customers']
         setting.save()
     settings = Setting.objects.first()
     ctx = {'settings':settings}

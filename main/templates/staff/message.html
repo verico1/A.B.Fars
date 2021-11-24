@@ -1,0 +1,32 @@
+{% extends 'staff/base.html' %}
+{% block title %}آبنوس برنای خلیج فارس | پیام {{message.name}}{% endblock %}
+
+{% block content %}
+<div class="d-none">{% block meassages %}active{% endblock %}</div>
+<div class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-7">
+          <div class="card">
+            <div class="card-header card-header-primary">
+              <p class="card-category">فرستنده : {{message.name}}</p>
+            </div>
+            <div class="card-body">
+                <div class="form-group recive">
+                    <label for="ans_content" class="text-primary">متن پیام</label>
+                    <div name="msg_content" class="w-100 mb-2">
+                        {{message.text}}
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer border-top mt-3">
+                    <span class="mb-3 text-black-50">تاریخ ارسال : {{message.jcreated_on.0}} | ساعت : {{message.created_on_time|date:"G:i"}}</span>
+                    <span class="mb-3 text-black-50 mr-auto">ایمیل فرستنده : {{message.email}}</span>
+                    <span class="mb-3 text-black-50 mr-auto">شماره تماس فرستنده : {{message.phone_number}}</span>            
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
