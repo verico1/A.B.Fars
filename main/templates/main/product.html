@@ -1,0 +1,26 @@
+<br><br>
+{{product.name}}
+<br>
+<br>
+{{product.category}}
+<br><br>
+{{product.description}}
+
+<br>
+<br>
+<br>
+{% if product.image1 %}
+ <img src="{{product.image1.url}}" alt="Image">
+{% endif %}
+
+{% if product.image2 %}
+ <img src="{{product.image2.url}}" alt="Image">
+{% endif %}
+
+{% if product.image3 %}
+ <img src="{{product.image3.url}}" alt="Image">
+{% endif %}
+
+{% if product.image4 %}
+ <img src="{{product.image4.url}}" alt="Image">
+{% endif %}

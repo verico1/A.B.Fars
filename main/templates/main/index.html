@@ -39,91 +39,27 @@
         <div class="d-block d-sm-flex justify-content-center align-items-center">
             <ul class="d-flex align-items-center justify-content-center my-4">
                 <li class="filter fs-5 mx-3 pb-3 active" data-filter="*">{% trans 'تمام محصولات' %}</li>
-                <li class="filter fs-5 mx-3 pb-3" data-filter=".Milk">خربزه</li>
-                <li class="filter fs-5 mx-3 pb-3" data-filter=".Fruits">موز</li>
-            </ul>
-            <ul class="d-flex align-items-center justify-content-center my-4">
-                <li class="filter fs-5 mx-3 pb-3" data-filter=".Vegetables">گلابی</li>
-                <li class="filter fs-5 mx-3 pb-3" data-filter=".Juices">خیارسبز</li>
-                <li class="filter fs-5 mx-3 pb-3" data-filter=".Beef">بادمجان</li>
+                {% for category in categories %}
+                    <li class="filter fs-5 mx-3 pb-3" data-filter=".Milk">{{category.category}}</li>
+                {% endfor %}
             </ul>
         </div>
 
     </div>
     <div class="row" id="mixitup_list">
-
+    {% for product in products %}
         <div class="col-lg-4 col-md-6 col-xs-6 mix Fruits Vegetables" data-bound="" style="display: inline-block;">
             <div class="Product">
                 <div class="single_item_wrapper">
-                    <img src="{% static 'images/glry1.png' %}" alt="Image">
+                    <img src="{{product.image1.url}}" alt="Image">
                 </div>
                 <div class="value-info">
-                    <h4><a href="shop.html">آناناس</a></h4>
-                    <a href=""><h6 class="">مشاهده محصول</h6></a>
+                    <h4><a href="shop.html">{{product.name}}</a></h4>
+                    <a href="product/{{product.id}}/"><h6 class="">مشاهده محصول</h6></a>
                 </div>
             </div>
         </div>
-
-        <div class="col-lg-4 col-md-6 col-xs-6 mix Juices Beef" data-bound="" style="display: inline-block;">
-            <div class="Product">
-                <div class="single_item_wrapper">
-                    <img src="{% static 'images/glry2.png' %}" alt="Image">
-                </div>
-                <div class="value-info">
-                    <h4><a href="shop.html">کیوی</a></h4>
-                    <a href=""><h6 class="">مشاهده محصول</h6></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 col-xs-6 mix Fruits Milk" style="display: inline-block;" data-bound="">
-            <div class="Product">
-                <div class="single_item_wrapper">
-                    <img src="{% static 'images/glry3.png' %}" alt="Image">
-                </div>
-                <div class="value-info">
-                    <h4><a href="shop.html">پیاز</a></h4>
-                    <a href=""><h6 class="">مشاهده محصول</h6></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 col-xs-6 mix Beef" data-bound="" style="display: inline-block;">
-            <div class="Product">
-                <div class="single_item_wrapper">
-                    <img src="{% static 'images/glry1.png' %}" alt="Image">
-                </div>
-                <div class="value-info">
-                    <h4><a href="shop.html">آناناس هلندی</a></h4>
-                    <a href=""><h6 class="">مشاهده محصول</h6></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 col-xs-6 mix Milk  Juices Vegetables" data-bound=""
-            style="display: inline-block;">
-            <div class="Product">
-                <div class="single_item_wrapper">
-                    <img src="{% static 'images/glry4.png' %}" alt="Image">
-                </div>
-                <div class="value-info">
-                    <h4><a href="shop.html">گیلاس</a></h4>
-                    <a href=""><h6 class="">مشاهده محصول</h6></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 col-xs-6 mix Milk Vegetables" data-bound="" style="display: inline-block;">
-            <div class="Product">
-                <div class="single_item_wrapper">
-                    <img src="{% static 'images/glry5.png' %}" alt="Image">
-                </div>
-                <div class="value-info">
-                    <h4><a href="shop.html">کلم بروکلی</a></h4>
-                    <a href=""><h6 class="">مشاهده محصول</h6></a>
-                </div>
-            </div>
-        </div>
+    {% endfor %}
     </div>
 </div>
 

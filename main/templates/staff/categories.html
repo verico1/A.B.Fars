@@ -45,10 +45,12 @@
                     </td>
                     <td class="text-black-50">
                       {% for n in category.cat.all %}
-                      {{n.name}}
+                      {{n.name}},
                       {% endfor %}
                     </td>
-                    <td></td>
+                    <td>
+                    <a href="/staff/delete-category/{{category.id}}" >حذف دسته </a>
+                    </td>
                   </tr>
                   {% endfor %}
                 </tbody>

@@ -4,17 +4,21 @@ from django.contrib import messages
 # models imported here
 from .models import Message
 from settings.models import Setting
-from products.models import Product
+from products.models import Category, Product
 
 # Translation Imports
 from django.utils.translation import gettext as _
 
 def index(request):
 	"""
+		products are here
+	"""
+	products = Product.objects.all()
+	categories = Category.objects.all()
+	"""
 		settings are here
 	"""
 	setting = Setting.objects.first()
-	ctx = {'setting':setting}
 	"""
 		Contact us section exsists here
 		request form is POST, and also validators placed for each input
@@ -34,6 +38,7 @@ def index(request):
 			message = Message(name=name, email=email, phone_number=phone_number, text=text)
 			message.save()
 			messages.success(request, 'پیام با موفقیت ارسال شد')
+	ctx = {'setting':setting, 'products':products, 'categories':categories}
 	return render(request, 'main/index.html', ctx)
 
 def product(request, id):

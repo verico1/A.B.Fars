@@ -153,3 +153,8 @@ def staff_settings(request):
     settings = Setting.objects.first()
     ctx = {'settings':settings}
     return render(request, "staff/settings/settings.html", ctx)
+
+def delete_category(request, id):
+    category = Category.objects.get(id=id)
+    category.delete()
+    return redirect("/staff/categories")

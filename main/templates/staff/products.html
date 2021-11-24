@@ -52,12 +52,10 @@
                             {{product.category.category}}
                           </td>
                           <td class="text-black-50">
-                            {{product.description.html|safe}}
+                            {{product.description|truncatewords:20}}
                           </td>
                           <td class="text-primary">
-                            {% for img in product.image.all %}
-                            <img src="{{ img.image.url }}" width="120" class="product_image">
-                            {% endfor %}
+                            <img src="{{ product.image1.url }}" width="120" class="product_image">
                           </td>
                           <td class="text-info">
                             <button class="btn btn-danger px-3" data-toggle="modal" data-target="#Delete{{product.pk}}}" rel="tooltip" data-original-title="حذف محصول"><i class="fas fa-trash"></i></button>
