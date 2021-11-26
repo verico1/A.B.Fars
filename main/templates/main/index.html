@@ -13,7 +13,8 @@
             <div class="col-lg-6 mx-auto">
                 <p class="lead mb-4" style="line-height: 2.5rem;">{{setting.about_us_small}}</p>
                 <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                    <button type="button" class="btn btn-primary btn-lg px-4 gap-3" onclick="scrollTO('about-us')">{%trans 'درباره ما' %}</button>
+                    <button type="button" class="btn btn-primary btn-lg px-4 gap-3"
+                        onclick="scrollTO('about-us')">{%trans 'درباره ما' %}</button>
                 </div>
             </div>
         </div>
@@ -28,26 +29,28 @@
             <ul class="d-flex align-items-center justify-content-center my-4">
                 <li class="filter fs-5 mx-3 pb-3 active" data-filter="*">{% trans 'تمام محصولات' %}</li>
                 {% for category in categories %}
-                    <li class="filter fs-5 mx-3 pb-3" data-filter=".{{category.category}}">{{category.category}}</li>
+                <li class="filter fs-5 mx-3 pb-3" data-filter=".{{category.category}}">{{category.category}}</li>
                 {% endfor %}
             </ul>
         </div>
 
     </div>
     <div class="row" id="mixitup_list">
-    {% for product in products %}
-        <div class="col-lg-4 col-md-6 col-xs-6 mix {{product.category}}" style="display: inline-block;">
+        {% for product in products %}
+        <div class="col-lg-3 col-md-4 col-xs-6 mix {{product.category}}" style="display: inline-block;">
             <div class="Product">
                 <div class="single_item_wrapper">
                     <img src="{{product.image1.url}}" alt="Image">
                 </div>
                 <div class="value-info">
-                    <h4><a href="shop.html">{{product.name}}</a></h4>
-                    <a href="product/{{product.id}}/"><h6 class="">مشاهده محصول</h6></a>
+                    <h4 class="mt-3"><a href="product/{{product.id}}/">{{product.name}}</a></h4>
+                    <a href="product/{{product.id}}/">
+                        <h6 class="">مشاهده محصول</h6>
+                    </a>
                 </div>
             </div>
         </div>
-    {% endfor %}
+        {% endfor %}
     </div>
 </div>
 
@@ -118,7 +121,8 @@
                     </div>
                     <div class="col-lg-6 d-flex justify-content-around d-md-block">
                         <div class="counter mb-5">
-                            <span>+</span><span class="number-counter" number="{{setting.international_customers}}">0</span>
+                            <span>+</span><span class="number-counter"
+                                number="{{setting.international_customers}}">0</span>
                             <p>{% trans "مشتریان بین المللی" %}</p>
                         </div>
                         <div class="counter mb-5">
@@ -176,14 +180,16 @@
                 <form method="POST" class="text-center">
                     {% csrf_token %}
                     <div class="my-4">
-                        <input type="text" class="w-75 text-right bg-color5" name="name" id=""
-                            placeholder="{% trans "نام و نام خانوادگی" %}">
+                        <input type="text" class="w-75 text-right bg-color5" name="name" id="" placeholder="{% trans "
+                            نام و نام خانوادگی" %}">
                     </div>
                     <div class="my-4">
-                        <input type="email" class="w-75 text-right bg-color5" name="email" id="" placeholder="{% trans "پست الکترونیکی" %}">
+                        <input type="email" class="w-75 text-right bg-color5" name="email" id="" placeholder="{% trans "
+                            پست الکترونیکی" %}">
                     </div>
                     <div class="my-4">
-                        <input type="tel" class="w-75 text-right bg-color5" name="phone_number" id="" placeholder='{% trans "شماره تماس" %}'>
+                        <input type="tel" class="w-75 text-right bg-color5" name="phone_number" id=""
+                            placeholder='{% trans "شماره تماس" %}'>
                     </div>
                     <div class="my-4">
                         <textarea name="text" class="bg-color5" placeholder='{% trans "متن پیام" %}'></textarea>
@@ -207,7 +213,7 @@
 </div>
 {% endblock content %}
 
-{% block scripts %}
+{% block script %}
 <script>
     var mixer = mixitup('#mixitup_list');
     $(".owl-carousel").owlCarousel({
@@ -233,4 +239,4 @@
         $(this).addClass('active');
     })
 </script>
-{% endblock scripts %}
+{% endblock script %}

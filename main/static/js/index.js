@@ -28,7 +28,6 @@ $(document).ready(function () {
     $(".dropdown-menu").click(function (e) {
         e.stopPropagation();
     })
-
     const navbar = document.getElementById("navbar");
     const sticky = navbar.offsetTop;
     function fixedNavbar() {
@@ -38,7 +37,7 @@ $(document).ready(function () {
             navbar.classList.remove("fixed-navbar");
         }
     }
-    window.onscroll = function () { fixedNavbar() ,scroller_number() };
+    window.onscroll = function () { fixedNavbar(), scroller_number() };
 
     const pageLANGUAGE = window.location.href.split('/')[3]
     const selectLANGUAGE = document.getElementById('selectLANGUAGE');

@@ -14,18 +14,6 @@
 <br>
 
 
-{% if product.image2 %}
-<img src="{{product.image2.url}}" alt="Image">
-{% endif %}
-
-{% if product.image3 %}
-<img src="{{product.image3.url}}" alt="Image">
-{% endif %}
-
-{% if product.image4 %}
-<img src="{{product.image4.url}}" alt="Image">
-{% endif %}
-
 {% block title %}{{setting.meta_title}}{% endblock title %}
 
 {% block content %}
@@ -37,11 +25,31 @@
                 <img src="{{product.image1.url}}" alt="Image">
                 {% endif %}
             </div>
+            <div class="product-gallery">
+                {% if product.image2 %}
+                <img src="{{product.image2.url}}" alt="Image">
+                {% endif %}
+
+                {% if product.image3 %}
+                <img src="{{product.image3.url}}" alt="Image">
+                {% endif %}
+
+                {% if product.image4 %}
+                <img src="{{product.image4.url}}" alt="Image">
+                {% endif %}
+            </div>
         </div>
         <div class="col-md-6">
             <h4>{{product.name}}</h4>
             <p class="my-3">{{product.category}}</p>
-            <div class="my-3">{{product.description}}</div>
+            <div class="my-3 product-description">{{product.description}}</div>
+        </div>
+        <div class="share-social my-3">
+            <p>اشتراک گذاری در</p>
+            <a href="{{setting.instagram}}" target="blank"><i class="fab fa-instagram"></i></a>
+            <a href="{{setting.telegram}}" target="blank"><i class="fab fa-telegram-plane"></i></a>
+            <a href="{{setting.whatsapp}}" target="blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="{{setting.telegram}}" target="blank"><i class="fab fa-facebook"></i></a>
         </div>
     </div>
 </div>

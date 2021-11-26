@@ -220,7 +220,7 @@ a:hover {
 
 .single_item_wrapper img {
   width: 100%;
-  height: 350px;
+  height: 300px;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -595,12 +595,105 @@ input:focus, textarea:focus {
   border-radius: 15px;
   -webkit-box-shadow: 0 0 50px #bfbfbf59;
           box-shadow: 0 0 50px #bfbfbf59;
+  position: relative;
+}
+
+.product-section .product-description {
+  line-height: 1.8rem;
 }
 
 .product-image {
   width: 350px;
   height: 350px;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 15px;
+}
+
+.product-gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 110px;
+}
+
+.product-gallery img {
+  width: 110px;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 5px 0 0 10px;
+  border-radius: 15px;
+}
+
+.share-social {
+  position: absolute;
+  left: 10px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.share-social p {
+  position: absolute;
+  width: 170px;
+  left: -25px;
+  top: -20px;
+}
+
+.share-social a {
+  background: #f6f8fa;
+  width: 50px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 25px;
+  -webkit-box-shadow: 0 0 25px #bfbfbf66;
+          box-shadow: 0 0 25px #bfbfbf66;
+  margin: 15px 0 0 15px;
+  border-radius: 15px;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+
+.share-social a:hover {
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.share-social a:nth-child(2):hover {
+  background: #FCAF45;
+  color: #fff;
+}
+
+.share-social a:nth-child(3):hover {
+  background: #0088CC;
+  color: #fff;
+}
+
+.share-social a:nth-child(4):hover {
+  background: #25D366;
+  color: #fff;
+}
+
+.share-social a:nth-child(5):hover {
+  background: #1877f2;
+  color: #fff;
 }
 /*# sourceMappingURL=style.css.map */
