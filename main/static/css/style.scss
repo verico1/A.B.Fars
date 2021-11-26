@@ -136,7 +136,7 @@ a{
 }
 .Product {
     text-align: center;
-    height: 480px;
+    height: 450px;
     width: 100%;
     margin: auto;
     background: #e9e8e8;
@@ -144,20 +144,22 @@ a{
     overflow: hidden;
     margin: 15px 0;
     transition: 0.4s all;
-}
-.Product:hover{
-    background: #FF2626;
-    transition: 0.4s all;
-}
-.Product:before {
-    content: '';
-    position: absolute;
-    width: calc(100% + 120px);
-    height: 130%;
-    background: #f8f8f8;
-    border-radius: 50%;
-    left: -60px;
-    top: -160px;
+    border-radius: 15px;
+    &:hover{
+        background: #FF2626;
+        transition: 0.4s all;
+        box-shadow: 0 0 50px #bfbfbf59;
+    }
+    &:before {
+        content: '';
+        position: absolute;
+        width: calc(100% + 120px);
+        height: 130%;
+        background: #f8f8f8;
+        border-radius: 50%;
+        left: -60px;
+        top: -160px;
+    }
 }
 .single_item_wrapper img{
     width: 100%;

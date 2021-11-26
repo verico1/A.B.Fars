@@ -190,7 +190,7 @@ a:hover {
 
 .Product {
   text-align: center;
-  height: 480px;
+  height: 450px;
   width: 100%;
   margin: auto;
   background: #e9e8e8;
@@ -199,12 +199,15 @@ a:hover {
   margin: 15px 0;
   -webkit-transition: 0.4s all;
   transition: 0.4s all;
+  border-radius: 15px;
 }
 
 .Product:hover {
   background: #FF2626;
   -webkit-transition: 0.4s all;
   transition: 0.4s all;
+  -webkit-box-shadow: 0 0 50px #bfbfbf59;
+          box-shadow: 0 0 50px #bfbfbf59;
 }
 
 .Product:before {

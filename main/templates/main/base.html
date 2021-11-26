@@ -35,7 +35,7 @@
                         <a class="nav-link active" aria-current="page" href="#">{% trans "خانه" %}</a>
                     </li>
                     <li class="nav-item px-lg-3 px-md-0">
-                        <a class="nav-link" href="#">{% trans "محصولات" %}</a>
+                        <p class="nav-link" onclick="scrollTO('products')">{% trans "محصولات" %}</p>
                     </li>
                     <li class="nav-item px-lg-3 px-md-0">
                         <p class="nav-link" onclick="scrollTO('about-us')">{% trans "درباره ما" %}</p>
@@ -110,17 +110,15 @@
                             {% trans "لینک های مفید" %}
                         </h6>
                         <p class="mt-3">
-                            <a href="#!" class="">{% trans "محصولات" %}</a>
+                            <a href="/#products">{% trans "محصولات" %}</a>
                         </p>
                         <p class="mt-3">
-                            <a href="" class="">{% trans "تماس باما" %}</a>
+                            <a href="/#contact-us">{% trans "تماس باما" %}</a>
                         </p>
                         <p class="mt-3">
-                            <a href="#!" class="">{% trans "درباره ما" %}</a>
+                            <a href="/#about-us">{% trans "درباره ما" %}</a>
                         </p>
-                        <p class="mt-3">
-                            <a href="#!" class="">{% trans "راهنما" %}</a>
-                        </p>
+
                     </div>
                     <div class="col-md-4 col-lg-3 col-xl-3 mx-auto pt-4 mb-md-0 mb-4">
                         <h6 class="text-uppercase fw-bold mb-4">
