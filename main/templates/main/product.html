@@ -1,4 +1,7 @@
-<br><br>
+{% extends "main/base.html" %}
+{% load i18n %}
+{% load static %}
+
 {{product.name}}
 <br>
 <br>
@@ -9,18 +12,37 @@
 <br>
 <br>
 <br>
-{% if product.image1 %}
- <img src="{{product.image1.url}}" alt="Image">
-{% endif %}
+
 
 {% if product.image2 %}
- <img src="{{product.image2.url}}" alt="Image">
+<img src="{{product.image2.url}}" alt="Image">
 {% endif %}
 
 {% if product.image3 %}
- <img src="{{product.image3.url}}" alt="Image">
+<img src="{{product.image3.url}}" alt="Image">
 {% endif %}
 
 {% if product.image4 %}
- <img src="{{product.image4.url}}" alt="Image">
+<img src="{{product.image4.url}}" alt="Image">
 {% endif %}
+
+{% block title %}{{setting.meta_title}}{% endblock title %}
+
+{% block content %}
+<div class="container my-5 ">
+    <div class="row p-5 product-section">
+        <div class="col-md-4">
+            <div class="product-image">
+                {% if product.image1 %}
+                <img src="{{product.image1.url}}" alt="Image">
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h4>{{product.name}}</h4>
+            <p class="my-3">{{product.category}}</p>
+            <div class="my-3">{{product.description}}</div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -3,18 +3,6 @@
 {% load static %}
 
 {% block title %}{{setting.meta_title}}{% endblock title %}
-<br>
-<br>
-<a href="{% url 'main:about_us' %}">{% trans "درباره ما" %}</a>
-<br>
-<br>
-<a href="">{% trans "محصولات" %}</a>
-
-<br>
-<a href="/en/">en</a>
-<a href="/fa/">fa</a>
-<a href="/ar/">ar</a>
-<a href="/ku/">ku</a>
 
 {% block content %}
 <div class="px-4 py-5 text-center main-hero position-relative">
@@ -40,7 +28,7 @@
             <ul class="d-flex align-items-center justify-content-center my-4">
                 <li class="filter fs-5 mx-3 pb-3 active" data-filter="*">{% trans 'تمام محصولات' %}</li>
                 {% for category in categories %}
-                    <li class="filter fs-5 mx-3 pb-3" data-filter=".Milk">{{category.category}}</li>
+                    <li class="filter fs-5 mx-3 pb-3" data-filter=".{{category.category}}">{{category.category}}</li>
                 {% endfor %}
             </ul>
         </div>
@@ -48,7 +36,7 @@
     </div>
     <div class="row" id="mixitup_list">
     {% for product in products %}
-        <div class="col-lg-4 col-md-6 col-xs-6 mix Fruits Vegetables" data-bound="" style="display: inline-block;">
+        <div class="col-lg-4 col-md-6 col-xs-6 mix {{product.category}}" style="display: inline-block;">
             <div class="Product">
                 <div class="single_item_wrapper">
                     <img src="{{product.image1.url}}" alt="Image">
@@ -218,3 +206,31 @@
     </div>
 </div>
 {% endblock content %}
+
+{% block scripts %}
+<script>
+    var mixer = mixitup('#mixitup_list');
+    $(".owl-carousel").owlCarousel({
+        rtl: true,
+        loop: true,
+        responsiveClass: true,
+        autoplay: true,
+        autoplayTimeout: 2000,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 1
+            },
+            1000: {
+                items: 2
+            }
+        }
+    });
+    $(".filter").click(function () {
+        $('li.active').removeClass('active');
+        $(this).addClass('active');
+    })
+</script>
+{% endblock scripts %}

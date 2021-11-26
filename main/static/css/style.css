@@ -590,4 +590,17 @@ input:focus, textarea:focus {
     margin: 15px 15px;
   }
 }
+
+.product-section {
+  border-radius: 15px;
+  -webkit-box-shadow: 0 0 50px #bfbfbf59;
+          box-shadow: 0 0 50px #bfbfbf59;
+}
+
+.product-image {
+  width: 350px;
+  height: 350px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 /*# sourceMappingURL=style.css.map */

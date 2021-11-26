@@ -428,3 +428,12 @@ input:focus , textarea:focus{
         }
     }
 }
+.product-section{
+    border-radius: 15px;
+    box-shadow: 0 0 50px #bfbfbf59;
+}
+.product-image{
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+}

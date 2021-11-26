@@ -1,26 +1,26 @@
 $(document).ready(function () {
     // set language
-    if (!sessionStorage.getItem("language")) {
-        sessionStorage.setItem("language", "none");
+    if (!localStorage.getItem("language")) {
+        localStorage.setItem("language", "none");
         setLang()
     } else {
         setLang()
     }
     function setLang() {
-        if (sessionStorage.getItem("language") == "none") {
+        if (localStorage.getItem("language") == "none") {
             document.getElementById('setLANGUAGE').classList.add('show')
             document.getElementById('setLANGUAGE').classList.remove('d-none')
             $("#setEN").click(() => {
-                sessionStorage.setItem("language", "true");
+                localStorage.setItem("language", "true");
             })
             $("#setFA").click(() => {
-                sessionStorage.setItem("language", "true");
+                localStorage.setItem("language", "true");
             })
             $("#setAR").click(() => {
-                sessionStorage.setItem("language", "true");
+                localStorage.setItem("language", "true");
             })
             $("#setKU").click(() => {
-                sessionStorage.setItem("language", "true");
+                localStorage.setItem("language", "true");
             })
         }
     }
@@ -29,29 +29,6 @@ $(document).ready(function () {
         e.stopPropagation();
     })
 
-    var mixer = mixitup('#mixitup_list');
-    $(".owl-carousel").owlCarousel({
-        rtl: true,
-        loop: true,
-        responsiveClass: true,
-        autoplay: true,
-        autoplayTimeout: 2000,
-        responsive: {
-            0: {
-                items: 1
-            },
-            600: {
-                items: 1
-            },
-            1000: {
-                items: 2
-            }
-        }
-    });
-    $(".filter").click(function () {
-        $('li.active').removeClass('active');
-        $(this).addClass('active');
-    })
     const navbar = document.getElementById("navbar");
     const sticky = navbar.offsetTop;
     function fixedNavbar() {
