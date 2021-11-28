@@ -19,6 +19,7 @@ def staff_index(request):
 
     products_count = Product.objects.all().count()
     messages_count = Message.objects.all().count()
+    readed_messages_count = Message.objects.filter(is_read=False).count()
 
     views_of_month_count = IPAddress.objects.filter(created_on__year=this_year ,created_on__month=this_month).count()
     messages_of_month_count = Message.objects.filter(created_on__year=this_year ,created_on__month=this_month).count()
@@ -29,7 +30,8 @@ def staff_index(request):
         'messages_count':messages_count,
         'messages_of_month_count':messages_of_month_count,
         'views_of_month_count':views_of_month_count,
-        'views_of_day_count':views_of_day_count
+        'views_of_day_count':views_of_day_count,
+        'readed_messages_count':readed_messages_count,
     }
     return render(request, "staff/home.html", ctx)
 

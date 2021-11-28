@@ -45,7 +45,7 @@
                     </td>
                     <td class="text-black-50">
                       {% for n in category.cat.all %}
-                      {{n.name}},
+                        {{n.name}}{{ forloop.last|yesno:",&#44;"|safe }}
                       {% endfor %}
                     </td>
                     <td>

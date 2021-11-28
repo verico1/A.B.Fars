@@ -92,18 +92,11 @@
                         <h6 class="text-uppercase fw-bold mb-4">
                            {% trans "محصولات" %}
                         </h6>
-                        <p class="mt-3">
-                            <a href="#!" class="">عنوان</a>
-                        </p>
-                        <p class="mt-3">
-                            <a href="#!" class="">عنوان</a>
-                        </p>
-                        <p class="mt-3">
-                            <a href="#!" class="">عنوان</a>
-                        </p>
-                        <p class="mt-3">
-                            <a href="#!" class="">عنوان</a>
-                        </p>
+                        {% for random_product in random_products %}
+                            <p class="mt-3">
+                                <a href="product/{{random_product.id}}/" class="">{{random_product.name}}</a>
+                            </p>
+                        {% endfor %}
                     </div>
                     <div class="col-md-3 col-lg-2 col-xl-2 mx-auto pt-4 mb-4">
                         <h6 class="text-uppercase fw-bold mb-4">
