@@ -2,16 +2,9 @@
 {% load i18n %}
 {% load static %}
 
-{{product.name}}
-<br>
-<br>
-{{product.category}}
-<br><br>
-{{product.description}}
-
-<br>
-<br>
-<br>
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/xzoom.min.css' %}">
+{% endblock head %}
 
 
 {% block title %}{{setting.meta_title}}{% endblock title %}
@@ -19,38 +12,60 @@
 {% block content %}
 <div class="container my-5 ">
     <div class="row p-5 product-section">
-        <div class="col-md-4">
+        <div class="col-lg-4">
             <div class="product-image">
                 {% if product.image1 %}
-                <img src="{{product.image1.url}}" alt="Image">
+                <img class="img-product" src="{{product.image1.url}}" alt="Image">
                 {% endif %}
             </div>
-            <div class="product-gallery">
+            <div class="product-gallery owl-carousel">
+
+                {% if product.image1 %}
+                <img class="img-gallery active" src="{{product.image1.url}}" alt="Image">
+                {% endif %}
+
                 {% if product.image2 %}
-                <img src="{{product.image2.url}}" alt="Image">
+                <img class="img-gallery" src="{{product.image2.url}}" alt="Image">
                 {% endif %}
 
                 {% if product.image3 %}
-                <img src="{{product.image3.url}}" alt="Image">
+                <img class="img-gallery" src="{{product.image3.url}}" alt="Image">
                 {% endif %}
 
                 {% if product.image4 %}
-                <img src="{{product.image4.url}}" alt="Image">
+                <img class="img-gallery" src="{{product.image4.url}}" alt="Image">
                 {% endif %}
             </div>
         </div>
-        <div class="col-md-6">
-            <h4>{{product.name}}</h4>
+        <div class="col-lg-6">
+            <h4 id="product-name">{{product.name}}</h4>
             <p class="my-3">{{product.category}}</p>
             <div class="my-3 product-description">{{product.description}}</div>
         </div>
         <div class="share-social my-3">
             <p>اشتراک گذاری در</p>
-            <a href="{{setting.instagram}}" target="blank"><i class="fab fa-instagram"></i></a>
-            <a href="{{setting.telegram}}" target="blank"><i class="fab fa-telegram-plane"></i></a>
-            <a href="{{setting.whatsapp}}" target="blank"><i class="fab fa-whatsapp"></i></a>
-            <a href="{{setting.telegram}}" target="blank"><i class="fab fa-facebook"></i></a>
+            <span onclick="share('telegram')" target="blank"><i class="fab fa-telegram-plane"></i></span>
+            <span onclick="share('whatsapp')" target="blank"><i class="fab fa-whatsapp"></i></span>
+            <span onclick="share('facebook')" target="blank"><i class="fab fa-facebook"></i></span>
         </div>
     </div>
 </div>
 {% endblock content %}
+{% block script %}
+<script src="{% static 'js/product.js' %}"></script>
+<script src="{% static 'js/xgallery.js' %}"></script>
+<script>
+     $(".owl-carousel").owlCarousel({
+        rtl: true,
+        responsiveClass: true,
+        dots:false,
+        nav:true,
+        margin: 10,
+        responsive: {
+            0: {
+                items: 3
+            }
+        }
+    });
+</script>
+{% endblock script %}

@@ -48,7 +48,7 @@
             <a class="nav-link" href="/staff/messages/">
               <i class="fad fa-envelope"></i>
               <p>پیام ها</p>
-              {% if messages_count %}
+              {% if readed_messages_count > 0 %}
               <p class="new-notification">{{readed_messages_count}}</p>
               {% else %}
               {% endif %}

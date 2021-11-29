@@ -599,6 +599,7 @@ input:focus, textarea:focus {
   -webkit-box-shadow: 0 0 50px #bfbfbf59;
           box-shadow: 0 0 50px #bfbfbf59;
   position: relative;
+  min-height: 700px;
 }
 
 .product-section .product-description {
@@ -606,8 +607,8 @@ input:focus, textarea:focus {
 }
 
 .product-image {
-  width: 350px;
-  height: 350px;
+  width: 100%;
+  height: 360px;
 }
 
 .product-image img {
@@ -619,6 +620,7 @@ input:focus, textarea:focus {
 }
 
 .product-gallery {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -632,6 +634,51 @@ input:focus, textarea:focus {
      object-fit: cover;
   margin: 5px 0 0 10px;
   border-radius: 15px;
+}
+
+.product-gallery .owl-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  width: 100%;
+  top: 55%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.product-gallery .owl-nav button {
+  background: #f6f8fa !important;
+  -webkit-box-shadow: 0 0 10px #8f8f8f66;
+          box-shadow: 0 0 10px #8f8f8f66;
+  font-size: 2rem !important;
+  padding: 0px 15px;
+  border-radius: 8px;
+}
+
+.product-gallery .owl-nav button.owl-prev {
+  position: absolute;
+  right: -15;
+}
+
+.product-gallery .owl-nav button.owl-next {
+  position: absolute;
+  left: -15;
+}
+
+.img-gallery {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.img-gallery.active {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  border: 4px solid #c4c4c4;
+  padding: 4px;
 }
 
 .share-social {
@@ -649,8 +696,9 @@ input:focus, textarea:focus {
   top: -20px;
 }
 
-.share-social a {
+.share-social span {
   background: #f6f8fa;
+  cursor: pointer;
   width: 50px;
   height: 50px;
   display: -webkit-box;
@@ -671,7 +719,7 @@ input:focus, textarea:focus {
   transition: 0.3s all;
 }
 
-.share-social a:hover {
+.share-social span:hover {
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
   -webkit-box-shadow: none;
@@ -680,22 +728,17 @@ input:focus, textarea:focus {
           transform: scale(1.1);
 }
 
-.share-social a:nth-child(2):hover {
-  background: #FCAF45;
-  color: #fff;
-}
-
-.share-social a:nth-child(3):hover {
+.share-social span:nth-child(2):hover {
   background: #0088CC;
   color: #fff;
 }
 
-.share-social a:nth-child(4):hover {
+.share-social span:nth-child(3):hover {
   background: #25D366;
   color: #fff;
 }
 
-.share-social a:nth-child(5):hover {
+.share-social span:nth-child(4):hover {
   background: #1877f2;
   color: #fff;
 }
