@@ -11,6 +11,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import authenticate, login, logout
 
 from settings.models import Setting
+from staff.cahrts.cahrts import site_views_month
 
 # Create your views here.
 def staff_index(request):
@@ -34,6 +35,7 @@ def staff_index(request):
             'views_of_month_count':views_of_month_count,
             'views_of_day_count':views_of_day_count,
             'readed_messages_count':readed_messages_count,
+            'cahrt_counts':site_views_month()
         }
         return render(request, "staff/home.html", ctx)
     else:
