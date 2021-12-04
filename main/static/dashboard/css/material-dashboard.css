@@ -2349,9 +2349,9 @@ pre code {
 .form-control:focus {
   color: #495057;
   background-color: rgba(0, 0, 0, 0);
-  border-color: #9acffa;
+  border-color: none!important;
   outline: 0;
-  box-shadow: none, 0 0 0 0.2rem rgba(33, 150, 243, 0.25);
+  box-shadow: none!important;
 }
 
 .form-control::placeholder {

@@ -742,4 +742,17 @@ input:focus, textarea:focus {
   background: #1877f2;
   color: #fff;
 }
+
+.login-box {
+  width: 450px;
+  background: #f6f8fa;
+  border-radius: 15px;
+  margin: 120px auto;
+}
+
+.product-mini-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 /*# sourceMappingURL=style.css.map */
