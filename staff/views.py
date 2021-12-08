@@ -13,6 +13,8 @@ from django.contrib.auth import authenticate, login, logout
 from settings.models import Setting
 from staff.cahrts.cahrts import site_views_month
 
+from extensions.im_not_robot import grecaptcha_verify
+
 # Create your views here.
 def staff_index(request):
     if request.user.is_staff:
@@ -46,12 +48,14 @@ def staff_login(request):
         username = request.POST['username']
         password = request.POST['password']
         user = authenticate(request, username=username, password=password)
-        if user is not None:
+        if not grecaptcha_verify(request):
+            ctx = {'msg_bad':'لطفا تست ربات را کامل کنید'}
+        elif user is not None:
             login(request, user)
             return redirect('/staff/')
         else:
             ctx = {'msg_bad':'نام کاربری یا کلمه عبور اشتباه است'}
-            return render(request, 'staff/login.html/', ctx)
+        return render(request, 'staff/login.html/', ctx)
     return render(request, 'staff/login.html/')
 
 def staff_logout(request):

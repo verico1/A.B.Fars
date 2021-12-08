@@ -1,4 +1,5 @@
 from main.models import IPAddress
+import time
 
 class ViewCounterMiddleware:
     def __init__(self, get_response):
@@ -11,7 +12,9 @@ class ViewCounterMiddleware:
         else:
             ip = request.META.get('REMOTE_ADDR')
         try:
-            ip_address = IPAddress.objects.get(ip_address=ip)
+            this_year = time.strftime("%Y", time.localtime(time.time()))
+            this_month = time.strftime("%m", time.localtime(time.time()))
+            ip_address = IPAddress.objects.get(created_on__year=this_year ,created_on__month=this_month ,ip_address=ip)
         except IPAddress.DoesNotExist:
             ip_address = IPAddress(ip_address=ip)
             ip_address.save()

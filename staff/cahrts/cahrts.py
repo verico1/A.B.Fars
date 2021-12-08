@@ -5,10 +5,8 @@ from extensions import jalali
 
 def site_views_month():
     this_year = time.strftime("%Y", time.localtime(time.time()))
-    this_month = time.strftime("%m", time.localtime(time.time()))
     this_day = time.strftime("%d", time.localtime(time.time()))
-
-    i = 1
+    i = 0
     counts = []
     while i < 12:
         i += 1

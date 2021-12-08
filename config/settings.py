@@ -139,3 +139,5 @@ MEDIA_URL = '/media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+RECAPTCHA_SECRET_KEY = '6LeVpHwdAAAAAAwmRxMF_Lj7WTtHZ2dyLq2el_3W'

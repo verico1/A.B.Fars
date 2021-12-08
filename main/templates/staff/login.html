@@ -3,19 +3,7 @@
 {% load static %}
 
 {% block title %}{{setting.meta_title}}{% endblock title %}
-<form method="POST">
-    <br>
-    <br>
-    <input type="text", name="username", placeholder="username">
-    <br>
-    <br>
-    <input type="password", name="password" placeholder="password">
-    <br>
-    <br>
-    <button type="submit" >submit</button>
-    <br>
-    <br>
-</form>
+
 {% block content %}
 
 <div class="">
@@ -35,10 +23,14 @@
         <div class="input-group mb-3 ">
           <input type="password" name="password" class="form-control" placeholder="رمز عبور" aria-label="Example text with button addon" aria-describedby="button-addon1">
         </div>
+        <div class="my-5">
+          <script src='https://www.google.com/recaptcha/api.js'></script>
+          <div class="g-recaptcha recaptcha" data-sitekey="6LeVpHwdAAAAAKdthCC9yCVYlyvQtr0Z7D8p2tw4"></div>
+        </div>
         <p class="my-4" style="color: #FF2626;;">{{msg_bad}}</p>
         <button class="btn btn-primary w-100" type="submit">ورود</button>
         <div class="d-flex align-items-center my-4 justify-content-between">
-            <div class="checkbox">
+          <div class="checkbox">
               <label>
                 <input type="checkbox" value="">
                 من را به خاطر بسپار
