@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-13 11:58+0330\n"
+"POT-Creation-Date: 2021-12-08 10:35+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,112 +23,103 @@ msgid "خانه"
 msgstr "خانه"
 
 #: main/templates/main/base.html:38 main/templates/main/base.html:93
-#: main/templates/main/base.html:113 main/templates/main/index.html:11
+#: main/templates/main/base.html:106
 msgid "محصولات"
 msgstr "محصولات"
 
-#: main/templates/main/base.html:41 main/templates/main/base.html:119
-#: main/templates/main/index.html:8 main/templates/main/index.html:28
-#: main/templates/main/index.html:180
+#: main/templates/main/base.html:41 main/templates/main/base.html:112
+#: main/templates/main/index.html:17 main/templates/main/index.html:108
 msgid "درباره ما"
 msgstr "درباره ما"
 
-#: main/templates/main/base.html:44 main/templates/main/base.html:116
+#: main/templates/main/base.html:44 main/templates/main/base.html:109
 msgid "تماس باما"
 msgstr "تماس باما"
 
-#: main/templates/main/base.html:84 main/templates/main/index.html:181
+#: main/templates/main/base.html:84 main/templates/main/index.html:109
 msgid "شرکت آبنوس برنای خلیج فارس"
 msgstr "شرکت آبنوس برنای خلیج فارس"
 
-#: main/templates/main/base.html:110
+#: main/templates/main/base.html:103
 msgid "لینک های مفید"
 msgstr "لینک های مفید"
 
-#: main/templates/main/base.html:122
-msgid "راهنما"
-msgstr "راهنما"
-
-#: main/templates/main/base.html:127
+#: main/templates/main/base.html:118
 msgid "راه های ارتباطی"
 msgstr "راه های ارتباطی"
 
-#: main/templates/main/base.html:130
+#: main/templates/main/base.html:121
 msgid "ایمیل"
 msgstr "ایمیل"
 
-#: main/templates/main/base.html:134
-msgid "اینستاگرام"
-msgstr "اینستاگرام"
-
-#: main/templates/main/base.html:139
-msgid "تلگرام"
-msgstr "تلگرام"
-
-#: main/templates/main/base.html:144
-msgid "واتساپ"
-msgstr "واتساپ"
-
-#: main/templates/main/index.html:37
+#: main/templates/main/index.html:26
 msgid "محصولات صادراتی"
 msgstr "محصولات صادراتی"
 
-#: main/templates/main/index.html:41
+#: main/templates/main/index.html:30
 msgid "تمام محصولات"
 msgstr "تمام محصولات"
 
-#: main/templates/main/index.html:132
+#: main/templates/main/index.html:48
+msgid "مشاهده محصول"
+msgstr "مشاهده محصول"
+
+#: main/templates/main/index.html:60
 msgid "نظرات مشتریان"
 msgstr "نظرات مشتریان"
 
-#: main/templates/main/index.html:187
+#: main/templates/main/index.html:115
 msgid "مشتریان داخلی"
 msgstr "مشتریان داخلی"
 
-#: main/templates/main/index.html:191
+#: main/templates/main/index.html:119
 msgid "تعداد محصولات"
 msgstr "تعداد محصولات"
 
-#: main/templates/main/index.html:197
+#: main/templates/main/index.html:126
 msgid "مشتریان بین المللی"
 msgstr "مشتریان بین المللی"
 
-#: main/templates/main/index.html:201
+#: main/templates/main/index.html:130
 msgid "سابقه فعالیت"
 msgstr "سابقه فعالیت"
 
-#: main/templates/main/index.html:249
-msgid "تماس باما"
+#: main/templates/main/index.html:178
+msgid "تماس با ما"
 msgstr "تماس باما"
 
-#: main/templates/main/index.html:255
+#: main/templates/main/index.html:183
 msgid "نام و نام خانوادگی"
 msgstr "نام و نام خانوادگی"
 
-#: main/templates/main/index.html:258
+#: main/templates/main/index.html:186
 msgid "پست الکترونیکی"
 msgstr "پست الکترونیکی"
 
-#: main/templates/main/index.html:261
+#: main/templates/main/index.html:190
 msgid "شماره تماس"
 msgstr "شماره تماس"
 
-#: main/templates/main/index.html:264
+#: main/templates/main/index.html:193
 msgid "متن پیام"
 msgstr "متن پیام"
 
-#: main/templates/main/index.html:267
+#: main/templates/main/index.html:196
 msgid "ارسال"
 msgstr "ارسال"
 
-#: main/views.py:27
+#: main/templates/main/product.html:46
+msgid "اشتراک گذاری در"
+msgstr "اشتراک گذاری در"
+
+#: main/views.py:32
 msgid "خطا در ثبت پیام. لطفا نام و نام خانوادگی را صحیح وارد کنید"
 msgstr "خطا در ثبت پیام. لطفا نام و نام خانوادگی را صحیح وارد کنید"
 
-#: main/views.py:29
+#: main/views.py:34
 msgid "خطا در ثبت پیام. لطفا شماره تماس را صحیح وارد کنید"
 msgstr "خطا در ثبت پیام. لطفا شماره تماس را صحیح وارد کنید"
 
-#: main/views.py:31
+#: main/views.py:36
 msgid "خطا در ثبت پیام. لطفا متن پیام را کوتاه تر کنید"
 msgstr "خطا در ثبت پیام. لطفا متن پیام را کوتاه تر کنید"
