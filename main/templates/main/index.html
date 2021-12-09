@@ -57,44 +57,14 @@
 <div class="testimonial my-5">
     <div class="opacity">
         <div class="container py-5">
-            <h4 class="fw-bold text-white text-center border-bottom pt-4 pb-3">{% trans "نظرات مشتریان" %}</h4>
-            <div class="owl-carousel owl-theme">
-                <div class="info_wrapper">
-                    <div class="client_info">
-                        <img src="{% static 'images/profile.png' %}" alt="client" class="border_round float_left">
-                        <div class="name float_left">
-                            <h6 class="text-white">آقای بهرامی</h6>
-                            <span>شرکت جتامین خخخ</span>
-                        </div>
-                        <div class="clear_fix"></div>
-                    </div>
-                    <div class="brief-content">
-                        <h6>لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ،
-                            صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب
-                            بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می
-                            نماید،</h6>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-                <div class="info_wrapper">
-                    <div class="client_info">
-                        <img src="{% static 'images/profile2.png' %}" alt="client" class="border_round float_left">
-                        <div class="name float_left">
-                            <h6 class="text-white">جاستین بزرگ ( محسن پوریا )</h6>
-                            <span>کمپانی فامورال</span>
-                        </div>
-                        <div class="clear_fix"></div>
-                    </div>
-                    <div class="brief-content">
-                        <h6>لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ،
-                            صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب
-                            بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می
-                            نماید،</h6>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
+            <h4 class="fw-bold text-white text-center border-bottom pt-4 pb-3">{% trans "افتخارات" %}</h4>
+            <div class="owl-carousel owl-theme mt-4">
+                <a href="{% static 'images/intro1.jpg' %}" target="_blank" class="honors">
+                    <img src="{% static 'images/intro1.jpg' %}">
+                </a>
+                <a href="{% static 'images/intro2.jpg' %}" target="_blank" class="honors">
+                    <img src="{% static 'images/intro2.jpg' %}">
+                </a>
             </div>
 
         </div>
@@ -132,41 +102,14 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="icon-box">
-                            <div class="icon bg-color1 mb-2">
-                                <i class="fad fa-columns" aria-hidden="true"></i>
-                            </div>
-                            <h4 class="mb-2">لروم ایپسوم</h4>
-                            <p class="text-black-50 mb-2">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</p>
-                        </div>
-                        <div class="icon-box">
-                            <div class="icon bg-color2 mb-2">
-                                <i class="fad fa-star" aria-hidden="true"></i>
-                            </div>
-                            <h4 class="mb-2">لروم ایپسوم</h4>
-                            <p class="text-black-50 mb-2">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="icon-box">
-                            <div class="icon bg-color3 mb-2">
-                                <i class="fad fa-shopping-cart" aria-hidden="true"></i>
-                            </div>
-                            <h4 class="mb-2">لروم ایپسوم</h4>
-                            <p class="text-black-50 mb-2">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</p>
-                        </div>
-                        <div class="icon-box">
-                            <div class="icon bg-color4 mb-2">
-                                <i class="fab fa-instagram" aria-hidden="true"></i>
-                            </div>
-                            <h4 class="mb-2">لروم ایپسوم</h4>
-                            <p class="text-black-50 mb-2">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-md-6 d-flex align-items-center">
+                <span class="text-center">
+                    <h4 class="fw-bold mb-4">ویدیو معرفی</h4>
+                    <video class="w-100" controls>
+                        <source src="{% static 'video/intro.mp4' %}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </span>
             </div>
         </div>
     </div>
@@ -180,10 +123,12 @@
                 <form method="POST" class="text-center">
                     {% csrf_token %}
                     <div class="my-4">
-                        <input type="text" class="w-75 text-right bg-color5" name="name" id="" placeholder="{% trans "نام و نام خانوادگی" %}">
+                        <input type="text" class="w-75 text-right bg-color5" name="name" id="" placeholder="{% trans "
+                            نام و نام خانوادگی" %}">
                     </div>
                     <div class="my-4">
-                        <input type="email" class="w-75 text-right bg-color5" name="email" id="" placeholder="{% trans "پست الکترونیکی" %}">
+                        <input type="email" class="w-75 text-right bg-color5" name="email" id="" placeholder="{% trans "
+                            پست الکترونیکی" %}">
                     </div>
                     <div class="my-4">
                         <input type="tel" class="w-75 text-right bg-color5" name="phone_number" id=""
@@ -219,17 +164,11 @@
         loop: true,
         responsiveClass: true,
         autoplay: true,
-        autoplayTimeout: 2000,
+        autoplayTimeout: 3000,
         responsive: {
             0: {
-                items: 1
-            },
-            600: {
-                items: 1
-            },
-            1000: {
                 items: 2
-            }
+            },
         }
     });
     $(".filter").click(function () {

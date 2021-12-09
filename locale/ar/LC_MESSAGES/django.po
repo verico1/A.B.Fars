@@ -66,8 +66,8 @@ msgid "مشاهده محصول"
 msgstr "عرض المنتج"
 
 #: main/templates/main/index.html:60
-msgid "نظرات مشتریان"
-msgstr "تعليقات العملاء"
+msgid "افتخارات"
+msgstr "مرتبة الشرف"
 
 #: main/templates/main/index.html:115
 msgid "مشتریان داخلی"

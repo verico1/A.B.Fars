@@ -64,8 +64,8 @@ msgid "مشاهده محصول"
 msgstr "تماشای محصولات"
 
 #: main/templates/main/index.html:60
-msgid "نظرات مشتریان"
-msgstr "نظرات مشتریان"
+msgid "افتخارات"
+msgstr "افتخارات"
 
 #: main/templates/main/index.html:115
 msgid "مشتریان داخلی"

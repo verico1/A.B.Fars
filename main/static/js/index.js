@@ -88,3 +88,12 @@ function scroller_number() {
         }
     });
 }
+
+const honors = document.querySelectorAll('.honors');
+if (honors) {
+    honors.forEach(honor => {
+        honor.addEventListener('click', ()=>{
+            console.log(honor.getElementsByTagName('img')[0].src)
+        })
+    })
+}

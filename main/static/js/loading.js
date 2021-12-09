@@ -5,7 +5,7 @@ function disable_loading() {
         document.body.style.overflowY = "auto";
         setTimeout(() => {
             loading.classList.add('d-none')
-        }, 500);
+        }, 100);
     }, 300);
 }
 if (document.readyState == 'loading') {
