@@ -48,6 +48,7 @@ footer{
 body {
     font-family: 'IRANYekan', 'Roboto', sans-serif !important;
 	line-height: 1;
+    overflow-y: hidden;
 }
 ol, ul {
 	list-style: none;
@@ -73,6 +74,24 @@ a{
         transition: 0.3s all;
     }
 }
+::-webkit-scrollbar-track
+{
+	background-color: #F5F5F5;
+    position: fixed;
+    left: 0;
+}
+
+::-webkit-scrollbar
+{
+	width: 8px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+	background-color: #FF2626;
+}
+
 
 .navbar{
     box-shadow: 0 0 5px #ddd;
@@ -81,7 +100,7 @@ a{
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1000;
+    z-index: 900;
     width: 100%;
     animation: fixNavbar 0.5s normal;
 }
@@ -140,6 +159,7 @@ a{
     width: 100%;
     margin: auto;
     background: #e9e8e8;
+    border: 1px solid #e9e8e8;
     position: relative;
     overflow: hidden;
     margin: 15px 0;

@@ -8,17 +8,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock title %}</title>
+    <style>
+        #loading {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: #FF2626;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            touch-action: none;
+        }
+    </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.rtl.min.css"
         integrity="sha384-+qdLaIRZfNu4cVPK/PxJJEy0B0f3Ugv8i482AKY7gwXwhaCroABd086ybrVKTa0q" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/fontawesome.css' %}">
     <link rel="stylesheet" href="{% static 'css/custombs.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/loading.js' %}"></script>
     {% block head %}
     {% endblock head %}
 </head>
 
 <body>
+
+    <div id="loading">
+        <div class="text-center">
+            <img src="{% static 'images/logo.png' %}" alt="آبنوس برنای خلیج فارس" width="180">
+            <h4 class="text-white mt-3 fw-bold d-flex align-items-center gap-3">
+                <div class="spinner-border text-light" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                در حال بارگذاری
+            </h4>
+        </div>
+    </div>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white" id="navbar">
         <div class="container">
@@ -90,12 +118,12 @@
                     <div class="col-md-2 col-lg-2 col-xl-2 mx-auto pt-4 mb-4">
                         <!-- Links -->
                         <h6 class="text-uppercase fw-bold mb-4">
-                           {% trans "محصولات" %}
+                            {% trans "محصولات" %}
                         </h6>
                         {% for random_product in random_products %}
-                            <p class="mt-3 product-mini-title">
-                                <a href="product/{{random_product.id}}/" class="">{{random_product.name}}</a>
-                            </p>
+                        <p class="mt-3 product-mini-title">
+                            <a href="product/{{random_product.id}}/" class="">{{random_product.name}}</a>
+                        </p>
                         {% endfor %}
                     </div>
                     <div class="col-md-3 col-lg-2 col-xl-2 mx-auto pt-4 mb-4">
@@ -118,10 +146,10 @@
                             {% trans "راه های ارتباطی" %}
                         </h6>
                         <p class="mt-3">
-                           {% trans "ایمیل" %} : {{setting.email}}
+                            {% trans "ایمیل" %} : {{setting.email}}
                         </p>
                         <p class="mt-3" style="line-height: 1.4rem;">
-                             {{setting.address}}
+                            {{setting.address}}
                         </p>
                         <div class="social-menu justify-content-center justify-content-md-start my-3">
                             <a href="{{setting.instagram}}" target="blank"><i class="fab fa-instagram"></i></a>

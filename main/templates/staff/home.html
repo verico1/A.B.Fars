@@ -4,8 +4,26 @@
 {% block title %}آبنوس برنای خلیج فارس | پنل مدیریت{% endblock %}
 {% block head %}داشبورد{% endblock head %}
 
-{% block content %}
+{% block loading %}
+<style>
+  #loading {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #FF2626;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    touch-action: none;
+  }
+</style>
+<script src="{% static 'js/loading.js' %}"></script>
+{% endblock loading %}
 
+{% block content %}
 <div class="d-none">{% block dashboard %}active{% endblock %}</div>
 
 <div class="content">
