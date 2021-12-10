@@ -115,9 +115,8 @@
 </div>
 {{products_view_dict}}
 
-{% for n in products %}
-{{n.name}}:{{n.hits.all.count}}
-{% endfor %}
+{{v_products}}
+{{v_count}}
 
 {% endblock content%}
 
