@@ -113,6 +113,12 @@
 <div class="d-none" id="view_data">
   {{cahrt_counts}}
 </div>
+{{products_view_dict}}
+
+{% for n in products %}
+{{n.name}}:{{n.hits.all.count}}
+{% endfor %}
+
 {% endblock content%}
 
 {% block scripts %}

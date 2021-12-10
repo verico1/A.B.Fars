@@ -30,6 +30,8 @@ def staff_index(request):
         messages_of_month_count = Message.objects.filter(created_on__year=this_year ,created_on__month=this_month).count()
 
         views_of_day_count = IPAddress.objects.filter(created_on__year=this_year ,created_on__month=this_month, created_on__day=this_day).count()
+        
+        products = Product.objects.all()
         ctx = {
             'products_count':products_count,
             'messages_count':messages_count,
@@ -37,7 +39,8 @@ def staff_index(request):
             'views_of_month_count':views_of_month_count,
             'views_of_day_count':views_of_day_count,
             'readed_messages_count':readed_messages_count,
-            'cahrt_counts':site_views_month()
+            'cahrt_counts':site_views_month(),
+            'products':products,
         }
         return render(request, "staff/home.html", ctx)
     else:
