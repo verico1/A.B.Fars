@@ -1,4 +1,6 @@
 const view_data = document.getElementById('view_data').innerHTML.split('[')[1].split(']')[0].split(',');
+const view_products = document.getElementById('view_products').innerHTML.split('[')[1].split(']')[0].split(',');
+const view_products_count = document.getElementById('view_products_count').innerHTML.split('[')[1].split(']')[0].split(',');
 const ctx1 = document.getElementById('chartViewPage').getContext('2d');
 const chartViewPage = new Chart(ctx1, {
     type: 'line',
@@ -32,10 +34,10 @@ const ctx2 = document.getElementById('chartViewProducts').getContext('2d');
 const chartViewProducts = new Chart(ctx2, {
     type: 'bar',
     data: {
-        labels: ['عنوان محصول', 'عنوان محصول', 'عنوان محصول', 'عنوان محصول', 'عنوان محصول'],
+        labels: view_products,
         datasets: [{
             label: 'بازدید',
-            data: [140, 53, 43, 52, 100, 95, 130, 145],
+            data: view_products_count,
             backgroundColor: [
                 '#FF2626'
             ]
